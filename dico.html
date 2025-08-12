@@ -10,6 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="questions.js"></script>
 <style>
         :root {
@@ -1535,6 +1536,12 @@ document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
     </div>
 </div>
 <script>
+    // --- SUPABASE CLIENT INITIALIZATION ---
+    const supabaseUrl = 'https://dpaumpllxdqpjytkctpo.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwYXVtcGxseGRxcGp5dGtjdHBvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUwMDA5MjMsImV4cCI6MjA3MDU3NjkyM30.xKLMgyzw4_N8tZEoVKkyA51TnVFPpMQyeIbRHQNLVJI';
+    const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+</script>
+<script>
         // --- TRANSLATIONS ---
         const translations = {
             fr: {
@@ -2686,26 +2693,30 @@ document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
 
         class HallOfFame {
             constructor() {
-                this.apiBaseUrl = 'http://localhost:3000/api';
                 this.scores = [];
                 this.stats = null;
                 this.loading = false;
             }
 
-            // Charger les scores depuis l'API
+            // Charger les scores depuis Supabase
             async loadScores() {
                 try {
                     this.loading = true;
-                    const response = await fetch(`${this.apiBaseUrl}/scores`);
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
+                    const { data, error } = await supabaseClient
+                        .from('scores')
+                        .select('*')
+                        .order('score', { ascending: false })
+                        .limit(100); // Garder seulement les 100 meilleurs
+
+                    if (error) {
+                        throw error;
                     }
-                    const data = await response.json();
-                    this.scores = data.scores || [];
+
+                    this.scores = data || [];
                     return this.scores;
                 } catch (error) {
-                    console.warn('Erreur lors du chargement du hall of fame:', error);
-                    // Fallback vers localStorage si l'API n'est pas disponible
+                    console.warn('Erreur lors du chargement du hall of fame depuis Supabase:', error);
+                    // Le fallback vers localStorage reste une bonne idée
                     return this.loadScoresFromLocalStorage();
                 } finally {
                     this.loading = false;
@@ -2725,13 +2736,12 @@ document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
                 }
             }
 
-            // Ajouter un nouveau score via l'API
+            // Ajouter un nouveau score via Supabase
             async addScore(scoreData) {
                 try {
-                    // Demander le pseudo à l'utilisateur
                     const pseudo = await this.promptPlayerName();
                     if (!pseudo) {
-                        console.log('Pseudo annulé, score non enregistré');
+                        console.log('Pseudo annulé, score non enregistré.');
                         return null;
                     }
 
@@ -2743,31 +2753,27 @@ document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
                         total: scoreData.total,
                         difficulty: scoreData.difficulty || 'facile',
                         time: scoreData.time || 0,
-                        gameType: scoreData.gameType || 'quiz'
+                        game_type: scoreData.gameType || 'quiz' // Note: 'game_type' to match DB
                     };
 
-                    const response = await fetch(`${this.apiBaseUrl}/scores`, {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(scorePayload)
-                    });
+                    const { error } = await supabaseClient
+                        .from('scores')
+                        .insert([scorePayload]);
 
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
+                    if (error) {
+                        throw error;
                     }
 
-                    const result = await response.json();
-                    console.log('Score enregistré avec succès:', result);
+                    console.log('Score enregistré avec succès sur Supabase:', scorePayload);
                     
                     // Recharger les scores pour avoir les données à jour
                     await this.loadScores();
                     
-                    return result.rank || 1;
+                    // On ne peut plus facilement calculer le rang, mais on peut le signaler comme réussi.
+                    return 'success';
                 } catch (error) {
-                    console.warn('Erreur lors de l\'enregistrement du score:', error);
-                    // Fallback vers localStorage
+                    console.warn('Erreur lors de l\'enregistrement du score sur Supabase:', error);
+                    // Le fallback est toujours utile
                     return this.addScoreToLocalStorage(scoreData);
                 }
             }
@@ -2855,21 +2861,14 @@ document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
                 });
             }
 
-            // Obtenir les statistiques depuis l'API
+            // Obtenir les statistiques en les calculant localement
             async getStats() {
-                try {
-                    const response = await fetch(`${this.apiBaseUrl}/stats`);
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    const data = await response.json();
-                    this.stats = data;
-                    return data;
-                } catch (error) {
-                    console.warn('Erreur lors du chargement des statistiques:', error);
-                    // Calculer les stats localement
-                    return this.calculateLocalStats();
+                // S'assurer que les scores sont chargés
+                if (this.scores.length === 0) {
+                    await this.loadScores();
                 }
+                this.stats = this.calculateLocalStats();
+                return this.stats;
             }
 
             // Calculer les statistiques localement
@@ -2946,15 +2945,6 @@ document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
                 return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
             }
 
-            // Vérifier si l'API est disponible
-            async checkApiStatus() {
-                try {
-                    const response = await fetch(`${this.apiBaseUrl}/scores`);
-                    return response.ok;
-                } catch (error) {
-                    return false;
-                }
-            }
         }
 
         // 🎮 Interface du Hall of Fame
@@ -3601,47 +3591,19 @@ document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
         // Fonction pour enregistrer un score
         async function saveScore(scoreData) {
             try {
-                // Vérifier si l'API est disponible
-                const apiAvailable = await hallOfFameUI.hof.checkApiStatus();
-                
-                if (apiAvailable) {
-                    // Utiliser l'API en ligne
-                    const position = await hallOfFameUI.hof.addScore(scoreData);
-                    
-                    if (position) {
-                        // Afficher le Hall of Fame après un délai
-                        setTimeout(() => {
-                            hallOfFameUI.showHallOfFame();
-                        }, 1000);
-                        
-                        return position;
-                    }
-                } else {
-                    // Mode hors ligne - utiliser localStorage
-                    console.log('API non disponible, mode hors ligne activé');
-                    const position = hallOfFameUI.hof.addScoreToLocalStorage(scoreData);
-                    
-                    if (position) {
-                        // Afficher le Hall of Fame après un délai
-                        setTimeout(() => {
-                            hallOfFameUI.showHallOfFame();
-                        }, 1000);
-                        
-                        return position;
-                    }
-                }
-            } catch (error) {
-                console.warn('Erreur lors de l\'enregistrement du score:', error);
-                // Fallback vers localStorage
-                const position = hallOfFameUI.hof.addScoreToLocalStorage(scoreData);
+                // La méthode addScore contient maintenant la logique de fallback.
+                const position = await hallOfFameUI.hof.addScore(scoreData);
                 
                 if (position) {
+                    // Afficher le Hall of Fame après un délai
                     setTimeout(() => {
                         hallOfFameUI.showHallOfFame();
                     }, 1000);
                     
                     return position;
                 }
+            } catch (error) {
+                console.warn('Erreur globale lors de l\'enregistrement du score:', error);
             }
             return null;
         }
