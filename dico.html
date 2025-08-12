@@ -1525,6 +1525,7 @@ document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
         <p data-en="Your name will be displayed in the Hall of Fame." data-fr="Votre pseudo sera affiché dans le Hall of Fame.">Votre pseudo sera affiché dans le Hall of Fame.</p>
         <div style="margin: 20px 0;">
             <input type="text" id="pseudoInput" placeholder="Votre pseudo..." style="width: 100%; padding: 12px; font-size: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-medium); background: var(--bg-secondary); color: var(--text-primary);">
+            <p id="pseudoError" style="color: var(--error-red); font-size: 0.9rem; margin-top: 10px; display: none;"></p>
         </div>
         <div class="modal-buttons">
             <button class="modal-btn" id="submitPseudoBtn"><span data-en="Save Score" data-fr="Enregistrer le score">Enregistrer le score</span> <i class="fas fa-save"></i></button>
@@ -2833,17 +2834,30 @@ document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
                     // Fonction pour gérer la soumission
                     const handleSubmit = () => {
                         const pseudo = pseudoInput.value.trim();
-                        if (pseudo) {
-                            pseudoModal.style.display = 'none';
-                            // Nettoyer les listeners pour éviter les exécutions multiples
-                            submitPseudoBtn.removeEventListener('click', handleSubmit);
-                            pseudoInput.removeEventListener('keypress', handleEnter);
-                            resolve(pseudo);
-                        } else {
-                            // Optionnel: secouer le champ et mettre une bordure rouge si vide
+                        const errorP = document.getElementById('pseudoError');
+
+                        // Cacher l'erreur précédente et réinitialiser la bordure
+                        errorP.style.display = 'none';
+                        pseudoInput.style.border = '1px solid var(--border-medium)';
+
+                        if (pseudo.length < 3) {
+                            errorP.textContent = 'Le pseudo doit faire au moins 3 caractères.';
+                            errorP.style.display = 'block';
                             pseudoInput.style.border = '2px solid var(--error-red)';
                             pseudoModal.classList.add('shake');
                             setTimeout(() => pseudoModal.classList.remove('shake'), 500);
+                        } else if (pseudo.length > 30) {
+                            errorP.textContent = 'Le pseudo ne peut pas dépasser 30 caractères.';
+                            errorP.style.display = 'block';
+                            pseudoInput.style.border = '2px solid var(--error-red)';
+                            pseudoModal.classList.add('shake');
+                            setTimeout(() => pseudoModal.classList.remove('shake'), 500);
+                        } else {
+                            // Validation réussie
+                            pseudoModal.style.display = 'none';
+                            submitPseudoBtn.removeEventListener('click', handleSubmit);
+                            pseudoInput.removeEventListener('keypress', handleEnter);
+                            resolve(pseudo);
                         }
                     };
 
@@ -2965,7 +2979,7 @@ document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
 
                 // Charger les données depuis l'API
                 await this.loadData();
-                this.updateDisplay();
+                this.updateDisplay(modal);
             }
 
             // Charger les données depuis l'API
@@ -3095,15 +3109,15 @@ document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
             }
 
             // Mettre à jour l'affichage
-            updateDisplay() {
-                const scoresContainer = document.getElementById('hofScores');
+            updateDisplay(modal) {
+                const scoresContainer = modal.querySelector('#hofScores');
                 const stats = this.hof.stats || this.hof.calculateLocalStats();
 
                 // Mettre à jour les statistiques
-                document.getElementById('totalScores').textContent = stats.totalScores || 0;
-                document.getElementById('topScore').textContent = stats.topScore || 0;
-                document.getElementById('averageScore').textContent = stats.averageScore || 0;
-                document.getElementById('totalPlayers').textContent = stats.totalPlayers || 0;
+                modal.querySelector('#totalScores').textContent = stats.totalScores || 0;
+                modal.querySelector('#topScore').textContent = stats.topScore || 0;
+                modal.querySelector('#averageScore').textContent = stats.averageScore || 0;
+                modal.querySelector('#totalPlayers').textContent = stats.totalPlayers || 0;
 
                 // Filtrer les scores selon la vue
                 let scores = [];
@@ -3118,7 +3132,8 @@ document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
                         scores = this.hof.getTopScores();
                 }
 
-                // Afficher les scores
+                // Afficher les scores de manière sécurisée
+                scoresContainer.innerHTML = ''; // Vider le conteneur
                 if (scores.length === 0) {
                     scoresContainer.innerHTML = `
                         <div class="hof-empty">
@@ -3130,31 +3145,47 @@ document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
                     return;
                 }
 
-                scoresContainer.innerHTML = scores.map((score, index) => `
-                    <div class="hof-entry ${index < 3 ? 'top-' + (index + 1) : ''}">
-                        <div class="entry-rank">
-                            ${index < 3 ? ['🥇', '🥈', '🥉'][index] : (index + 1)}
-                        </div>
-                        <div class="entry-info">
-                            <div class="entry-name">${score.name}</div>
-                            <div class="entry-details">
-                                ${score.gameType === 'quiz' ? 'Cyber Dico' : 'Jeu du Héros'} • 
-                                ${score.difficulty.toUpperCase()} • 
-                                ${score.percentage}%
-                            </div>
-                        </div>
-                        <div class="entry-score">
-                            <div class="score-value">${score.score}</div>
-                            <div class="score-details">
-                                ${score.correct}/${score.total} • 
-                                ${this.hof.formatTime(score.time)}
-                            </div>
-                        </div>
-                        <div class="entry-date">
-                            ${this.hof.formatDate(score.date)}
-                        </div>
-                    </div>
-                `).join('');
+                scores.forEach((score, index) => {
+                    const entry = document.createElement('div');
+                    entry.className = `hof-entry ${index < 3 ? 'top-' + (index + 1) : ''}`;
+
+                    const rank = document.createElement('div');
+                    rank.className = 'entry-rank';
+                    rank.textContent = index < 3 ? ['🥇', '🥈', '🥉'][index] : (index + 1);
+
+                    const info = document.createElement('div');
+                    info.className = 'entry-info';
+                    const name = document.createElement('div');
+                    name.className = 'entry-name';
+                    name.textContent = score.pseudo; // *** SÉCURISÉ ***
+                    const details = document.createElement('div');
+                    details.className = 'entry-details';
+                    details.textContent = `${score.game_type === 'quiz' ? 'Cyber Dico' : 'Jeu du Héros'} • ${score.difficulty.toUpperCase()} • ${score.percentage}%`;
+                    info.appendChild(name);
+                    info.appendChild(details);
+
+                    const scoreDiv = document.createElement('div');
+                    scoreDiv.className = 'entry-score';
+                    const scoreValue = document.createElement('div');
+                    scoreValue.className = 'score-value';
+                    scoreValue.textContent = score.score;
+                    const scoreDetails = document.createElement('div');
+                    scoreDetails.className = 'score-details';
+                    scoreDetails.textContent = `${score.correct}/${score.total} • ${this.hof.formatTime(score.time)}`;
+                    scoreDiv.appendChild(scoreValue);
+                    scoreDiv.appendChild(scoreDetails);
+
+                    const dateDiv = document.createElement('div');
+                    dateDiv.className = 'entry-date';
+                    dateDiv.textContent = this.hof.formatDate(score.created_at);
+
+                    entry.appendChild(rank);
+                    entry.appendChild(info);
+                    entry.appendChild(scoreDiv);
+                    entry.appendChild(dateDiv);
+
+                    scoresContainer.appendChild(entry);
+                });
             }
 
             // Effacer tous les scores
