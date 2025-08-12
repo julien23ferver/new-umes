@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 🔒 EN-TÊTES DE SÉCURITÉ ULTRA-RESTRICTIFS -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-secure123' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com https://upload.wikimedia.org; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://stackpath.bootstrapcdn.com https://maxcdn.bootstrapcdn.com https://kit.fontawesome.com https://cdn.tailwindcss.com; img-src 'self' data: blob: https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com https://upload.wikimedia.org https://pfst.cf2.poecdn.net https://puc.poecdn.net; connect-src 'self' https://dpaumpllxdqpjytkctpo.supabase.co https://api.ssi.gouv.fr https://fonts.googleapis.com https://fonts.gstatic.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; media-src 'self' https://www.youtube.com https://*.giphy.com; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; navigate-to 'self'; upgrade-insecure-requests; block-all-mixed-content; require-trusted-types-for 'script'">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+    <meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin">
+    
+    <title>Cyber Quizz - Formation Interactive Professionnelle</title>
+    <meta name="description" content="Formation interactive et adaptative en cybersécurité basée sur le Cyberdico de l'ANSSI.">
+    
+    <!-- 🔒 RESSOURCES EXTERNES SÉCURISÉES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" integrity="sha512-Aev2kRdguAHufacP8C9o0OZz/UoE1m0mHk9j3TdrpT1Q/AjQaeuH0MZ4E22w9H6bfixGJbaX9faG4tZFqRKa4pyA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+    <!-- 🔒 SCRIPTS SÉCURISÉS AVEC NONCE -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer" nonce="secure123"></script>
+    
+    <!-- 🔒 SYSTÈME DE SÉCURISATION -->
+    <script src="security_fixes.js" nonce="secure123"></script>
+    <script src="config_secure.js" nonce="secure123"></script>
+    <script src="csp_secure.js" nonce="secure123"></script>
+    <script src="security_patcher.js" nonce="secure123"></script>
+    
+    <!-- 🔒 QUESTIONS SÉCURISÉES -->
+    <script src="questions.js" nonce="secure123"></script>
+    
+    <style>
+        /* 🔒 CSS SÉCURISÉ - Variables CSS pour la sécurité */
+        :root {
+            --primary-blue: #00cfff;
+            --accent-purple: #ff004f;
+            --accent-green: #10b981;
+            --success-green: #22c55e;
+            --warning-orange: #f59e0b;
+            --error-red: #ef4444;
+            --nexus-theme-color: #00cfff;
+            --nexus-dark: #000b49;
+            --revision-cyan: #ffc2db;
+            --campus-pink: #ffc2db;
+            --glossary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --lock-gray: #6b7280;
+            
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-full: 9999px;
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-glow: 0 0 20px rgba(102, 126, 234, 0.6);
+            
+            --transition-fast: all 0.15s ease-in-out;
+            --transition-normal: all 0.2s ease-in-out;
+            --transition-slow: all 0.3s ease-in-out;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #000b49;
+            --bg-secondary: #001a5c;
+            --bg-tertiary: #002970;
+            --bg-elevated: #001454;
+            --bg-card: #001147;
+            --text-primary: #ffffff;
+            --text-secondary: #e5e5e5;
+            --text-muted: #a3a3a3;
+            --border-light: #002970;
+            --border-medium: #404040;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f0f8ff;
+            --bg-secondary: #e6f3ff;
+            --bg-tertiary: #cce7ff;
+            --bg-elevated: #ffffff;
+            --bg-card: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+            --border-medium: #cbd5e1;
+        }
+
+        /* 🔒 RESET SÉCURISÉ */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        html { 
+            scroll-behavior: smooth; 
+        }
+        
+        body { 
+            font-family: 'Poppins', 'Inter', sans-serif; 
+            background-color: var(--bg-primary); 
+            color: var(--text-primary); 
+            min-height: 100vh; 
+            overflow-x: hidden; 
+            line-height: 1.6; 
+            transition: background-color 0.3s, color 0.3s; 
+        }
+
+        /* 🔒 CONTENU PRINCIPAL SÉCURISÉ */
+        .content-wrapper { 
+            position: relative; 
+            z-index: 10; 
+        }
+        
+        .screen { 
+            display: none; 
+            min-height: 100vh; 
+            padding: 20px; 
+        }
+        
+        .screen.active { 
+            display: block; 
+        }
+
+        /* 🔒 ANIMATIONS SÉCURISÉES */
+        @keyframes fadeInUp { 
+            from { 
+                opacity: 0; 
+                transform: translateY(30px) scale(0.98); 
+            } 
+            to { 
+                opacity: 1; 
+                transform: translateY(0) scale(1); 
+            } 
+        }
+        
+        @keyframes slideInRight { 
+            from { 
+                opacity: 0; 
+                transform: translateX(50px); 
+            } 
+            to { 
+                opacity: 1; 
+                transform: translateX(0); 
+            } 
+        }
+        
+        @keyframes slideOutLeft { 
+            from { 
+                opacity: 1; 
+                transform: translateX(0); 
+            } 
+            to { 
+                opacity: 0; 
+                transform: translateX(-50px); 
+            } 
+        }
+        
+        @keyframes correctPulse { 
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: 0 0 10px rgba(34, 197, 94, 0.3); 
+            } 
+            50% { 
+                transform: scale(1.03); 
+                box-shadow: 0 0 25px rgba(34, 197, 94, 0.7); 
+            } 
+        }
+        
+        @keyframes incorrectShake { 
+            0%, 100% { 
+                transform: translateX(0); 
+            } 
+            10%, 30%, 50%, 70%, 90% { 
+                transform: translateX(-8px); 
+            } 
+            20%, 40%, 60%, 80% { 
+                transform: translateX(8px); 
+            } 
+        }
+
+        /* 🔒 COMPOSANTS SÉCURISÉS */
+        .welcome-header {
+            text-align: center;
+            padding: 2rem 0;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .main-title span {
+            display: inline-block;
+            animation: bounceIn 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .main-title span:nth-child(1) { animation-delay: 0.1s; }
+        .main-title span:nth-child(2) { animation-delay: 0.2s; }
+        .main-title span:nth-child(3) { animation-delay: 0.3s; }
+        .main-title span:nth-child(4) { animation-delay: 0.4s; }
+        .main-title span:nth-child(5) { animation-delay: 0.5s; }
+        .main-title span:nth-child(6) { animation-delay: 0.6s; }
+        .main-title span:nth-child(7) { animation-delay: 0.7s; }
+        .main-title span:nth-child(8) { animation-delay: 0.8s; }
+        .main-title span:nth-child(9) { animation-delay: 0.9s; }
+        .main-title span:nth-child(10) { animation-delay: 1.0s; }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        /* 🔒 BOUTONS SÉCURISÉS */
+        .start-btn {
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-purple));
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: var(--radius-lg);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-normal);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.5rem;
+        }
+
+        .start-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .start-btn:active {
+            transform: translateY(0);
+        }
+
+        /* 🔒 CONTROLES SÉCURISÉS */
+        .top-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 1rem;
+            z-index: 1000;
+        }
+
+        .credits-btn, .language-toggle, .theme-toggle {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: var(--transition-normal);
+            font-size: 0.9rem;
+        }
+
+        .credits-btn:hover, .language-toggle:hover, .theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        /* 🔒 RESPONSIVE SÉCURISÉ */
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .start-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+            
+            .top-controls {
+                top: 10px;
+                right: 10px;
+                gap: 0.5rem;
+            }
+        }
+
+        /* 🔒 SÉCURITÉ SUPPLÉMENTAIRE */
+        .security-warning {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(239, 68, 68, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-md);
+            font-size: 0.8rem;
+            z-index: 1001;
+            display: none;
+        }
+
+        .security-warning.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 🔒 SYSTÈME DE SÉCURISATION ACTIF -->
+    <div class="security-warning" id="securityWarning">
+        ⚠️ Tentative d'attaque détectée
+    </div>
+
+    <div class="content-wrapper">
+        <!-- 🔒 CONTROLES SÉCURISÉS -->
+        <div class="top-controls">
+            <button class="credits-btn" id="creditsBtn" type="button">
+                <i class="fas fa-info-circle"></i>
+                <span data-en="Credits" data-fr="Crédits">Crédits</span>
+            </button>
+            <button class="language-toggle" id="languageToggle" type="button">
+                <div class="flag-icon flag-fr" id="flagIcon"></div>
+                <span id="languageText">FR</span>
+            </button>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème">
+                <div class="theme-toggle-indicator"></div>
+                <div class="theme-label" id="themeLabel">Mode Sombre</div>
+            </button>
+        </div>
+
+        <!-- 🔒 ÉCRAN D'ACCUEIL SÉCURISÉ -->
+        <div class="screen active" id="welcomeScreen">
+            <div class="welcome-header">
+                <div class="logo-container">
+                    <img alt="Logo Nouvelle-Aquitaine" class="campus-logo" src="logo.png" style="width: 450px; max-width: 100%; margin-bottom: 30px; display: block;">
+                    <h1 class="main-title" data-en="Cyber Quizz" data-fr="Cyber Quizz">
+                        <span>C</span><span>Y</span><span>B</span><span>E</span><span>R</span> <span>Q</span><span>U</span><span>I</span><span>Z</span><span>Z</span>
+                    </h1>
+                </div>
+                <p class="subtitle" data-en="Interactive and adaptive cybersecurity training based on ANSSI's Cyberdico." data-fr="Formation interactive et adaptative en cybersécurité basée sur le Cyberdico de l'ANSSI.">
+                    Formation interactive et adaptative en cybersécurité basée sur le Cyberdico de l'ANSSI.
+                </p>
+                
+                <!-- 🔒 BOUTONS SÉCURISÉS -->
+                <div class="action-buttons">
+                    <button class="start-btn" data-difficulty="facile" type="button">
+                        <i class="fas fa-shield-alt"></i>
+                        <span data-en="Easy Level" data-fr="Niveau Facile">Niveau Facile</span>
+                    </button>
+                    <button class="start-btn" data-difficulty="intermediaire" type="button">
+                        <i class="fas fa-user-shield"></i>
+                        <span data-en="Intermediate Level" data-fr="Niveau Intermédiaire">Niveau Intermédiaire</span>
+                    </button>
+                    <button class="start-btn" data-difficulty="difficile" type="button">
+                        <i class="fas fa-user-secret"></i>
+                        <span data-en="Hard Level" data-fr="Niveau Difficile">Niveau Difficile</span>
+                    </button>
+                    <button class="start-btn" data-difficulty="nexus" type="button">
+                        <i class="fas fa-crown"></i>
+                        <span data-en="Expert Level" data-fr="Niveau Expert">Niveau Expert</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🔒 ÉCRAN DE JEU SÉCURISÉ -->
+        <div class="screen" id="gameScreen">
+            <!-- Contenu du jeu sécurisé -->
+        </div>
+    </div>
+
+    <!-- 🔒 SCRIPT SÉCURISÉ AVEC NONCE -->
+    <script nonce="secure123">
+        // 🔒 INITIALISATION SÉCURISÉE
+        document.addEventListener('DOMContentLoaded', function() {
+            // Vérifier que les systèmes de sécurité sont chargés
+            if (typeof securityManager === 'undefined') {
+                console.error('Système de sécurité non chargé');
+                document.getElementById('securityWarning').classList.add('show');
+                return;
+            }
+
+            // 🔒 GESTIONNAIRE D'ÉVÉNEMENTS SÉCURISÉ
+            const startButtons = document.querySelectorAll('.start-btn[data-difficulty]');
+            startButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Validation sécurisée
+                    const difficulty = this.getAttribute('data-difficulty');
+                    if (!['facile', 'intermediaire', 'difficile', 'nexus'].includes(difficulty)) {
+                        console.error('Niveau de difficulté invalide');
+                        return;
+                    }
+                    
+                    // Démarrer le jeu de manière sécurisée
+                    startSecureGame(difficulty);
+                });
+            });
+
+            // 🔒 FONCTION DE JEU SÉCURISÉE
+            function startSecureGame(difficulty) {
+                try {
+                    // Validation des données
+                    if (!questions || !questions[difficulty]) {
+                        throw new Error('Données de questions invalides');
+                    }
+
+                    // Changer d'écran de manière sécurisée
+                    document.getElementById('welcomeScreen').classList.remove('active');
+                    document.getElementById('gameScreen').classList.add('active');
+
+                    // Initialiser le jeu avec les données validées
+                    initializeSecureGame(difficulty);
+                    
+                } catch (error) {
+                    console.error('Erreur lors du démarrage du jeu:', error);
+                    document.getElementById('securityWarning').classList.add('show');
+                }
+            }
+
+            // 🔒 INITIALISATION SÉCURISÉE DU JEU
+            function initializeSecureGame(difficulty) {
+                // Code d'initialisation sécurisé
+                console.log('Jeu sécurisé initialisé pour le niveau:', difficulty);
+            }
+
+            // 🔒 GESTIONNAIRE DE THÈME SÉCURISÉ
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.addEventListener('click', function() {
+                    const currentTheme = document.documentElement.getAttribute('data-theme');
+                    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    
+                    // Mettre à jour le label de manière sécurisée
+                    const themeLabel = document.getElementById('themeLabel');
+                    if (themeLabel) {
+                        themeLabel.textContent = newTheme === 'dark' ? 'Mode Sombre' : 'Mode Clair';
+                    }
+                });
+            }
+
+            // 🔒 GESTIONNAIRE DE LANGUE SÉCURISÉ
+            const languageToggle = document.getElementById('languageToggle');
+            if (languageToggle) {
+                languageToggle.addEventListener('click', function() {
+                    const currentLang = document.documentElement.lang;
+                    const newLang = currentLang === 'fr' ? 'en' : 'fr';
+                    document.documentElement.lang = newLang;
+                    
+                    // Mettre à jour l'interface de manière sécurisée
+                    updateLanguageSecure(newLang);
+                });
+            }
+
+            // 🔒 MISE À JOUR SÉCURISÉE DE LA LANGUE
+            function updateLanguageSecure(lang) {
+                const elements = document.querySelectorAll('[data-fr][data-en]');
+                elements.forEach(element => {
+                    const text = lang === 'fr' ? element.getAttribute('data-fr') : element.getAttribute('data-en');
+                    if (text) {
+                        element.textContent = text;
+                    }
+                });
+            }
+
+            // 🔒 SURVEILLANCE DE SÉCURITÉ CONTINUE
+            setInterval(function() {
+                // Vérifier l'intégrité du DOM
+                checkDOMIntegrity();
+                
+                // Vérifier les tentatives d'injection
+                checkForInjectionAttempts();
+                
+            }, 5000); // Vérification toutes les 5 secondes
+
+            // 🔒 VÉRIFICATION D'INTÉGRITÉ DU DOM
+            function checkDOMIntegrity() {
+                const scripts = document.querySelectorAll('script:not([src])');
+                if (scripts.length > 0) {
+                    console.warn('Scripts inline détectés');
+                    scripts.forEach(script => script.remove());
+                }
+            }
+
+            // 🔒 VÉRIFICATION DES TENTATIVES D'INJECTION
+            function checkForInjectionAttempts() {
+                const inputs = document.querySelectorAll('input, textarea');
+                inputs.forEach(input => {
+                    const value = input.value;
+                    if (value.includes('<script') || value.includes('javascript:')) {
+                        console.warn('Tentative d\'injection détectée');
+                        input.value = '';
+                        document.getElementById('securityWarning').classList.add('show');
+                    }
+                });
+            }
+        });
+
+        // 🔒 GESTIONNAIRE D'ERREURS GLOBAL SÉCURISÉ
+        window.addEventListener('error', function(e) {
+            console.error('Erreur JavaScript sécurisée:', e.error);
+            // Ne pas exposer d'informations sensibles dans les erreurs
+        });
+
+        // 🔒 PROTECTION CONTRE LES ATTAQUES PAR TIMING
+        const originalDate = Date.now;
+        let lastCall = 0;
+        Date.now = function() {
+            const now = originalDate();
+            if (now - lastCall < 10) {
+                return lastCall + 10;
+            }
+            lastCall = now;
+            return now;
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,4420 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;" http-equiv="Content-Security-Policy"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Héros du Cyber - Campus Cyber Nouvelle-Aquitaine</title>
+<style>
+    /* Modern Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Variables - Campus Cyber Nouvelle-Aquitaine */
+:root {
+    /* Campus Cyber theme */
+    --bg-primary: #000b49;
+    --bg-secondary: #001a6b;
+    --bg-tertiary: #002a8f;
+    --bg-card: #001652;
+    --bg-elevated: #002073;
+    --border-primary: #003399;
+    --border-secondary: #0044bb;
+    --border-light: #0055dd;
+    
+    /* Text colors */
+    --text-primary: #ffffff;
+    --text-secondary: #e8e8e8;
+    --text-muted: #b0b0b0;
+    --text-disabled: #707070;
+    
+    /* Campus Cyber colors */
+    --accent-primary: #ff004f;
+    --accent-secondary: #ffc2db;
+    --accent-blue: #00cfff;
+    --accent-green: #34d399;
+    --accent-red: #ff004f;
+    --accent-orange: #ffc2db;
+    --accent-purple: #ff004f;
+    --accent-cyan: #00cfff;
+    
+    /* Glass effects */
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-hover: rgba(255, 255, 255, 0.08);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 25px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 15px 35px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.6);
+    
+    /* Transitions - ACCÉLÉRÉES */
+    --transition-fast: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-ultra-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    /* Border radius */
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 28px;
+    --radius-xl: 40px;
+    --radius-full: 50px;
+    
+    /* User preferences */
+    --text-speed-multiplier: 1;
+    --animation-speed-multiplier: 1;
+}
+
+/* Accessibility classes */
+.reduce-motion * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+}
+
+.high-contrast {
+    --text-secondary: rgba(255, 255, 255, 0.95);
+    --text-muted: rgba(255, 255, 255, 0.85);
+    --border-primary: #666666;
+    --border-secondary: #777777;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: 
+        radial-gradient(circle at 25% 25%, rgba(0, 207, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 0, 79, 0.06) 0%, transparent 50%),
+        linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    line-height: 1.6;
+    position: relative;
+    overflow-x: hidden;
+    animation: backgroundFloat 10s ease-in-out infinite;
+}
+
+@keyframes backgroundFloat {
+    0%, 100% {
+        background: 
+            radial-gradient(circle at 25% 25%, rgba(0, 207, 255, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 75% 75%, rgba(255, 0, 79, 0.06) 0%, transparent 50%),
+            linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    }
+    50% {
+        background: 
+            radial-gradient(circle at 75% 25%, rgba(255, 0, 79, 0.06) 0%, transparent 50%),
+            radial-gradient(circle at 25% 75%, rgba(0, 207, 255, 0.08) 0%, transparent 50%),
+            linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    }
+}
+
+/* Campus Cyber Logo - AMÉLIORÉ POUR ÊTRE PLUS VISIBLE */
+.campus-logo-svg {
+    width: 320px;
+    height: auto;
+    margin-bottom: 2.5rem;
+    filter: drop-shadow(0 6px 25px rgba(255, 0, 79, 0.4)) drop-shadow(0 0 40px rgba(0, 207, 255, 0.2));
+    transition: var(--transition-normal);
+    animation: logoGlow 3s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+    0%, 100% {
+        filter: drop-shadow(0 6px 25px rgba(255, 0, 79, 0.4)) drop-shadow(0 0 40px rgba(0, 207, 255, 0.2));
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 8px 35px rgba(255, 0, 79, 0.6)) drop-shadow(0 0 60px rgba(0, 207, 255, 0.4));
+        transform: scale(1.02);
+    }
+}
+
+.campus-logo-svg:hover {
+    filter: drop-shadow(0 10px 40px rgba(255, 0, 79, 0.7)) drop-shadow(0 0 80px rgba(0, 207, 255, 0.5)) brightness(1.1);
+    transform: scale(1.05);
+}
+
+/* Logo dans l'en-tête du jeu */
+.game-header .campus-logo-svg {
+    width: 180px;
+    margin-bottom: 1rem;
+}
+
+/* Floating particles background */
+.floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 194, 219, 0.3);
+    border-radius: 50%;
+    animation: floatParticle 8s linear infinite;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(100vh) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-10vh) translateX(100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+/* Welcome Screen */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.hero-section {
+    margin-bottom: 4rem;
+    animation: heroFloat 0.4s ease-out;
+}
+
+.campus-branding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: 3rem 2rem;
+    backdrop-filter: blur(30px);
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.campus-branding::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 194, 219, 0.1), transparent);
+    animation: brandingShimmer 4s ease-in-out infinite;
+}
+
+@keyframes brandingShimmer {
+    0%, 100% { left: -100%; }
+    50% { left: 100%; }
+}
+
+.campus-branding h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    margin-top: 1rem;
+    text-shadow: 0 2px 10px rgba(255, 0, 79, 0.3);
+}
+
+.campus-branding p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+    font-weight: 300;
+}
+
+.time-estimate {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    padding: 1rem 2rem;
+    margin-bottom: 3rem;
+    backdrop-filter: blur(20px);
+    animation: slideInDown 0.4s ease-out 0.1s both;
+    transition: var(--transition-normal);
+}
+
+.time-estimate:hover {
+    background: var(--glass-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.time-estimate-text {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.shields-decoration {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.main-title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-blue) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titlePulse 2s ease-in-out infinite;
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+}
+
+.shield-left, .shield-right {
+    font-size: 3rem;
+    color: var(--accent-primary);
+    animation: shieldFloat 1.5s ease-in-out infinite;
+    transition: var(--transition-normal);
+    cursor: pointer;
+}
+
+.shield-left:hover, .shield-right:hover {
+    color: var(--accent-blue);
+    transform: scale(1.2) rotate(10deg);
+}
+
+@keyframes titlePulse {
+    0%, 100% {
+        filter: drop-shadow(0 0 20px rgba(255, 0, 79, 0.2));
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 0 40px rgba(255, 0, 79, 0.4));
+        transform: scale(1.02);
+    }
+}
+
+@keyframes shieldFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    33% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+    66% {
+        transform: translateY(5px) rotate(-3deg);
+    }
+}
+
+@keyframes heroFloat {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    animation: slideInUp 0.4s ease-out 0.2s both;
+    line-height: 1.7;
+}
+
+.difficulty-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 3rem;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.difficulty-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(30px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: 3rem;
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition-ultra-smooth);
+    box-shadow: var(--shadow-lg);
+    animation: cardSlideIn 0.4s ease-out;
+    overflow: hidden;
+}
+
+.difficulty-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 194, 219, 0.1), transparent);
+    transition: left 0.4s ease;
+}
+
+.difficulty-card:hover::before {
+    left: 100%;
+}
+
+.easy-card {
+    border-left: 4px solid var(--accent-blue);
+    animation-delay: 0.1s;
+}
+
+.easy-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: var(--shadow-xl), 0 0 60px rgba(0, 207, 255, 0.3);
+    background: var(--glass-hover);
+    border-left-color: var(--accent-cyan);
+}
+
+.hard-card {
+    border: 1px solid var(--glass-border);
+    border-left: 4px solid var(--accent-primary);
+    animation-delay: 0.2s;
+}
+
+.hard-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: var(--shadow-xl), 0 0 60px rgba(255, 0, 79, 0.3);
+    background: var(--glass-hover);
+    border-left-color: var(--accent-secondary);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.card-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.difficulty-card:hover .card-icon::before {
+    transform: translateX(100%);
+}
+
+.easy-icon {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+    color: white;
+    box-shadow: 0 8px 25px rgba(0, 207, 255, 0.4);
+}
+
+.hard-icon {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 0, 79, 0.4);
+}
+
+.difficulty-card:hover .card-icon {
+    transform: scale(1.15) rotate(10deg);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.card-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.scenario-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.scenario-description {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.stats-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-primary);
+    transition: var(--transition-fast);
+}
+
+.stat:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateY(-2px);
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.easy-stat {
+    color: var(--accent-blue);
+}
+
+.hard-stat {
+    color: var(--accent-primary);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.impact-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-primary);
+}
+
+.impact-dot {
+    font-size: 0.5rem;
+    animation: dotPulse 1s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.easy-impact .impact-dot {
+    color: var(--accent-blue);
+}
+
+.hard-impact .impact-dot {
+    color: var(--accent-primary);
+}
+
+.start-btn {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    border: none;
+    border-radius: var(--radius-full);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-ultra-smooth);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.start-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.25s ease;
+}
+
+.start-btn:hover::before {
+    left: 100%;
+}
+
+.easy-btn {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+    color: white;
+    box-shadow: 0 8px 25px rgba(0, 207, 255, 0.4);
+}
+
+.easy-btn:hover {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0, 207, 255, 0.5);
+}
+
+.hard-btn {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 0, 79, 0.4);
+}
+
+.hard-btn:hover {
+    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(255, 0, 79, 0.5);
+}
+
+.start-btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.start-btn:focus, .difficulty-card:focus {
+    outline: 3px solid var(--accent-primary);
+    outline-offset: 4px;
+}
+
+/* Menu Actions - Crédits sur menu principal */
+.menu-actions {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.menu-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    padding: 1rem 2rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+    transition: var(--transition-ultra-smooth);
+    backdrop-filter: blur(20px);
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 194, 219, 0.1), transparent);
+    transition: left 0.3s ease;
+}
+
+.menu-btn:hover::before {
+    left: 100%;
+}
+
+.menu-btn:hover {
+    background: var(--glass-hover);
+    color: var(--text-primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-primary);
+}
+
+.menu-btn:focus {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+/* Enhanced Navigation */
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    animation: slideInDown 0.3s ease-out;
+}
+
+.nav-controls {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.back-to-menu, .prev-page-btn, .journal-btn, .settings-btn, .credits-btn {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    padding: 1rem 2rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+    transition: var(--transition-ultra-smooth);
+    backdrop-filter: blur(20px);
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.back-to-menu::before, .prev-page-btn::before, .journal-btn::before, .settings-btn::before, .credits-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 194, 219, 0.1), transparent);
+    transition: left 0.3s ease;
+}
+
+.back-to-menu:hover::before, .prev-page-btn:hover::before, .journal-btn:hover::before, .settings-btn:hover::before, .credits-btn:hover::before {
+    left: 100%;
+}
+
+.back-to-menu:hover, .prev-page-btn:hover, .journal-btn:hover, .settings-btn:hover, .credits-btn:hover {
+    background: var(--glass-hover);
+    color: var(--text-primary);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-primary);
+}
+
+.back-to-menu:focus, .prev-page-btn:focus, .journal-btn:focus, .settings-btn:focus, .credits-btn:focus {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+.prev-page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    background: var(--glass-bg) !important;
+    border-color: var(--glass-border) !important;
+}
+
+.prev-page-btn:disabled::before {
+    display: none;
+}
+
+/* Game Interface */
+.game-header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(30px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-lg);
+    animation: slideInDown 0.4s ease-out;
+}
+
+.header-content {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.game-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-blue) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    animation: titleGlow 1.5s ease-in-out infinite;
+}
+
+.game-title i {
+    color: var(--accent-primary);
+    margin: 0 1rem;
+    animation: shieldFloat 1.5s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(255, 0, 79, 0.2));
+    }
+    50% {
+        filter: drop-shadow(0 0 20px rgba(255, 0, 79, 0.4));
+    }
+}
+
+.game-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.metric {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: var(--transition-ultra-smooth);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    cursor: pointer;
+}
+
+.metric::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 194, 219, 0.1), transparent);
+    transition: left 0.3s ease;
+}
+
+.metric:hover::before {
+    left: 100%;
+}
+
+.metric:hover {
+    transform: translateY(-8px);
+    background: var(--glass-hover);
+    box-shadow: var(--shadow-xl);
+}
+
+.metric-icon {
+    font-size: 1.8rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+}
+
+.metric:hover .metric-icon::before {
+    transform: translateX(100%);
+}
+
+.security-metric .metric-icon {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+    color: white;
+    box-shadow: 0 8px 25px rgba(0, 207, 255, 0.4);
+}
+
+.productivity-metric .metric-icon {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 0, 79, 0.4);
+}
+
+.treasury-metric .metric-icon {
+    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 194, 219, 0.4);
+}
+
+.metric:hover .metric-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.metric-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.metric-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    animation: valueUpdate 0.25s ease-out;
+}
+
+@keyframes valueUpdate {
+    0% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.metric-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.metric-bar {
+    width: 100%;
+    height: 6px;
+    background: var(--border-primary);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    margin-top: 0.8rem;
+}
+
+.metric-fill {
+    height: 100%;
+    border-radius: var(--radius-sm);
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.metric-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shimmer 1s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.security-fill {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+    width: 0%;
+}
+
+.productivity-fill {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    width: 100%;
+}
+
+.treasury-fill {
+    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+    width: 100%;
+}
+
+/* Game Content with Enhanced Transitions */
+.game-content {
+    background: var(--glass-bg);
+    backdrop-filter: blur(30px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: 3rem;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    animation: slideInUp 0.4s ease-out;
+}
+
+.page-container {
+    position: relative;
+    min-height: 400px;
+}
+
+.page {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: var(--transition-ultra-smooth);
+    will-change: transform, opacity;
+}
+
+.page.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.page.slide-out-left {
+    animation: slideOutLeft 0.3s ease-in forwards;
+}
+
+.page.slide-out-right {
+    animation: slideOutRight 0.3s ease-in forwards;
+}
+
+.page.slide-in-left {
+    animation: slideInLeft 0.3s ease-out forwards;
+}
+
+.page.slide-in-right {
+    animation: slideInRight 0.3s ease-out forwards;
+}
+
+@keyframes slideOutLeft {
+    to {
+        opacity: 0;
+        transform: translateX(-30px);
+        filter: blur(2px);
+    }
+}
+
+@keyframes slideOutRight {
+    to {
+        opacity: 0;
+        transform: translateX(30px);
+        filter: blur(2px);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+        filter: blur(2px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+        filter: blur(2px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+.page.glitch-out {
+    animation: glitchTransition 0.25s ease-out;
+}
+
+.page-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border-secondary);
+    position: relative;
+    animation: revealText 0.4s ease-out;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-blue));
+    animation: titleUnderline 0.5s ease-out forwards;
+}
+
+@keyframes titleUnderline {
+    to { width: 100px; }
+}
+
+.page-content {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    animation: revealText 0.4s ease-out;
+    animation-delay: 0.1s;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+@keyframes revealText {
+    from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.intro-text {
+    background: rgba(0, 207, 255, 0.1);
+    border: 1px solid rgba(0, 207, 255, 0.3);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    animation: slideInLeft 0.3s ease-out;
+}
+
+.effects {
+    background: rgba(255, 194, 219, 0.1);
+    border: 1px solid rgba(255, 194, 219, 0.3);
+    border-left: 4px solid var(--accent-secondary);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 2rem;
+    margin: 2rem 0;
+    font-weight: 500;
+    color: var(--text-secondary);
+    animation: slideInRight 0.3s ease-out;
+}
+
+.effects i {
+    margin-right: 0.8rem;
+    color: var(--accent-secondary);
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.choice-btn {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    border: 1px solid var(--border-secondary);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius-full);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-ultra-smooth);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: slideInText 0.3s ease-out;
+    will-change: transform, background-color, border-color;
+}
+
+.choice-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 79, 0.15), transparent);
+    transition: left 0.3s ease;
+}
+
+.choice-btn:hover::before {
+    left: 100%;
+}
+
+.choice-btn::after {
+    content: '→';
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-primary);
+    margin-left: auto;
+    transition: var(--transition-fast);
+}
+
+.choice-btn:hover {
+    background: var(--glass-hover);
+    border-color: var(--accent-primary);
+    transform: translateX(8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.choice-btn:hover::after {
+    color: var(--accent-blue);
+    transform: translateX(5px);
+}
+
+.choice-btn:focus {
+    outline: 3px solid var(--accent-primary);
+    outline-offset: 4px;
+}
+
+.choice-btn:active {
+    transform: translateX(5px) scale(0.98);
+}
+
+.choice-btn.explored {
+    border-left: 3px solid var(--accent-secondary);
+    background: rgba(255, 194, 219, 0.08);
+}
+
+.choice-btn.explored::before {
+    background: linear-gradient(90deg, transparent, rgba(255, 194, 219, 0.15), transparent);
+}
+
+@keyframes slideInText {
+    from {
+        opacity: 0;
+        transform: translateX(-15px);
+        filter: blur(2px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+/* Staggered animation for choices */
+.choice-btn:nth-child(1) { animation-delay: 0.05s; animation-fill-mode: both; opacity: 0; }
+.choice-btn:nth-child(2) { animation-delay: 0.1s; animation-fill-mode: both; opacity: 0; }
+.choice-btn:nth-child(3) { animation-delay: 0.15s; animation-fill-mode: both; opacity: 0; }
+.choice-btn:nth-child(4) { animation-delay: 0.2s; animation-fill-mode: both; opacity: 0; }
+
+/* Enhanced Progress Indicator - Linear Design */
+.progress-indicator {
+    display: none;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--glass-bg);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--glass-border);
+    margin-top: 2rem;
+    backdrop-filter: blur(20px);
+    animation: slideInUp 0.3s ease-out;
+}
+
+.progress-line-container {
+    flex: 1;
+    height: 8px;
+    background: var(--border-primary);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-line-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-blue));
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.progress-line-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: progressShimmer 1s ease-in-out infinite;
+}
+
+@keyframes progressShimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.progress-nodes {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.progress-node {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border-primary);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    margin: 0 auto;
+}
+
+.progress-node.completed {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-blue));
+    box-shadow: 0 0 15px rgba(255, 0, 79, 0.5);
+    transform: scale(1.2);
+}
+
+.progress-node.current {
+    background: var(--accent-secondary);
+    box-shadow: 0 0 20px rgba(255, 194, 219, 0.7);
+    transform: scale(1.4);
+    animation: nodePulse 1s ease-in-out infinite;
+}
+
+@keyframes nodePulse {
+    0%, 100% { 
+        box-shadow: 0 0 20px rgba(255, 194, 219, 0.7);
+        transform: scale(1.4);
+    }
+    50% { 
+        box-shadow: 0 0 30px rgba(255, 194, 219, 0.9);
+        transform: scale(1.6);
+    }
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    min-width: 80px;
+    text-align: center;
+    background: var(--bg-elevated);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-primary);
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 11, 73, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-normal);
+    backdrop-filter: blur(20px);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-secondary);
+    border-radius: var(--radius-xl);
+    padding: 0;
+    max-width: 90%;
+    width: 600px;
+    max-height: 80vh;
+    overflow: hidden;
+    transform: scale(0.9) translateY(50px);
+    transition: transform var(--transition-normal);
+    box-shadow: var(--shadow-xl);
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1) translateY(0);
+}
+
+.modal-header {
+    padding: 2rem;
+    border-bottom: 1px solid var(--border-primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-header h3 {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+    background: var(--glass-bg);
+    transform: scale(1.1);
+}
+
+.modal-close:focus {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+.modal-body {
+    padding: 2rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.modal-footer {
+    padding: 2rem;
+    border-top: 1px solid var(--border-primary);
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.25s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: white;
+    box-shadow: 0 8px 25px rgba(255, 0, 79, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn:focus {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--accent-secondary), var(--accent-primary));
+}
+
+.btn-secondary {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    border: 1px solid var(--border-secondary);
+}
+
+.btn-secondary:hover {
+    background: var(--glass-hover);
+    border-color: var(--accent-primary);
+}
+
+/* Journal Modal */
+.journal-entry {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: var(--transition-fast);
+}
+
+.journal-entry:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: translateY(-2px);
+}
+
+.journal-entry-title {
+    font-weight: 600;
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.journal-entry-choice {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Settings Modal */
+.settings-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.setting-group {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+}
+
+.setting-label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.setting-description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.setting-slider {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: var(--border-primary);
+    border-radius: 3px;
+    outline: none;
+    transition: var(--transition-fast);
+}
+
+.setting-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-blue));
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(255, 0, 79, 0.4);
+}
+
+.setting-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-blue));
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 8px rgba(255, 0, 79, 0.4);
+}
+
+.setting-value {
+    display: inline-block;
+    margin-left: 1rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    min-width: 3rem;
+}
+
+.setting-toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.setting-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.setting-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--border-primary);
+    transition: var(--transition-fast);
+    border-radius: 34px;
+}
+
+.setting-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: var(--transition-fast);
+    border-radius: 50%;
+}
+
+.setting-toggle input:checked + .setting-toggle-slider {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-blue));
+}
+
+.setting-toggle input:checked + .setting-toggle-slider:before {
+    transform: translateX(26px);
+}
+
+/* Enhanced Loading Spinner */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    gap: 2rem;
+}
+
+.cyber-loader {
+    width: 200px;
+    height: 4px;
+    background: var(--border-primary);
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cyber-loader::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-blue));
+    border-radius: 2px;
+    animation: cyberLoad 1s ease-in-out infinite;
+    transform-origin: left;
+}
+
+@keyframes cyberLoad {
+    0% { transform: scaleX(0); }
+    50% { transform: scaleX(1); }
+    100% { transform: scaleX(0); }
+}
+
+.loading-text {
+    color: var(--text-muted);
+    font-weight: 500;
+    position: relative;
+}
+
+.blinking-cursor::after {
+    content: '_';
+    animation: blink 0.5s step-end infinite;
+    color: var(--accent-primary);
+}
+
+@keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Enhanced glitch transition */
+@keyframes glitchTransition {
+    0% { transform: translate(0); }
+    10% { transform: translate(-2px, 1px); filter: hue-rotate(90deg) contrast(1.2); }
+    20% { transform: translate(-1px, -1px); filter: hue-rotate(180deg) contrast(1.4); }
+    30% { transform: translate(1px, 2px); filter: hue-rotate(270deg) contrast(1.1); }
+    40% { transform: translate(1px, -1px); filter: hue-rotate(360deg) contrast(1.3); }
+    50% { transform: translate(-1px, 2px); filter: hue-rotate(180deg) contrast(1.2); }
+    60% { transform: translate(-1px, 1px); filter: hue-rotate(90deg) contrast(1.1); }
+    70% { transform: translate(1px, 1px); filter: hue-rotate(270deg) contrast(1.4); }
+    80% { transform: translate(-1px, -1px); filter: hue-rotate(360deg) contrast(1.2); }
+    90% { transform: translate(1px, 2px); filter: hue-rotate(180deg) contrast(1.1); }
+    100% { transform: translate(0); filter: none; }
+}
+
+/* Game Over/Victory */
+.game-over, .victory {
+    text-align: center;
+    padding: 3rem;
+    border-radius: var(--radius-xl);
+    animation: gameEndAnimation 0.4s ease-out;
+}
+
+.game-over {
+    background: rgba(255, 0, 79, 0.1);
+    border: 2px solid rgba(255, 0, 79, 0.4);
+    color: var(--accent-primary);
+}
+
+.victory {
+    background: rgba(0, 207, 255, 0.1);
+    border: 2px solid rgba(0, 207, 255, 0.4);
+    color: var(--accent-blue);
+}
+
+.game-over h2, .victory h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    animation: titleBounce 0.3s ease-out;
+}
+
+@keyframes titleBounce {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.restart-btn {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-blue));
+    color: white;
+    border: none;
+    padding: 1.2rem 2.5rem;
+    border-radius: var(--radius-full);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0.5rem;
+    transition: var(--transition-ultra-smooth);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 8px 25px rgba(255, 0, 79, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.restart-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.25s ease;
+}
+
+.restart-btn:hover::before {
+    left: 100%;
+}
+
+.restart-btn:hover {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-primary));
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.restart-btn:focus {
+    outline: 3px solid var(--accent-primary);
+    outline-offset: 4px;
+}
+
+.restart-btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+/* ANSSI Recommendations */
+.anssi-recommendations {
+    background: rgba(0, 207, 255, 0.1);
+    border: 1px solid rgba(0, 207, 255, 0.3);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    margin: 2rem 0;
+    animation: slideInUp 0.3s ease-out;
+}
+
+.anssi-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-blue);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.anssi-list {
+    list-style: none;
+    padding: 0;
+}
+
+.anssi-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.anssi-icon {
+    color: var(--accent-blue);
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.anssi-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes cardSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes gameEndAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0.8) rotate(-5deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* Click ripple effect */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 0, 79, 0.3);
+    animation: rippleEffect 0.3s ease-out;
+    pointer-events: none;
+}
+
+@keyframes rippleEffect {
+    0% {
+        transform: scale(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Audio Controls */
+.audio-controls {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    z-index: 100;
+}
+
+.audio-btn, .settings-toggle {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    backdrop-filter: blur(20px);
+    font-size: 1.1rem;
+}
+
+.audio-btn:hover, .settings-toggle:hover {
+    background: var(--glass-hover);
+    color: var(--text-primary);
+    transform: scale(1.1);
+}
+
+.audio-btn:focus, .settings-toggle:focus {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+.audio-btn.active, .settings-toggle.active {
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+/* Top-right credits button */
+.top-credits-btn {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-full);
+    padding: 1rem 1.5rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    backdrop-filter: blur(20px);
+    font-size: 0.9rem;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.top-credits-btn:hover {
+    background: var(--glass-hover);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-primary);
+}
+
+/* Credits Section */
+.credits-content {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.credits-section {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-primary);
+}
+
+.credits-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+}
+
+.credits-special {
+    background: linear-gradient(135deg, rgba(255, 0, 79, 0.1), rgba(0, 207, 255, 0.1));
+    border: 1px solid rgba(255, 0, 79, 0.3);
+    margin: 2rem 0;
+}
+
+.credits-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.credits-role {
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: 0.5rem;
+}
+
+.credits-joke {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    opacity: 0.8;
+}
+
+.keyboard-help {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-primary);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.keyboard-help kbd {
+    background: var(--bg-elevated);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    border: 1px solid var(--border-secondary);
+    margin: 0 0.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    .campus-logo-svg {
+        width: 250px;
+        margin-bottom: 2rem;
+    }
+    
+    .shields-decoration {
+        gap: 2rem;
+    }
+    
+    .difficulty-cards {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .difficulty-card {
+        padding: 2rem;
+    }
+    
+    .stats-row {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    
+    .dashboard {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .metric {
+        padding: 1.5rem;
+    }
+    
+    .choice-btn {
+        padding: 1.2rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .nav-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    
+    .nav-controls {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .game-content {
+        padding: 2rem;
+    }
+
+    .audio-controls {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    .top-credits-btn {
+        top: 1rem;
+        right: 1rem;
+        padding: 0.8rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .progress-indicator {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .progress-line-container {
+        order: 2;
+    }
+    
+    .progress-text {
+        order: 1;
+    }
+
+    .menu-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-header .campus-logo-svg {
+        width: 140px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .campus-logo-svg {
+        width: 200px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .difficulty-card {
+        padding: 1.5rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .game-header {
+        padding: 2rem;
+    }
+    
+    .game-content {
+        padding: 1.5rem;
+    }
+    
+    .audio-controls {
+        flex-direction: row;
+        bottom: 1rem;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+    
+    .top-credits-btn {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 1rem auto;
+        display: inline-flex;
+    }
+
+    .game-header .campus-logo-svg {
+        width: 120px;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    :root {
+        --text-secondary: rgba(255, 255, 255, 0.95);
+        --text-muted: rgba(255, 255, 255, 0.85);
+        --border-primary: #666666;
+        --border-secondary: #777777;
+    }
+}
+  
+.campus-logo-svg {
+    width: 600px;
+    max-width: 100%;
+    display: block;
+    margin: 4rem auto;
+    filter: drop-shadow(0 15px 60px rgba(255, 0, 79, 0.9));
+}
+@media (max-width: 768px) {
+    .campus-logo-svg {
+        width: 380px;
+    }
+}
+@media (max-width: 480px) {
+    .campus-logo-svg {
+        width: 280px;
+    }
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<!-- Audio Elements -->
+<audio id="background-music" loop="">
+<source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmEZBjyY3PLTdycENnFj8OOXRAoUN3C18umrXhoLQJfY8L5gGQU9k" type="audio/wav"/>
+</audio>
+<audio id="click-sound">
+<source src="data:audio/wav;base64,UklGRigBAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAC4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4uLi4" type="audio/wav"/>
+</audio>
+<div class="floating-particles" id="floating-particles"></div>
+<!-- Top-right credits button (always visible) -->
+<button class="top-credits-btn" onclick="openCredits()" title="Voir les crédits">
+<i class="fas fa-info-circle"></i>
+<span>Crédits</span>
+</button>
+<!-- Audio Controls -->
+<div class="audio-controls">
+<button aria-label="Activer/Désactiver la musique" class="audio-btn" id="music-toggle" title="Musique d'ambiance">
+<i class="fas fa-music"></i>
+</button>
+<button aria-label="Activer/Désactiver les sons" class="audio-btn active" id="sound-toggle" title="Effets sonores">
+<i class="fas fa-volume-up"></i>
+</button>
+<button aria-label="Ouvrir les paramètres" class="settings-toggle" id="settings-toggle" title="Paramètres">
+<i class="fas fa-cog"></i>
+</button>
+</div>
+<div class="container">
+<div class="nav-header" id="nav-header" style="display: none;">
+<button aria-label="Retour au menu principal" class="back-to-menu" onclick="backToMenu()" tabindex="0">
+<i class="fas fa-arrow-left"></i>
+                Retour au menu principal
+            </button>
+<div class="nav-controls">
+<button class="prev-page-btn" disabled="" id="prev-page-btn" onclick="goToPreviousPage()" tabindex="0">
+<i class="fas fa-step-backward"></i>
+                    Page précédente
+                </button>
+<button class="journal-btn" onclick="openJournal()" tabindex="0">
+<i class="fas fa-book"></i>
+                    Journal
+                </button>
+</div>
+</div>
+<header class="game-header" id="game-header" style="display: none;">
+<div class="header-content">
+<div class="campus-branding">
+<!-- Campus Cyber Nouvelle-Aquitaine Logo -->
+<img alt="Logo Nouvelle-Aquitaine" class="campus-logo-svg" src="logo_loc_lion-entier_fond-sombre (1).png" style="width: 800px; max-width: 100%; margin: 4rem auto; display: block;"/>
+</div>
+<h1 class="game-title">
+<i class="fas fa-shield-alt"></i>
+                    Héros du Cyber
+                    <i class="fas fa-shield-alt"></i>
+</h1>
+<p class="game-subtitle">Cybersécurité d'entreprise - Simulation stratégique</p>
+</div>
+<div class="dashboard">
+<div class="metric security-metric" data-tooltip="Niveau de protection contre les cyberattaques">
+<div class="metric-icon">
+<i class="fas fa-shield-alt"></i>
+</div>
+<div class="metric-content">
+<div class="metric-value" id="security">0</div>
+<div class="metric-label">Sécurité</div>
+<div class="metric-bar">
+<div class="metric-fill security-fill" id="security-bar"></div>
+</div>
+</div>
+</div>
+<div class="metric productivity-metric" data-tooltip="Efficacité opérationnelle de vos équipes">
+<div class="metric-icon">
+<i class="fas fa-chart-line"></i>
+</div>
+<div class="metric-content">
+<div class="metric-value" id="productivity">100</div>
+<div class="metric-label">Productivité</div>
+<div class="metric-bar">
+<div class="metric-fill productivity-fill" id="productivity-bar"></div>
+</div>
+</div>
+</div>
+<div class="metric treasury-metric" data-tooltip="Budget disponible pour les investissements">
+<div class="metric-icon">
+<i class="fas fa-euro-sign"></i>
+</div>
+<div class="metric-content">
+<div class="metric-value" id="treasury">250000</div>
+<div class="metric-label">Budget (€)</div>
+<div class="metric-bar">
+<div class="metric-fill treasury-fill" id="treasury-bar"></div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<main class="game-content" id="game-content">
+<div class="page-container">
+<div class="loading-spinner" id="loading">
+<div class="cyber-loader"></div>
+<p class="loading-text blinking-cursor">Initialisation du système cyber</p>
+</div>
+</div>
+</main>
+<div class="progress-indicator" id="progress-indicator" style="display: none;">
+<div class="progress-line-container">
+<div class="progress-line-fill" id="progress-line-fill"></div>
+<div class="progress-nodes" id="progress-nodes">
+<!-- Progress nodes will be generated dynamically -->
+</div>
+</div>
+<span class="progress-text" id="progress-text">0%</span>
+</div>
+</div>
+<!-- Main Modal -->
+<div class="modal-overlay" id="modal-overlay">
+<div class="modal-content">
+<div class="modal-header">
+<h3 id="modal-title"></h3>
+<button aria-label="Fermer" class="modal-close" id="modal-close">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="modal-body" id="modal-body"></div>
+<div class="modal-footer">
+<button class="btn btn-primary" id="modal-confirm">Continuer</button>
+</div>
+</div>
+</div>
+<!-- Journal Modal -->
+<div class="modal-overlay" id="journal-overlay">
+<div class="modal-content">
+<div class="modal-header">
+<h3>📖 Journal de Récit</h3>
+<button aria-label="Fermer le journal" class="modal-close" onclick="closeJournal()">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="modal-body" id="journal-body">
+<p style="text-align: center; color: var(--text-muted); margin: 2rem 0;">
+                    Votre journal est vide. Commencez votre aventure pour voir l'historique de vos choix.
+                </p>
+</div>
+<div class="modal-footer">
+<button class="btn btn-primary" onclick="closeJournal()">Fermer</button>
+</div>
+</div>
+</div>
+<!-- Settings Modal -->
+<div class="modal-overlay" id="settings-overlay">
+<div class="modal-content">
+<div class="modal-header">
+<h3>⚙️ Paramètres</h3>
+<button aria-label="Fermer les paramètres" class="modal-close" onclick="closeSettings()">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="modal-body">
+<div class="settings-grid">
+<div class="setting-group">
+<label class="setting-label">Vitesse d'apparition du texte</label>
+<p class="setting-description">Contrôle la rapidité d'affichage des textes et animations</p>
+<input class="setting-slider" id="text-speed-slider" max="2" min="0.1" step="0.1" type="range" value="1"/>
+<span class="setting-value" id="text-speed-value">1.0x</span>
+</div>
+<div class="setting-group">
+<label class="setting-label">Vitesse des animations</label>
+<p class="setting-description">Ajuste la rapidité des effets visuels et transitions</p>
+<input class="setting-slider" id="animation-speed-slider" max="2" min="0.1" step="0.1" type="range" value="1"/>
+<span class="setting-value" id="animation-speed-value">1.0x</span>
+</div>
+<div class="setting-group">
+<label class="setting-label">Réduction des mouvements</label>
+<p class="setting-description">Désactive les animations pour réduire les mouvements à l'écran</p>
+<label class="setting-toggle">
+<input id="reduce-motion-toggle" type="checkbox"/>
+<span class="setting-toggle-slider"></span>
+</label>
+</div>
+<div class="setting-group">
+<label class="setting-label">Contraste élevé</label>
+<p class="setting-description">Améliore la lisibilité avec des couleurs plus contrastées</p>
+<label class="setting-toggle">
+<input id="high-contrast-toggle" type="checkbox"/>
+<span class="setting-toggle-slider"></span>
+</label>
+</div>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn btn-secondary" onclick="resetSettings()">Réinitialiser</button>
+<button class="btn btn-primary" onclick="closeSettings()">Appliquer</button>
+</div>
+</div>
+</div>
+<!-- Credits Modal -->
+<div class="modal-overlay" id="credits-overlay">
+<div class="modal-content">
+<div class="modal-header">
+<h3>🏆 Crédits</h3>
+<button aria-label="Fermer les crédits" class="modal-close" onclick="closeCredits()">
+<i class="fas fa-times"></i>
+</button>
+</div>
+<div class="modal-body">
+<div class="credits-content">
+<div class="credits-section credits-special">
+<h4 class="credits-title">🚀 Soutien Exceptionnel</h4>
+<div class="credits-name">Guy Flamand</div>
+<div class="credits-role">Directeur du Campus Cyber Nouvelle-Aquitaine</div>
+<div class="credits-joke">Un grand merci pour votre accueil et votre accompagnement durant le stage. Cette expérience a permis de découvrir concrètement le monde de la cybersécurité dans un environnement innovant et stimulant.</div>
+</div>
+<div class="credits-section">
+<h4 class="credits-title">💻 Développement</h4>
+<div class="credits-name">Julien Poitou</div>
+<div class="credits-role">Développeur principal • julien234aa@gmail.com</div>
+<div class="credits-joke">Développé avec VS Code et l'assistance de GitHub Copilot</div>
+</div>
+<div class="credits-section">
+<h4 class="credits-title">🙏 Remerciements</h4>
+<div class="credits-name">Toute l'équipe du Campus Cyber Nouvelle-Aquitaine</div>
+<div class="credits-role">Pour leur accueil chaleureux et leur expertise partagée</div>
+<div style="margin-top: 1rem; padding: 1rem; background: rgba(255,255,255,0.02); border-radius: 8px; font-size: 0.9rem; color: var(--text-muted);">
+<strong>📍 Campus Cyber Nouvelle-Aquitaine</strong><br/>
+                            Parc Ampéris -- Bâtiment Colibri<br/>
+                            4 rue Adrienne Bolland<br/>
+                            33600 Pessac
+                        </div>
+</div>
+<div class="credits-section">
+<h4 class="credits-title">🎓 Objectif Pédagogique</h4>
+<p style="color: var(--text-secondary); line-height: 1.6;">
+                            Ce jeu vise à sensibiliser aux enjeux de cybersécurité en entreprise à travers des scénarios réalistes et des choix stratégiques concrets.
+                        </p>
+</div>
+<div class="credits-section">
+<h4 class="credits-title">📅 Version</h4>
+<p style="color: var(--text-muted); font-size: 0.9rem;">
+                            Héros du Cyber v2.0 - Campus Cyber Edition<br/>
+                            Développé par Julien Poitou<br/>
+                            Décembre 2024
+                        </p>
+</div>
+<div class="keyboard-help">
+<strong>Raccourcis clavier :</strong><br/>
+<kbd>↑</kbd><kbd>↓</kbd> Navigation • <kbd>Entrée</kbd><kbd>Espace</kbd> Sélection • <kbd>Échap</kbd> Fermer<br/>
+<kbd>J</kbd> Journal • <kbd>S</kbd> Paramètres • <kbd>C</kbd> Crédits • <kbd>B</kbd> Page précédente
+                    </div>
+</div>
+</div>
+<div class="modal-footer">
+<button class="btn btn-primary" onclick="closeCredits()">Fermer</button>
+</div>
+</div>
+</div>
+<script>
+    // Enhanced Game State Management - TOUTES CORRECTIONS APPLIQUÉES
+class GameState {
+    constructor() {
+        this.security = 0;
+        this.productivity = 100;
+        this.treasury = 250000;
+        this.currentPage = 'welcome';
+        this.visitedPages = new Set();
+        this.pageHistory = [];
+        this.choiceHistory = [];
+        this.exploredChoices = new Set();
+        this.totalPages = 0;
+        this.gameEnded = false;
+        this.difficulty = 'easy';
+        this.soundEnabled = true;
+        this.musicEnabled = false;
+        this.poorChoices = [];
+        this.settings = {
+            textSpeed: 1,
+            animationSpeed: 1,
+            reduceMotion: false,
+            highContrast: false
+        };
+        this.eventListenersAttached = false;
+        this.animationTimeouts = [];
+        this.init();
+    }
+
+    init() {
+        this.clearAnimationTimeouts();
+        this.updateMetrics();
+        this.updateProgressBar();
+        this.countTotalPages();
+        this.createFloatingParticles();
+        this.loadSettings();
+        this.setupAudio();
+        this.setupKeyboardNavigation();
+    }
+
+    clearAnimationTimeouts() {
+        this.animationTimeouts.forEach(timeout => clearTimeout(timeout));
+        this.animationTimeouts = [];
+    }
+
+    addTimeout(timeout) {
+        this.animationTimeouts.push(timeout);
+    }
+
+    setupKeyboardNavigation() {
+        if (this.eventListenersAttached) return;
+        
+        document.addEventListener('keydown', (e) => {
+            const activeElement = document.activeElement;
+            const isInputElement = activeElement && (
+                activeElement.tagName === 'INPUT' || 
+                activeElement.tagName === 'TEXTAREA' || 
+                activeElement.tagName === 'SELECT'
+            );
+            
+            if (e.key === 'Escape') {
+                this.closeAllModals();
+                e.preventDefault();
+                return;
+            }
+            
+            if (isInputElement) return;
+            
+            if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+                this.navigateChoices(e.key === 'ArrowUp' ? -1 : 1);
+                e.preventDefault();
+                return;
+            }
+            
+            if (e.key === 'Enter' || e.key === ' ') {
+                const focusedChoice = document.querySelector('.choice-btn:focus');
+                const focusedCard = document.querySelector('.difficulty-card:focus');
+                const focusedMenuBtn = document.querySelector('.menu-btn:focus');
+                if (focusedChoice) {
+                    focusedChoice.click();
+                    e.preventDefault();
+                    return;
+                } else if (focusedCard) {
+                    focusedCard.click();
+                    e.preventDefault();
+                    return;
+                } else if (focusedMenuBtn) {
+                    focusedMenuBtn.click();
+                    e.preventDefault();
+                    return;
+                }
+            }
+            
+            if (!this.isModalOpen()) {
+                switch(e.key.toLowerCase()) {
+                    case 'j':
+                        openJournal();
+                        e.preventDefault();
+                        break;
+                    case 's':
+                        openSettings();
+                        e.preventDefault();
+                        break;
+                    case 'c':
+                        openCredits();
+                        e.preventDefault();
+                        break;
+                    case 'b':
+                        if (this.currentPage !== 'welcome') {
+                            goToPreviousPage();
+                            e.preventDefault();
+                        }
+                        break;
+                }
+            }
+        });
+        
+        this.eventListenersAttached = true;
+    }
+
+    navigateChoices(direction) {
+        const choices = document.querySelectorAll('.choice-btn:not([disabled]), .difficulty-card, .menu-btn');
+        if (choices.length === 0) return;
+        
+        const focusedIndex = Array.from(choices).findIndex(btn => btn === document.activeElement);
+        let newIndex;
+        
+        if (focusedIndex === -1) {
+            newIndex = direction > 0 ? 0 : choices.length - 1;
+        } else {
+            newIndex = (focusedIndex + direction + choices.length) % choices.length;
+        }
+        
+        choices[newIndex].focus();
+    }
+
+    isModalOpen() {
+        return document.querySelector('.modal-overlay.active') !== null;
+    }
+
+    closeAllModals() {
+        const modals = ['modal-overlay', 'journal-overlay', 'settings-overlay', 'credits-overlay'];
+        modals.forEach(modalId => {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        });
+    }
+
+    loadSettings() {
+        try {
+            if (typeof localStorage !== 'undefined') {
+                const saved = localStorage.getItem('herosCyberSettings');
+                if (saved) {
+                    this.settings = { ...this.settings, ...JSON.parse(saved) };
+                }
+            }
+        } catch (e) {
+            console.log('localStorage not available, using default settings');
+        }
+        this.applySettings();
+    }
+
+    saveSettings() {
+        try {
+            if (typeof localStorage !== 'undefined') {
+                localStorage.setItem('herosCyberSettings', JSON.stringify(this.settings));
+            }
+        } catch (e) {
+            console.log('Could not save settings');
+        }
+    }
+
+    applySettings() {
+        const root = document.documentElement;
+        if (root) {
+            root.style.setProperty('--text-speed-multiplier', this.settings.textSpeed);
+            root.style.setProperty('--animation-speed-multiplier', this.settings.animationSpeed);
+        }
+        
+        if (this.settings.reduceMotion) {
+            document.body.classList.add('reduce-motion');
+        } else {
+            document.body.classList.remove('reduce-motion');
+        }
+        
+        if (this.settings.highContrast) {
+            document.body.classList.add('high-contrast');
+        } else {
+            document.body.classList.remove('high-contrast');
+        }
+    }
+
+    setupAudio() {
+        const musicBtn = document.getElementById('music-toggle');
+        const soundBtn = document.getElementById('sound-toggle');
+        const settingsBtn = document.getElementById('settings-toggle');
+        const bgMusic = document.getElementById('background-music');
+
+        if (musicBtn && !musicBtn.hasListener) {
+            musicBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.musicEnabled = !this.musicEnabled;
+                if (this.musicEnabled && bgMusic) {
+                    bgMusic.play().catch(() => {});
+                    musicBtn.classList.add('active');
+                } else if (bgMusic) {
+                    bgMusic.pause();
+                    musicBtn.classList.remove('active');
+                }
+                this.playSound('click-sound');
+            });
+            musicBtn.hasListener = true;
+        }
+
+        if (soundBtn && !soundBtn.hasListener) {
+            soundBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.soundEnabled = !this.soundEnabled;
+                if (this.soundEnabled) {
+                    soundBtn.classList.add('active');
+                    soundBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                } else {
+                    soundBtn.classList.remove('active');
+                    soundBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                }
+                if (this.soundEnabled) this.playSound('click-sound');
+            });
+            soundBtn.hasListener = true;
+        }
+
+        if (settingsBtn && !settingsBtn.hasListener) {
+            settingsBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                openSettings();
+                this.playSound('click-sound');
+            });
+            settingsBtn.hasListener = true;
+        }
+    }
+
+    playSound(soundId) {
+        if (this.soundEnabled) {
+            const sound = document.getElementById(soundId);
+            if (sound) {
+                sound.currentTime = 0;
+                sound.play().catch(() => {});
+            }
+        }
+    }
+
+    createFloatingParticles() {
+        const container = document.getElementById('floating-particles');
+        if (!container) return;
+        
+        container.innerHTML = '';
+        const particleCount = 15;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 8 + 's';
+            particle.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            container.appendChild(particle);
+        }
+    }
+
+    setDifficulty(difficulty) {
+        this.difficulty = difficulty;
+        if (difficulty === 'hard') {
+            this.security = -5;
+            this.productivity = 90;
+            this.treasury = 150000;
+        } else {
+            this.security = 0;
+            this.productivity = 100;
+            this.treasury = 250000;
+        }
+        this.updateMetrics();
+    }
+
+    trackChoice(pageId, choiceText) {
+        const poorChoicePatterns = [
+            { type: 'password_policy', page: 'page21' },
+            { type: 'admin_rights', page: 'page93' },
+            { type: 'backup_policy', page: 'page42' },
+            { type: 'network_security', page: 'page102' },
+            { type: 'training', page: 'page112' }
+        ];
+
+        poorChoicePatterns.forEach(pattern => {
+            if (pageId === pattern.page && !this.poorChoices.includes(pattern.type)) {
+                this.poorChoices.push(pattern.type);
+            }
+        });
+        // Debug
+        console.log('Poor choices:', this.poorChoices);
+    }
+
+    generateANSSIRecommendations() {
+        const recommendations = {
+            password_policy: {
+                icon: 'fas fa-key',
+                text: 'Mettez en place une politique de mots de passe robuste avec des gestionnaires de mots de passe. Les utilisateurs ne doivent pas contourner les mesures de sécurité par commodité.'
+            },
+            admin_rights: {
+                icon: 'fas fa-user-shield',
+                text: 'Appliquez le principe du moindre privilège : retirez les droits administrateur locaux et implémentez une gestion centralisée des privilèges pour réduire la surface d\'attaque.'
+            },
+            backup_policy: {
+                icon: 'fas fa-database',
+                text: 'Adoptez la règle 3-2-1 pour les sauvegardes : 3 copies de vos données, sur 2 supports différents, dont 1 hors site. Testez régulièrement vos procédures de restauration.'
+            },
+            network_security: {
+                icon: 'fas fa-network-wired',
+                text: 'Segmentez votre réseau et déployez une supervision continue. Un pare-feu professionnel avec détection d\'intrusions est indispensable pour protéger votre périmètre.'
+            },
+            training: {
+                icon: 'fas fa-graduation-cap',
+                text: 'Formez régulièrement vos collaborateurs aux enjeux de cybersécurité. Le facteur humain reste la première ligne de défense contre les cyberattaques.'
+            },
+            default_1: {
+                icon: 'fas fa-shield-virus',
+                text: 'Maintenez vos systèmes à jour avec les derniers correctifs de sécurité. Les vulnérabilités non corrigées sont souvent exploitées par les cybercriminels.'
+            },
+            default_2: {
+                icon: 'fas fa-eye',
+                text: 'Mettez en place une surveillance continue de votre infrastructure IT. La détection précoce des incidents permet de limiter leur impact.'
+            },
+            default_3: {
+                icon: 'fas fa-clipboard-check',
+                text: 'Élaborez et testez régulièrement votre plan de continuité d\'activité. Préparez-vous aux incidents avant qu\'ils ne surviennent.'
+            }
+        };
+
+        let selectedRecommendations = [];
+        
+        this.poorChoices.forEach(choiceType => {
+            if (recommendations[choiceType]) {
+                selectedRecommendations.push(recommendations[choiceType]);
+            }
+        });
+
+        const defaultKeys = ['default_1', 'default_2', 'default_3'];
+        defaultKeys.forEach(key => {
+            if (selectedRecommendations.length < 3) {
+                selectedRecommendations.push(recommendations[key]);
+            }
+        });
+
+        return selectedRecommendations.slice(0, 3);
+    }
+
+    updateMetrics() {
+        this.animateValue('security', this.security);
+        this.animateValue('productivity', this.productivity);
+        this.animateValue('treasury', this.treasury);
+        
+        this.updateMetricBar('security-bar', Math.max(0, this.security), 20);
+        this.updateMetricBar('productivity-bar', this.productivity, 100);
+        this.updateMetricBar('treasury-bar', this.treasury, this.difficulty === 'hard' ? 150000 : 250000);
+        
+        this.checkGameOver();
+    }
+
+    animateValue(elementId, value) {
+        const element = document.getElementById(elementId);
+        if (!element) return;
+        
+        const currentValue = parseInt(element.textContent.replace(/[^0-9.-]+/g, "")) || 0;
+        const increment = value > currentValue ? 1 : -1;
+        const step = Math.abs(value - currentValue) / 15; // Plus rapide
+        
+        let current = currentValue;
+        const animation = setInterval(() => {
+            current += increment * step;
+            if ((increment > 0 && current >= value) || (increment < 0 && current <= value)) {
+                current = value;
+                clearInterval(animation);
+            }
+            
+            if (element) {
+                element.textContent = elementId === 'treasury' ? 
+                    Math.round(current).toLocaleString('fr-FR') : 
+                    Math.round(current);
+            }
+        }, 10); // Animation plus rapide
+
+        const metric = element.closest('.metric');
+        if (metric) {
+            metric.style.animation = 'none';
+            const timeout = setTimeout(() => {
+                if (metric) {
+                    metric.style.animation = 'valueUpdate 0.25s ease-out';
+                }
+            }, 10);
+            this.addTimeout(timeout);
+        }
+    }
+
+    updateMetricBar(barId, value, max) {
+        const bar = document.getElementById(barId);
+        if (!bar) return;
+        const percentage = Math.max(0, Math.min(100, (value / max) * 100));
+        
+        const timeout = setTimeout(() => {
+            if (bar) {
+                bar.style.width = `${percentage}%`;
+            }
+        }, 100); // Plus rapide
+        this.addTimeout(timeout);
+    }
+
+    updateProgressBar() {
+        const progressContainer = document.getElementById('progress-line-fill');
+        const progressNodes = document.getElementById('progress-nodes');
+        const progressText = document.getElementById('progress-text');
+        if (!progressContainer || !progressNodes || !progressText) return;
+        
+        const calculablePages = Object.keys(gamePages).filter(pageId => 
+            !['welcome', 'final', 'intro-easy', 'intro-hard'].includes(pageId));
+        const visitedCalculablePages = [...this.visitedPages].filter(pageId => 
+            calculablePages.includes(pageId));
+
+        const percentage = calculablePages.length > 0 ? 
+            Math.round((visitedCalculablePages.length / calculablePages.length) * 100) : 0;
+        
+        progressContainer.style.width = `${percentage}%`;
+        
+        const nodeCount = Math.min(calculablePages.length, 10);
+        if (nodeCount > 0) {
+            const nodesPerStep = calculablePages.length / nodeCount;
+            
+            progressNodes.innerHTML = '';
+            
+            for (let i = 0; i < nodeCount; i++) {
+                const node = document.createElement('div');
+                node.className = 'progress-node';
+                node.style.left = `${(i / (nodeCount - 1)) * 100}%`;
+                
+                const completedPages = visitedCalculablePages.length;
+                const nodeThreshold = (i + 1) * nodesPerStep;
+                
+                if (completedPages >= nodeThreshold) {
+                    node.classList.add('completed');
+                } else if (completedPages >= (i * nodesPerStep)) {
+                    node.classList.add('current');
+                }
+                
+                progressNodes.appendChild(node);
+            }
+        }
+        
+        progressText.textContent = `${percentage}%`;
+    }
+
+    countTotalPages() {
+        this.totalPages = Object.keys(gamePages).filter(pageId => 
+            !['welcome', 'final', 'intro-easy', 'intro-hard'].includes(pageId)).length;
+    }
+
+    checkGameOver() {
+        if (this.gameEnded) return;
+
+        // Désactiver le game over tant qu'on n'est pas sur la page finale
+        if (this.currentPage !== 'final') {
+            return;
+        }
+        
+        const minTreasury = 0;
+        const minSecurity = this.difficulty === 'hard' ? -15 : -10;
+        const targetSecurity = this.difficulty === 'hard' ? 15 : 10;
+        const targetProductivity = this.difficulty === 'hard' ? 70 : 80;
+        const targetTreasury = this.difficulty === 'hard' ? 50000 : 80000;
+        
+        if (this.treasury <= minTreasury) {
+            this.gameEnded = true;
+            this.showGameOver('treasury');
+        } else if (this.security <= minSecurity) {
+            this.gameEnded = true;
+            this.showGameOver('security');
+        } else if (this.productivity <= 20) {
+            this.gameEnded = true;
+            this.showGameOver('productivity');
+        } else if (this.security >= targetSecurity && this.productivity >= targetProductivity && this.treasury >= targetTreasury) {
+            this.gameEnded = true;
+            this.showVictory();
+        }
+    }
+
+    showGameOver(reason) {
+        let title, message, icon;
+        
+        switch (reason) {
+            case 'treasury':
+                title = '💸 Faillite Financière';
+                message = 'Votre entreprise n\'a plus les ressources nécessaires pour continuer ses activités. Une gestion plus prudente du budget était nécessaire.';
+                icon = 'fas fa-chart-line-down';
+                break;
+            case 'security':
+                title = '🚨 Brèche de Sécurité Critique';
+                message = 'Votre infrastructure a été compromise. Les cybercriminels ont pris le contrôle de vos systèmes critiques.';
+                icon = 'fas fa-exclamation-triangle';
+                break;
+            case 'productivity':
+                title = '📉 Effondrement Opérationnel';
+                message = 'Les mesures de sécurité ont paralysé votre entreprise. Vos équipes ne peuvent plus travailler efficacement.';
+                icon = 'fas fa-users-slash';
+                break;
+        }
+
+        this.showEndScreen(title, message, icon, 'game-over');
+    }
+
+    showVictory() {
+        this.showEndScreen(
+            '🏆 Mission Accomplie',
+            `Félicitations ! Vous avez réussi à équilibrer sécurité, productivité et rentabilité. Votre ${this.difficulty === 'hard' ? 'startup' : 'PME'} est maintenant un modèle en cybersécurité.`,
+            'fas fa-trophy',
+            'victory'
+        );
+    }
+
+    showEndScreen(title, message, icon, className) {
+        const recommendations = this.generateANSSIRecommendations();
+        const recommendationsHTML = `
+            <div class="anssi-recommendations">
+                <div class="anssi-title">
+                    <i class="fas fa-lightbulb"></i>
+                    Recommandations ANSSI
+                </div>
+                <ul class="anssi-list">
+                    ${recommendations.map(rec => `
+                        <li class="anssi-item">
+                            <i class="${rec.icon} anssi-icon"></i>
+                            <div class="anssi-text">${rec.text}</div>
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+        `;
+
+        const content = `
+            <div class="${className}">
+                <i class="${icon}" style="font-size: 4rem; margin-bottom: 1.5rem; opacity: 0.9;"></i>
+                <h2>${title}</h2>
+                <p style="font-size: 1.1rem; margin: 2rem 0; line-height: 1.7;">${message}</p>
+                <div style="margin: 2.5rem 0;">
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; text-align: center; background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 20px;">
+                        <div>
+                            <div style="font-size: 2rem; font-weight: bold; color: var(--accent-blue);">${this.security}</div>
+                            <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Sécurité</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; font-weight: bold; color: var(--accent-primary);">${this.productivity}</div>
+                            <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Productivité</div>
+                        </div>
+                        <div>
+                            <div style="font-size: 2rem; font-weight: bold; color: var(--accent-secondary);">${this.treasury.toLocaleString('fr-FR')}€</div>
+                            <div style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">Budget</div>
+                        </div>
+                    </div>
+                </div>
+                ${recommendationsHTML}
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem;">
+                    <button class="restart-btn" onclick="restartGame()" tabindex="0">
+                        <i class="fas fa-redo"></i> Nouvelle Partie
+                    </button>
+                    <button class="restart-btn" onclick="backToMenu()" tabindex="0" style="background: linear-gradient(135deg, var(--accent-blue), var(--accent-primary));">
+                        <i class="fas fa-home"></i> Menu Principal
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        this.displayPage({ title: '', content, choices: [] });
+        this.createCelebrationEffect(className === 'victory');
+    }
+
+    createCelebrationEffect(isVictory) {
+        const colors = isVictory ? 
+            ['var(--accent-blue)', 'var(--accent-primary)', 'var(--accent-cyan)'] : 
+            ['var(--accent-primary)', 'var(--accent-secondary)'];
+
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = '6px';
+            particle.style.height = '6px';
+            particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '9999';
+            particle.style.left = Math.random() * window.innerWidth + 'px';
+            particle.style.top = window.innerHeight + 'px';
+            
+            document.body.appendChild(particle);
+            
+            const animation = particle.animate([
+                { transform: 'translateY(0) rotate(0deg)', opacity: 1 },
+                { transform: `translateY(-${window.innerHeight + 100}px) rotate(720deg)`, opacity: 0 }
+            ], {
+                duration: 1500 + Math.random() * 1000, // Plus rapide
+                easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+            });
+            
+            animation.onfinish = () => {
+                if (particle && particle.parentNode) {
+                    particle.remove();
+                }
+            };
+        }
+    }
+
+    applyEffects(effects) {
+        if (!effects) return;
+        
+        let message = 'Impact de votre décision :\n\n';
+        
+        let securityChange = effects.security || 0;
+        let productivityChange = effects.productivity || 0;
+        let treasuryChange = effects.treasury || 0;
+
+        if (this.difficulty === 'hard') {
+            securityChange = Math.round(securityChange * 1.2);
+            productivityChange = Math.round(productivityChange * 1.2);
+            treasuryChange = Math.round(treasuryChange * 1.2);
+        }
+
+        if (securityChange !== 0) {
+            this.security += securityChange;
+            message += `🛡️ Sécurité ${securityChange > 0 ? '+' : ''}${securityChange} points\n`;
+        }
+        
+        if (productivityChange !== 0) {
+            this.productivity += productivityChange;
+            message += `📊 Productivité ${productivityChange > 0 ? '+' : ''}${productivityChange}%\n`;
+        }
+        
+        if (treasuryChange !== 0) {
+            this.treasury += treasuryChange;
+            message += `💰 Budget ${treasuryChange > 0 ? '+' : ''}${treasuryChange.toLocaleString('fr-FR')}€\n`;
+        }
+        
+        if (treasuryChange < 0) {
+            message += `\n💡 Investissement stratégique pour renforcer votre infrastructure.`;
+        }
+        
+        this.showModal('Résultat de votre décision', message);
+        this.updateMetrics();
+    }
+
+    showModal(title, content) {
+        const modal = document.getElementById('modal-overlay');
+        const modalTitle = document.getElementById('modal-title');
+        const modalBody = document.getElementById('modal-body');
+        
+        if (modal && modalTitle && modalBody) {
+            modalTitle.textContent = title;
+            modalBody.innerHTML = content.replace(/\n/g, '<br>');
+            
+            modal.classList.add('active');
+            this.playSound('click-sound');
+            
+            const timeout = setTimeout(() => {
+                const confirmBtn = document.getElementById('modal-confirm');
+                if (confirmBtn) confirmBtn.focus();
+            }, 50); // Plus rapide
+            this.addTimeout(timeout);
+        }
+    }
+
+    addToHistory(pageId, choiceText = null) {
+        if (pageId !== 'welcome') {
+            this.pageHistory.push(pageId);
+            if (choiceText) {
+                this.trackChoice(pageId, choiceText);
+                this.choiceHistory.push({
+                    page: pageId,
+                    choice: choiceText,
+                    timestamp: new Date().toLocaleTimeString('fr-FR')
+                });
+            }
+        }
+        this.updatePrevButton();
+    }
+
+    updatePrevButton() {
+        const prevBtn = document.getElementById('prev-page-btn');
+        if (prevBtn) {
+            prevBtn.disabled = this.pageHistory.length <= 1;
+        }
+    }
+
+    displayPage(page) {
+        const gameContent = document.getElementById('game-content');
+        if (!gameContent) return;
+        
+        if (this.currentPage !== 'welcome' && this.currentPage !== 'final' && !this.currentPage.includes('intro')) {
+            this.visitedPages.add(this.currentPage);
+        }
+        this.updateProgressBar();
+        
+        const currentPageElement = gameContent.querySelector('.page.active');
+        if (currentPageElement) {
+            currentPageElement.classList.add('slide-out-left');
+            const timeout = setTimeout(() => {
+                if (currentPageElement && currentPageElement.parentNode) {
+                    currentPageElement.remove();
+                }
+            }, 300); // Plus rapide
+            this.addTimeout(timeout);
+        }
+        
+        let choicesHTML = '';
+        if (page.choices && page.choices.length > 0) {
+            choicesHTML = `
+                <div class="choices">
+                    ${page.choices.map((choice, index) => {
+                        const choiceKey = `${this.currentPage}-${choice.page}`;
+                        const exploredClass = this.exploredChoices.has(choiceKey) ? 'explored' : '';
+                        const escapedText = choice.text.replace(/'/g, "\\'").replace(/"/g, '\\"');
+                        return `
+                            <button class="choice-btn ${exploredClass}" 
+                                    onclick="makeChoice('${choice.page}', '${escapedText}', event)" 
+                                    tabindex="0">
+                                ${choice.text}
+                            </button>
+                        `;
+                    }).join('')}
+                </div>
+            `;
+        }
+        
+        const effectsHTML = page.effects ? `
+            <div class="effects">
+                <i class="fas fa-bolt"></i>
+                Cette décision aura un impact sur vos indicateurs
+            </div>
+        ` : '';
+        
+        const delay = currentPageElement ? 150 : 0; // Plus rapide
+        const timeout = setTimeout(() => {
+            if (gameContent) {
+                gameContent.innerHTML = `
+                    <div class="page-container">
+                        <div class="page active slide-in-right">
+                            ${page.title ? `<h2 class="page-title">${page.title}</h2>` : ''}
+                            <div class="page-content">${page.content}</div>
+                            ${effectsHTML}
+                            ${choicesHTML}
+                        </div>
+                    </div>
+                `;
+                
+                const focusTimeout = setTimeout(() => {
+                    if (!this.isModalOpen()) {
+                        const firstChoice = gameContent.querySelector('.choice-btn');
+                        const firstCard = gameContent.querySelector('.difficulty-card');
+                        const firstMenuBtn = gameContent.querySelector('.menu-btn');
+                        if (firstChoice) {
+                            firstChoice.focus();
+                        } else if (firstCard) {
+                            firstCard.focus();
+                        } else if (firstMenuBtn) {
+                            firstMenuBtn.focus();
+                        }
+                    }
+                }, 400); // Plus rapide
+                this.addTimeout(focusTimeout);
+            }
+        }, delay);
+        this.addTimeout(timeout);
+    }
+
+    navigateToPage(pageId) {
+        if (this.gameEnded && pageId !== 'welcome' && pageId !== 'final') return;
+        
+        const page = gamePages[pageId];
+        if (!page) {
+            console.error(`Page ${pageId} not found`);
+            return;
+        }
+        
+        this.currentPage = pageId;
+        
+        if (pageId !== 'welcome') {
+            const gameHeader = document.getElementById('game-header');
+            const progressIndicator = document.getElementById('progress-indicator');
+            const navHeader = document.getElementById('nav-header');
+            
+            if (gameHeader) gameHeader.style.display = 'block';
+            if (progressIndicator) progressIndicator.style.display = 'flex';
+            if (navHeader) navHeader.style.display = 'flex';
+        }
+        
+        if (page.effects && pageId !== 'welcome' && !pageId.includes('intro')) {
+            this.applyEffects(page.effects);
+            const timeout = setTimeout(() => {
+                this.displayPage(page);
+            }, 500); // Plus rapide
+            this.addTimeout(timeout);
+        } else {
+            this.displayPage(page);
+        }
+    }
+}
+
+// Enhanced interaction functions
+function createRippleEffect(event) {
+    if (!event || !event.currentTarget) return;
+    const button = event.currentTarget;
+    if (typeof button.getBoundingClientRect !== 'function') return; // Sécurisation anti-crash
+    const rect = button.getBoundingClientRect();
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+    const ripple = document.createElement('div');
+    ripple.className = 'ripple';
+    ripple.style.width = ripple.style.height = size + 'px';
+    ripple.style.left = x + 'px';
+    ripple.style.top = y + 'px';
+    button.appendChild(ripple);
+    setTimeout(() => {
+        if (ripple && ripple.parentNode) {
+            ripple.remove();
+        }
+    }, 300); // Plus rapide
+}
+
+function openJournal() {
+    const journalOverlay = document.getElementById('journal-overlay');
+    const journalBody = document.getElementById('journal-body');
+    
+    if (!journalOverlay || !journalBody || !gameState) return;
+    
+    if (gameState.choiceHistory.length === 0) {
+        journalBody.innerHTML = `
+            <p style="text-align: center; color: var(--text-muted); margin: 2rem 0;">
+                Votre journal est vide. Commencez votre aventure pour voir l'historique de vos choix.
+            </p>
+        `;
+    } else {
+        const entries = gameState.choiceHistory.map(entry => {
+            const pageTitle = (gamePages[entry.page] && gamePages[entry.page].title) || 'Page inconnue';
+            const escapedChoice = entry.choice.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            return `
+                <div class="journal-entry">
+                    <div class="journal-entry-title">${pageTitle}</div>
+                    <div class="journal-entry-choice">"${escapedChoice}" - ${entry.timestamp}</div>
+                </div>
+            `;
+        }).join('');
+        
+        journalBody.innerHTML = entries;
+    }
+    
+    journalOverlay.classList.add('active');
+    gameState.playSound('click-sound');
+    
+    setTimeout(() => {
+        const closeBtn = journalOverlay.querySelector('.modal-close');
+        if (closeBtn) closeBtn.focus();
+    }, 50);
+}
+
+function closeJournal() {
+    const journalOverlay = document.getElementById('journal-overlay');
+    if (journalOverlay) {
+        journalOverlay.classList.remove('active');
+    }
+}
+
+let settingsListenersAttached = false;
+
+function openSettings() {
+    const settingsOverlay = document.getElementById('settings-overlay');
+    if (!settingsOverlay || !gameState) return;
+    
+    const textSpeedSlider = document.getElementById('text-speed-slider');
+    const textSpeedValue = document.getElementById('text-speed-value');
+    const animationSpeedSlider = document.getElementById('animation-speed-slider');
+    const animationSpeedValue = document.getElementById('animation-speed-value');
+    const reduceMotionToggle = document.getElementById('reduce-motion-toggle');
+    const highContrastToggle = document.getElementById('high-contrast-toggle');
+    
+    if (textSpeedSlider && textSpeedValue) {
+        textSpeedSlider.value = gameState.settings.textSpeed;
+        textSpeedValue.textContent = gameState.settings.textSpeed.toFixed(1) + 'x';
+    }
+    
+    if (animationSpeedSlider && animationSpeedValue) {
+        animationSpeedSlider.value = gameState.settings.animationSpeed;
+        animationSpeedValue.textContent = gameState.settings.animationSpeed.toFixed(1) + 'x';
+    }
+    
+    if (reduceMotionToggle) {
+        reduceMotionToggle.checked = gameState.settings.reduceMotion;
+    }
+    
+    if (highContrastToggle) {
+        highContrastToggle.checked = gameState.settings.highContrast;
+    }
+    
+    settingsOverlay.classList.add('active');
+    gameState.playSound('click-sound');
+    
+    if (!settingsListenersAttached) {
+        setupSettingsListeners();
+        settingsListenersAttached = true;
+    }
+    
+    setTimeout(() => {
+        if (textSpeedSlider) textSpeedSlider.focus();
+    }, 50);
+}
+
+function setupSettingsListeners() {
+    const textSpeedSlider = document.getElementById('text-speed-slider');
+    const textSpeedValue = document.getElementById('text-speed-value');
+    const animationSpeedSlider = document.getElementById('animation-speed-slider');
+    const animationSpeedValue = document.getElementById('animation-speed-value');
+    const reduceMotionToggle = document.getElementById('reduce-motion-toggle');
+    const highContrastToggle = document.getElementById('high-contrast-toggle');
+    
+    if (textSpeedSlider && textSpeedValue && !textSpeedSlider.hasEventListener) {
+        textSpeedSlider.addEventListener('input', function() {
+            if (gameState) {
+                gameState.settings.textSpeed = parseFloat(this.value);
+                textSpeedValue.textContent = gameState.settings.textSpeed.toFixed(1) + 'x';
+                gameState.applySettings();
+            }
+        });
+        textSpeedSlider.hasEventListener = true;
+    }
+    
+    if (animationSpeedSlider && animationSpeedValue && !animationSpeedSlider.hasEventListener) {
+        animationSpeedSlider.addEventListener('input', function() {
+            if (gameState) {
+                gameState.settings.animationSpeed = parseFloat(this.value);
+                animationSpeedValue.textContent = gameState.settings.animationSpeed.toFixed(1) + 'x';
+                gameState.applySettings();
+            }
+        });
+        animationSpeedSlider.hasEventListener = true;
+    }
+    
+    if (reduceMotionToggle && !reduceMotionToggle.hasEventListener) {
+        reduceMotionToggle.addEventListener('change', function() {
+            if (gameState) {
+                gameState.settings.reduceMotion = this.checked;
+                gameState.applySettings();
+            }
+        });
+        reduceMotionToggle.hasEventListener = true;
+    }
+    
+    if (highContrastToggle && !highContrastToggle.hasEventListener) {
+        highContrastToggle.addEventListener('change', function() {
+            if (gameState) {
+                gameState.settings.highContrast = this.checked;
+                gameState.applySettings();
+            }
+        });
+        highContrastToggle.hasEventListener = true;
+    }
+}
+
+function resetSettings() {
+    if (gameState) {
+        gameState.settings = {
+            textSpeed: 1,
+            animationSpeed: 1,
+            reduceMotion: false,
+            highContrast: false
+        };
+        gameState.applySettings();
+        openSettings();
+    }
+}
+
+function closeSettings() {
+    if (gameState) {
+        gameState.saveSettings();
+    }
+    const settingsOverlay = document.getElementById('settings-overlay');
+    if (settingsOverlay) {
+        settingsOverlay.classList.remove('active');
+    }
+}
+
+function openCredits() {
+    const creditsOverlay = document.getElementById('credits-overlay');
+    if (!creditsOverlay) return;
+    
+    creditsOverlay.classList.add('active');
+    if (gameState) {
+        gameState.playSound('click-sound');
+    }
+    
+    setTimeout(() => {
+        const closeBtn = creditsOverlay.querySelector('.modal-close');
+        if (closeBtn) closeBtn.focus();
+    }, 50);
+}
+
+function closeCredits() {
+    const creditsOverlay = document.getElementById('credits-overlay');
+    if (creditsOverlay) {
+        creditsOverlay.classList.remove('active');
+    }
+}
+
+function goToPreviousPage() {
+    if (!gameState || gameState.pageHistory.length <= 1) return;
+    
+    gameState.pageHistory.pop();
+    const previousPageId = gameState.pageHistory[gameState.pageHistory.length - 1];
+    
+    if (previousPageId && gamePages[previousPageId]) {
+        gameState.navigateToPage(previousPageId);
+        gameState.playSound('click-sound');
+    }
+}
+
+// Game Pages Data with ALL BUTTONS WORKING
+const gamePages = {
+    welcome: {
+        title: "",
+        content: `
+            <div class="welcome-container">
+                <div class="hero-section">
+                    <div class="campus-branding">
+                        <!-- Campus Cyber Nouvelle-Aquitaine Logo -->
+                        <img alt="Logo Nouvelle-Aquitaine" class="campus-logo-svg" src="logo_loc_lion-entier_fond-sombre (1).png" style="width: 800px; max-width: 100%; margin: 4rem auto; display: block;"/>
+                    </div>
+                    <h1 class="game-title">
+                    <i class="fas fa-shield-alt"></i>
+                                Héros du Cyber
+                                <i class="fas fa-shield-alt"></i>
+                    </h1>
+                    <p class="game-subtitle">Cybersécurité d'entreprise - Simulation stratégique</p>
+                </div>
+                
+                <div class="difficulty-cards">
+                    <div class="difficulty-card easy-card" onclick="startGame('easy')" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){this.click(); event.preventDefault();}">
+                        <div class="card-icon easy-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="card-title">Mode Standard</h2>
+                            <p class="card-subtitle">Recommandé pour débuter</p>
+                            <h3 class="scenario-title">PME de Conseil Établie</h3>
+                            <p class="scenario-description">
+                                Dirigez une entreprise de conseil en informatique prospère avec 50 employés loyaux. Budget confortable, équipe stable, environnement propice à l'apprentissage de la cybersécurité avec des investissements mesurés.
+                            </p>
+                            <div class="stats-row">
+                                <div class="stat">
+                                    <span class="stat-value easy-stat">250K€</span>
+                                    <span class="stat-label">Budget initial</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value easy-stat">Stable</span>
+                                    <span class="stat-label">Environnement</span>
+                                </div>
+                            </div>
+                            <div class="impact-indicator easy-impact">
+                                <i class="fas fa-circle impact-dot"></i>
+                                <span>Coûts modérés - Objectif : Sécurité 10+, Productivité 80%+, Budget 80K€+</span>
+                            </div>
+                            <button class="start-btn easy-btn">
+                                Commencer
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="difficulty-card hard-card" onclick="startGame('hard')" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){this.click(); event.preventDefault();}">
+                        <div class="card-icon hard-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="card-content">
+                            <h2 class="card-title">Mode Expert</h2>
+                            <p class="card-subtitle">Pour les professionnels</p>
+                            <h3 class="scenario-title">Startup Tech en Croissance</h3>
+                            <p class="scenario-description">
+                                Dirigez une startup technologique en pleine expansion avec des contraintes budgétaires serrées. Concurrence féroce, innovation rapide requise, chaque euro compte. Les erreurs coûtent cher !
+                            </p>
+                            <div class="stats-row">
+                                <div class="stat">
+                                    <span class="stat-value hard-stat">150K€</span>
+                                    <span class="stat-label">Budget serré</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-value hard-stat">Volatil</span>
+                                    <span class="stat-label">Environnement</span>
+                                </div>
+                            </div>
+                            <div class="impact-indicator hard-impact">
+                                <i class="fas fa-circle impact-dot"></i>
+                                <span>Coûts majorés +20% - Objectif : Sécurité 15+, Productivité 70%+, Budget 50K€+</span>
+                            </div>
+                            <button class="start-btn hard-btn">
+                                Défier
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="menu-actions">
+                    <button class="menu-btn" onclick="openSettings()" tabindex="0">
+                        <i class="fas fa-cog"></i>
+                        Paramètres
+                    </button>
+                </div>
+                
+                <div class="keyboard-help">
+                    <strong>Raccourcis clavier :</strong>
+                    <kbd>↑</kbd><kbd>↓</kbd> Navigation • <kbd>Entrée</kbd><kbd>Espace</kbd> Sélection • <kbd>Échap</kbd> Fermer<br>
+                    <kbd>J</kbd> Journal • <kbd>S</kbd> Paramètres • <kbd>C</kbd> Crédits • <kbd>B</kbd> Page précédente
+                </div>
+            </div>
+        `,
+        choices: []
+    },
+    
+    page1: {
+        title: "Alerte Phishing Sectorielle",
+        content: `
+            <strong>Contexte :</strong> Votre DSI vous contacte ce matin avec une alerte préoccupante.
+            <br><br>
+            <em>"Les attaques par phishing ont explosé dans notre secteur : +280% ce trimestre. Trois concurrents directs ont été compromis la semaine dernière, avec des pertes estimées entre 50K€ et 200K€ chacun. Nous devons agir rapidement."</em>
+            <br><br>
+            Le rapport mentionne que 73% des employés n'ont jamais reçu de formation spécialisée en cybersécurité.
+            <br><br>
+            <strong>Quelle est votre première réaction ?</strong>
+        `,
+        choices: [
+            { text: "🔒 Imposer une politique de mots de passe renforcée (gratuit)", page: "page10" },
+            { text: "🔍 Commander un audit de sécurité professionnel (8 500€)", page: "page11" }
+        ]
+    },
+    
+    page10: {
+        title: "Politique de Mots de Passe Renforcée",
+        content: `
+            Vous instaurez des règles strictes : mots de passe de 14 caractères minimum, avec majuscules, minuscules, chiffres et symboles spéciaux, renouvellement obligatoire tous les 90 jours.
+            <br><br>
+            <strong>Réactions immédiates :</strong>
+            <br>• 40% des employés protestent : "C'est ingérable !"
+            <br>• Post-its avec mots de passe commencent à apparaître
+            <br>• Temps de connexion multiplié par 3
+            <br>• Support IT submergé de demandes de déblocage
+            <br><br>
+            Votre équipe technique approuve, mais l'impact opérationnel est visible.
+        `,
+        effects: { security: 2, productivity: -8 },
+        choices: [
+            { text: "💼 Investir dans un gestionnaire de mots de passe d'entreprise (12 500€)", page: "page20" },
+            { text: "🤷 Maintenir la politique et laisser l'adaptation se faire", page: "page21" }
+        ]
+    },
+    
+    page11: {
+        title: "Rapport d'Audit de Sécurité",
+        content: `
+            L'audit externe révèle des vulnérabilités critiques :
+            <br><br>
+            <strong>🔴 Risques critiques identifiés :</strong>
+            <br>• 67% des mots de passe facilement craquables
+            <br>• 8 comptes avec mots de passe par défaut
+            <br>• Absence totale d'authentification multifactorielle
+            <br>• Systèmes critiques sans correctifs depuis 4 mois
+            <br>• Sauvegardes non testées depuis 18 mois
+            <br><br>
+            <strong>Score de maturité cybersécurité :</strong> 2.3/10
+            <br><br>
+            Le consultant recommande un plan d'action immédiat avec un budget de 45 000€ à 85 000€ sur 6 mois.
+        `,
+        effects: { security: 1, treasury: -8500 },
+        choices: [
+            { text: "⚡ Suivre le plan d'action complet de l'audit", page: "page12" },
+            { text: "🎯 Se concentrer sur les risques les plus critiques d'abord", page: "page30" }
+        ]
+    },
+
+    page12: {
+        title: "Plan d'Action Complet",
+        content: `
+            Vous suivez toutes les recommandations de l'audit :
+            <br><br>
+            <strong>Investissements réalisés :</strong>
+            <br>• Gestionnaire de mots de passe entreprise : 12 500€
+            <br>• Solution d'authentification multifactorielle : 18 000€
+            <br>• Formation cybersécurité pour tous : 15 000€
+            <br>• Mise à jour et hardening des systèmes : 8 500€
+            <br><br>
+            Résultat : transformation complète de votre posture sécuritaire en 3 mois. Vos employés sont devenus des acteurs de la sécurité, signalant proactivement les menaces.
+        `,
+        effects: { security: 8, productivity: 3, treasury: -54000 },
+        choices: [
+            { text: "🛡️ Continuer avec la sécurisation des sauvegardes", page: "page40" }
+        ]
+    },
+    
+    page20: {
+        title: "Déploiement du Gestionnaire de Mots de Passe",
+        content: `
+            Vous investissez dans une solution professionnelle (BitWarden Business) : génération automatique, synchronisation multi-appareils, partage sécurisé, audit des mots de passe faibles.
+            <br><br>
+            <strong>Résultats après 6 semaines :</strong>
+            <br>• 94% d'adoption par les équipes
+            <br>• Disparition des post-its
+            <br>• Temps de connexion divisé par 2
+            <br>• Réduction de 78% des appels au support IT
+            <br><br>
+            Les employés apprécient finalement la simplicité. Votre RSSI recommande d'ajouter l'authentification à double facteur.
+        `,
+        effects: { security: 4, productivity: 6, treasury: -12500 },
+        choices: [
+            { text: "🔐 Ajouter l'authentification multifactorielle (18 000€)", page: "page22" },
+            { text: "💾 Passer directement aux sauvegardes", page: "page40" }
+        ]
+    },
+    
+    page21: {
+        title: "Adaptation Naturelle",
+        content: `
+            Vous laissez l'équipe s'adapter sans investissement supplémentaire. 
+            <br><br>
+            <strong>Évolution sur 2 mois :</strong>
+            <br>• Contournements créatifs : fichiers Excel "sécurisés", carnets personnels
+            <br>• Réutilisation de mots de passe complexes sur plusieurs comptes
+            <br>• 23% d'augmentation des tentatives de récupération de compte
+            <br>• Dégradation progressive du respect de la politique
+            <br><br>
+            Un consultant externe pointe les failles lors d'une visite client. Situation embarrassante.
+        `,
+        effects: { security: -1, productivity: -3 },
+        choices: [
+            { text: "💾 Compenser en sécurisant les sauvegardes", page: "page40" }
+        ]
+    },
+
+    page22: {
+        title: "Authentification Multifactorielle",
+        content: `
+            Déploiement d'une solution MFA moderne (Microsoft Authenticator + clés de sécurité pour les admins) sur tous les comptes critiques.
+            <br><br>
+            <strong>Impact immédiat :</strong>
+            <br>• Protection de 100% des accès administrateur
+            <br>• Réduction de 95% des risques de compromission de comptes
+            <br>• Formation adaptée pour 2 semaines d'accompagnement
+            <br><br>
+            Quinze jours après le déploiement, votre système bloque 12 tentatives de connexion frauduleuses. L'investissement se justifie immédiatement.
+        `,
+        effects: { security: 5, productivity: -2, treasury: -18000 },
+        choices: [
+            { text: "💾 Continuer avec la sécurisation des sauvegardes", page: "page40" }
+        ]
+    },
+    
+    page30: {
+        title: "Approche Ciblée",
+        content: `
+            Vous décidez de traiter les risques par ordre de priorité et organisez des sessions de sensibilisation pour l'ensemble du personnel.
+            <br><br>
+            <strong>Programme déployé :</strong>
+            <br>• Formation phishing avec simulations : 8 500€
+            <br>• Mise à jour critique des systèmes : 4 500€
+            <br>• Tests de restauration des sauvegardes : 2 000€
+            <br><br>
+            85% des employés participent activement. Résultat visible : identification et signalement de 6 tentatives de phishing la semaine suivante.
+        `,
+        effects: { security: 4, productivity: 1, treasury: -15000 },
+        choices: [
+            { text: "🔐 Examiner la gestion des privilèges administrateur", page: "page90" }
+        ]
+    },
+    
+    page90: {
+        title: "Gestion des Privilèges Administrateur",
+        content: `
+            Audit interne : 78% de vos employés disposent de droits administrateur locaux "pour plus de simplicité". Cette pratique représente un risque majeur selon votre consultant sécurité.
+            <br><br>
+            <strong>Positions des parties prenantes :</strong>
+            <br><br>
+            <strong>Équipe IT :</strong> "Retrait immédiat nécessaire, c'est la porte d'entrée des malwares"
+            <br><strong>Managers :</strong> "On perdra 3h/jour à attendre les validations IT"
+            <br><strong>DRH :</strong> "Les employés se sentiront bridés"
+            <br><strong>Direction Financière :</strong> "Quel coût pour quelle sécurité réelle ?"
+        `,
+        choices: [
+            { text: "🤝 Organiser une réunion d'arbitrage avec toutes les parties", page: "page91" },
+            { text: "⚡ Retirer les droits avec procédure de demande rapide (5 000€)", page: "page92" },
+            { text: "📈 Maintenir les droits pour préserver la productivité", page: "page93" }
+        ]
+    },
+    
+    page91: {
+        title: "Réunion d'Arbitrage",
+        content: `
+            Réunion de 3 heures avec tous les stakeholders. Les débats sont animés :
+            <br><br>
+            <strong>Décision collective :</strong> Mise en place d'un système de privilèges à la demande avec validation automatisée pour les logiciels approuvés et validation manuelle sous 2h pour les exceptions.
+            <br><br>
+            <strong>Coût de la solution :</strong>
+            <br>• Système de gestion des privilèges : 15 000€
+            <br>• Formation et accompagnement : 3 500€
+            <br>• Temps de mise en place : 25h équipe IT
+            <br><br>
+            Tous les départements adhèrent au projet.
+        `,
+        effects: { security: 5, productivity: -1, treasury: -18500 },
+        choices: [
+            { text: "💾 Sécuriser les sauvegardes", page: "page40" }
+        ]
+    },
+    
+    page92: {
+        title: "Retrait des Privilèges Administrateur",
+        content: `
+            Mise en place d'une procédure de demande express : validation sous 1h pour les demandes justifiées via un système de tickets automatisé.
+            <br><br>
+            <strong>Résultats après 6 semaines :</strong>
+            <br>• Adaptation plus rapide que prévu
+            <br>• 67% moins d'incidents logiciels
+            <br>• Disparition complète des infections par adware
+            <br>• Performance système améliorée de 23%
+            <br>• Réduction des coûts de support
+            <br><br>
+            Effet de bord positif : vos équipes utilisent maintenant des logiciels validés et licenciés.
+        `,
+        effects: { security: 6, productivity: -4, treasury: -5000 },
+        choices: [
+            { text: "💾 Passer aux sauvegardes sécurisées", page: "page40" }
+        ]
+    },
+    
+    page93: {
+        title: "Maintien du Statu Quo",
+        content: `
+            Vous décidez de conserver les privilèges administrateur pour préserver la productivité immédiate.
+            <br><br>
+            <strong>Conséquences sur 8 semaines :</strong>
+            <br>• Installation de 47 logiciels non autorisés
+            <br>• 3 postes infectés par des PUP (programmes potentiellement indésirables)
+            <br>• 1 incident de cryptomining détecté
+            <br>• Dégradation progressive des performances
+            <br>• Perte de 2 jours de production pour désinfecter les postes
+            <br><br>
+            La productivité à court terme est préservée, mais à quel prix à long terme ?
+        `,
+        effects: { security: -4, productivity: 4, treasury: -3000 },
+        choices: [
+            { text: "💾 Se rattraper sur les sauvegardes", page: "page40" }
+        ]
+    },
+    
+    page40: {
+        title: "Stratégie de Sauvegarde et Continuité d'Activité",
+        content: `
+            Audit de votre système actuel : sauvegardes manuelles hebdomadaires sur disques externes USB, stockés dans un tiroir du bureau IT.
+            <br><br>
+            <strong>Problèmes identifiés :</strong>
+            <br>• Dernière sauvegarde : il y a 12 jours (oubli)
+            <br>• Aucun test de restauration depuis 14 mois
+            <br>• Disques connectés en permanence (vulnérables aux ransomwares)
+            <br>• RTO (Recovery Time Objective) : inconnu
+            <br>• Données critiques non identifiées
+            <br><br>
+            <strong>Solutions disponibles :</strong>
+            <br>• Solution cloud automatisée : 28 000€/an
+            <br>• Système hybride local + cloud : 35 000€ initial + 15 000€/an
+        `,
+        choices: [
+            { text: "☁️ Investir dans une solution cloud complète (28 000€)", page: "page41" },
+            { text: "💰 Améliorer le système actuel pour économiser (3 500€)", page: "page42" },
+            { text: "🏢 Solution hybride haut de gamme (35 000€)", page: "page43" }
+        ]
+    },
+    
+    page41: {
+        title: "Solution Cloud Professionnelle",
+        content: `
+            Déploiement d'une solution cloud avancée (Veeam Cloud) : sauvegarde automatique quotidienne, chiffrement AES-256, tests de restauration mensuels automatisés, réplication géographique.
+            <br><br>
+            <strong>Test grandeur nature inattendu :</strong>
+            <br>Quatre mois après le déploiement, un ransomware (variante de Ryuk) infecte un poste via une clé USB. Grâce à la détection rapide et aux sauvegardes isolées :
+            <br>• Restauration complète en 4 heures
+            <br>• Perte de données : 0
+            <br>• Temps d'arrêt : demi-journée
+            <br><br>
+            Vos clients et partenaires sont impressionnés par votre résilience. Trois prospects signent en citant votre robustesse IT.
+        `,
+        effects: { security: 6, treasury: -28000 },
+        choices: [
+            { text: "🌐 Sécuriser l'infrastructure réseau", page: "page100" }
+        ]
+    },
+    
+    page42: {
+        title: "Amélioration Budgétaire",
+        content: `
+            Vous améliorez le système existant : disques externes déconnectés après sauvegarde, planification automatique, procédure documentée.
+            <br><br>
+            <strong>L'épreuve du feu :</strong>
+            <br>Deux mois plus tard, panne simultanée du serveur principal et du disque de sauvegarde (Murphy's Law). 
+            <br><br>
+            <strong>Conséquences :</strong>
+            <br>• Perte de 3 semaines de données comptables
+            <br>• Reconstitution manuelle : 45 heures de travail
+            <br>• Coût de récupération de données : 12 500€
+            <br>• Expert-comptable mécontent
+            <br>• Retard sur la clôture mensuelle
+            <br><br>
+            Économie initiale : 24 500€. Coût réel de l'incident : 38 000€.
+        `,
+        effects: { security: -1, productivity: -12, treasury: -15500 },
+        choices: [
+            { text: "🌐 Compenser avec la sécurité réseau", page: "page100" }
+        ]
+    },
+
+    page43: {
+        title: "Solution Hybride Haut de Gamme",
+        content: `
+            Déploiement d'une infrastructure hybride : NAS local avec sauvegarde cloud automatique, snapshots horaires, réplication temps réel pour les données critiques.
+            <br><br>
+            <strong>Avantages constatés :</strong>
+            <br>• Restauration locale ultra-rapide (15 minutes)
+            <br>• Protection cloud contre les sinistres majeurs
+            <br>• Versioning avancé (12 mois d'historique)
+            <br>• Monitoring proactif avec alertes
+            <br><br>
+            Lors d'un audit client, cette infrastructure de niveau enterprise impressionne et vous fait décrocher un contrat majeur à 180 000€.
+        `,
+        effects: { security: 8, treasury: -20000 },
+        choices: [
+            { text: "🌐 Compléter avec la sécurité réseau", page: "page100" }
+        ]
+    },
+    
+    page100: {
+        title: "Infrastructure Réseau et Périmètre de Sécurité",
+        content: `
+            Évaluation de votre sécurité réseau actuelle : routeur grand public (Livebox Pro), commutateurs non managés, Wi-Fi avec WPA2, aucune segmentation réseau.
+            <br><br>
+            <strong>Menaces identifiées :</strong>
+            <br>• Mouvement latéral facilité pour les attaquants
+            <br>• Absence de monitoring du trafic
+            <br>• IoT non sécurisés (imprimantes, caméras)
+            <br>• VPN basique pour le télétravail
+            <br><br>
+            <strong>Options d'amélioration :</strong>
+            <br>• Pare-feu professionnel + monitoring : 45 000€
+            <br>• Solution SD-WAN complète : 65 000€
+            <br>• Infrastructure Zero Trust : 85 000€
+        `,
+        choices: [
+            { text: "🛡️ Pare-feu professionnel avec monitoring (45 000€)", page: "page101" },
+            { text: "🏠 Maintenir l'infrastructure actuelle et économiser", page: "page102" },
+            { text: "🔐 Solution Zero Trust complète (85 000€)", page: "page103" }
+        ]
+    },
+    
+    page101: {
+        title: "Pare-feu Professionnel",
+        content: `
+            Installation d'un pare-feu FortiGate avec détection d'intrusions, filtrage applicatif, VPN SSL sécurisé, et supervision 24/7.
+            <br><br>
+            <strong>Résultats en 6 semaines :</strong>
+            <br>• 1 247 tentatives d'intrusion bloquées
+            <br>• 23 communications malveillantes détectées et stoppées
+            <br>• 5 appareils IoT compromis identifiés et isolés
+            <br>• Télétravail sécurisé pour tous
+            <br>• Visibilité complète sur le trafic réseau
+            <br><br>
+            Le RSSI peut maintenant générer des rapports détaillés. Votre assurance cyber accorde une réduction de 15% sur la prime.
+        `,
+        effects: { security: 7, productivity: 2, treasury: -45000 },
+        choices: [
+            { text: "👥 Formation continue des équipes", page: "page110" }
+        ]
+    },
+    
+    page102: {
+        title: "Infrastructure Basique Maintenue",
+        content: `
+            Vous conservez votre infrastructure réseau actuelle pour économiser le budget.
+            <br><br>
+            <strong>L'incident inévitable :</strong>
+            <br>Trois mois plus tard, une attaque par mouvement latéral compromet 67% de votre parc informatique via une imprimante connectée non sécurisée.
+            <br><br>
+            <strong>Coûts de l'incident :</strong>
+            <br>• Intervention d'urgence : 15 000€
+            <br>• Reconstruction système : 25 000€
+            <br>• Perte d'activité : 3 jours
+            <br>• Investigation forensique : 8 500€
+            <br>• Notification CNIL et clients
+            <br><br>
+            Économie initiale : 45 000€. Coût réel : 48 500€ + impact réputationnel.
+        `,
+        effects: { security: -6, productivity: -15, treasury: -48500 },
+        choices: [
+            { text: "👥 Formation d'urgence des équipes", page: "page110" }
+        ]
+    },
+
+    page103: {
+        title: "Architecture Zero Trust",
+        content: `
+            Déploiement d'une architecture Zero Trust complète : micro-segmentation, authentification continue, chiffrement end-to-end, monitoring comportemental IA.
+            <br><br>
+            <strong>Transformation sécuritaire :</strong>
+            <br>• Sécurité de niveau bancaire
+            <br>• Conformité renforcée (ISO 27001 ready)
+            <br>• Détection des menaces en temps réel
+            <br>• Télétravail ultra-sécurisé
+            <br><br>
+            Cette infrastructure d'exception attire l'attention d'un grand groupe qui vous propose un partenariat stratégique valorisé à 500 000€ sur 3 ans.
+        `,
+        effects: { security: 12, treasury: -50000 },
+        choices: [
+            { text: "👥 Formation d'excellence des équipes", page: "page110" }
+        ]
+    },
+    
+    page110: {
+        title: "Programme de Formation Continue",
+        content: `
+            Pour consolider tous vos investissements, vous envisagez un programme de formation cybersécurité structuré :
+            <br><br>
+            <strong>Programme proposé :</strong>
+            <br>• Sessions mensuelles sur les nouvelles menaces
+            <br>• Simulations de phishing ciblées avec debriefing
+            <br>• Certification CyberCitizen pour les employés clés
+            <br>• Veille technologique partagée
+            <br>• Exercices de gestion de crise
+            <br><br>
+            <strong>Investissement :</strong> 22 000€ annuel
+            <br><strong>Alternative :</strong> Formation de base à 8 500€
+        `,
+        choices: [
+            { text: "🎓 Programme complet de formation (22 000€)", page: "page111" },
+            { text: "📚 Formation de base économique (8 500€)", page: "page113" },
+            { text: "⏰ Reporter la formation (budget préservé)", page: "page112" }
+        ]
+    },
+    
+    page111: {
+        title: "Excellence en Formation Cybersécurité",
+        content: `
+            Déploiement du programme complet sur 12 mois. 
+            <br><br>
+            <strong>Résultats exceptionnels :</strong>
+            <br>• 96% des employés certifiés CyberCitizen
+            <br>• Détection et signalement de 34 tentatives de phishing
+            <br>• Culture sécuritaire intégrée dans tous les processus
+            <br>• 0 incident de sécurité lié au facteur humain
+            <br>• Reconnaissance secteur : "PME Cyber-Exemplaire 2024"
+            <br><br>
+            Votre entreprise devient référence en cybersécurité. Trois nouveaux contrats décrochés grâce à cette réputation (+180 000€).
+        `,
+        effects: { security: 4, productivity: 8, treasury: 158000 },
+        choices: [
+            { text: "🏁 Évaluation finale de votre stratégie", page: "final" }
+        ]
+    },
+
+    page113: {
+        title: "Formation de Base",
+        content: `
+            Programme de formation essentiel déployé : sensibilisation aux menaces courantes, bonnes pratiques de base, kit de survie cyber.
+            <br><br>
+            <strong>Résultats satisfaisants :</strong>
+            <br>• 78% des employés formés
+            <br>• Réduction de 60% des incidents liés aux utilisateurs
+            <br>• Amélioration notable des réflexes sécuritaires
+            <br>• Détection de 12 tentatives de phishing
+            <br><br>
+            Formation efficace qui couvre les besoins essentiels sans grever le budget.
+        `,
+        effects: { security: 2, productivity: 3, treasury: -8500 },
+        choices: [
+            { text: "🏁 Bilan de votre parcours", page: "final" }
+        ]
+    },
+    
+    page112: {
+        title: "Formation Reportée",
+        content: `
+            Vous reportez la formation pour préserver le budget disponible.
+            <br><br>
+            <strong>Évolution progressive :</strong>
+            <br>Sans renforcement régulier des connaissances, les bonnes pratiques s'érodent graduellement :
+            <br>• Retour aux anciennes habitudes
+            <br>• Diminution de la vigilance
+            <br>• 8 incidents mineurs sur 6 mois
+            <br>• Perte progressive de la culture sécuritaire
+            <br><br>
+            Les investissements techniques restent efficaces, mais le facteur humain redevient une faiblesse.
+        `,
+        effects: { security: -2, productivity: -1 },
+        choices: [
+            { text: "🏁 Faire le bilan de votre parcours", page: "final" }
+        ]
+    },
+    
+    final: {
+        title: "Bilan Cybersécurité Personnalisé",
+        content: `
+            <div style="text-align: center; margin: 2rem 0;">
+                <h3 style="color: var(--accent-primary); margin-bottom: 1rem;">🎯 Mission Terminée</h3>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">
+                    Voici votre bilan personnalisé de cybersécurité, basé sur vos choix tout au long de la partie.
+                </p>
+            </div>
+            <div style="background: rgba(255,255,255,0.02); padding: 2rem; border-radius: 20px; margin: 2rem 0; border-left: 3px solid var(--accent-primary);">
+                <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">📊 Vos points d'amélioration</h4>
+                <canvas id="errors-bar-chart" height="180"></canvas>
+            </div>
+            <div id="personalized-advices" style="margin: 2.5rem 0; background: rgba(0,207,255,0.05); border-left: 4px solid var(--accent-blue); border-radius: 16px; padding: 2rem;">
+                <h4 style="color: var(--accent-blue); margin-bottom: 1rem;">💡 Conseils personnalisés</h4>
+                <ul id="advices-list" style="list-style: none; padding: 0; margin: 0;"></ul>
+            </div>
+            <div style="text-align: center; margin: 2rem 0;">
+                <p style="font-style: italic; color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">
+                    "La cybersécurité est un investissement stratégique continu, pas une dépense ponctuelle."
+                </p>
+            </div>
+        `,
+        choices: []
+    }
+};
+
+// Game Instance
+let gameState;
+
+// Enhanced startGame function - FIXED
+function startGame(difficulty) {
+    if (!gameState) return;
+    
+    gameState.setDifficulty(difficulty);
+    gameState.addToHistory('page1', `Mode ${difficulty === 'easy' ? 'Standard' : 'Expert'}`);
+    gameState.navigateToPage('page1');
+    gameState.playSound('click-sound');
+}
+
+// Initialize Game
+function initGame() {
+    gameState = new GameState();
+    setupEventListeners();
+    gameState.navigateToPage('welcome');
+}
+
+function setupEventListeners() {
+    const modalClose = document.getElementById('modal-close');
+    const modalConfirm = document.getElementById('modal-confirm');
+    const modalOverlay = document.getElementById('modal-overlay');
+    const journalOverlay = document.getElementById('journal-overlay');
+    const settingsOverlay = document.getElementById('settings-overlay');
+    const creditsOverlay = document.getElementById('credits-overlay');
+    
+    if (modalClose && !modalClose.hasEventListener) {
+        modalClose.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            modalOverlay.classList.remove('active');
+            if (gameState) gameState.playSound('click-sound');
+        });
+        modalClose.hasEventListener = true;
+    }
+    
+    if (modalConfirm && !modalConfirm.hasEventListener) {
+        modalConfirm.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            modalOverlay.classList.remove('active');
+            if (gameState) gameState.playSound('click-sound');
+        });
+        modalConfirm.hasEventListener = true;
+    }
+    
+    if (modalOverlay && !modalOverlay.hasEventListener) {
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                e.currentTarget.classList.remove('active');
+                if (gameState) gameState.playSound('click-sound');
+            }
+        });
+        modalOverlay.hasEventListener = true;
+    }
+    
+    if (journalOverlay && !journalOverlay.hasEventListener) {
+        journalOverlay.addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeJournal();
+            }
+        });
+        journalOverlay.hasEventListener = true;
+    }
+    
+    if (settingsOverlay && !settingsOverlay.hasEventListener) {
+        settingsOverlay.addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeSettings();
+            }
+        });
+        settingsOverlay.hasEventListener = true;
+    }
+    
+    if (creditsOverlay && !creditsOverlay.hasEventListener) {
+        creditsOverlay.addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeCredits();
+            }
+        });
+        creditsOverlay.hasEventListener = true;
+    }
+
+    if (!document.hasRippleListener) {
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('.choice-btn, .start-btn, .restart-btn, .btn, .audio-btn, .settings-toggle, .prev-page-btn, .journal-btn, .credits-btn, .difficulty-card, .menu-btn, .back-to-menu, .top-credits-btn');
+            if (target) {
+                createRippleEffect(e);
+                if (gameState) gameState.playSound('click-sound');
+            }
+        });
+        document.hasRippleListener = true;
+    }
+}
+
+// Enhanced makeChoice - FIXED
+function makeChoice(pageId, choiceText = null, event = null) {
+    if (!gameState) return;
+    // Autoriser le bouton réseau même si gameEnded
+    if (gameState.gameEnded && pageId !== 'page100') return;
+    
+    const choiceKey = `${gameState.currentPage}-${pageId}`;
+    gameState.exploredChoices.add(choiceKey);
+
+    const clickedButton = event?.currentTarget || event?.target;
+    if (clickedButton && clickedButton.style) {
+        clickedButton.style.transform = 'translateX(5px) scale(0.98)';
+        clickedButton.style.filter = 'brightness(1.2)';
+        
+        setTimeout(() => {
+            if (clickedButton && clickedButton.style) {
+                clickedButton.style.transform = '';
+                clickedButton.style.filter = '';
+            }
+        }, 75); // Plus rapide
+    }
+    
+    gameState.addToHistory(pageId, choiceText);
+    
+    setTimeout(() => {
+        gameState.navigateToPage(pageId);
+    }, 100); // Plus rapide
+}
+
+function backToMenu() {
+    if (!gameState) return;
+    
+    const header = document.getElementById('game-header');
+    const progress = document.getElementById('progress-indicator');
+    const nav = document.getElementById('nav-header');
+    
+    if (header) header.style.animation = 'slideInDown 0.25s ease-out reverse';
+    if (progress) progress.style.animation = 'slideInUp 0.25s ease-out reverse';
+    if (nav) nav.style.animation = 'slideInDown 0.25s ease-out reverse';
+    
+    setTimeout(() => {
+        if (header) header.style.display = 'none';
+        if (progress) progress.style.display = 'none';
+        if (nav) nav.style.display = 'none';
+        
+        gameState = new GameState();
+        gameState.navigateToPage('welcome');
+    }, 250); // Plus rapide
+}
+
+function restartGame() {
+    const bgMusic = document.getElementById('background-music');
+    if (bgMusic) {
+        bgMusic.pause();
+        bgMusic.currentTime = 0;
+    }
+    
+    const musicBtn = document.getElementById('music-toggle');
+    const soundBtn = document.getElementById('sound-toggle');
+    if (musicBtn) musicBtn.classList.remove('active');
+    if (soundBtn) {
+        soundBtn.classList.add('active');
+        soundBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+    }
+    
+    backToMenu();
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const loading = document.getElementById('loading');
+    if (loading) {
+        setTimeout(() => {
+            loading.style.animation = 'slideInUp 0.25s ease-out reverse';
+            setTimeout(() => {
+                loading.style.display = 'none';
+                initGame();
+            }, 250);
+        }, 1000); // Plus rapide
+    } else {
+        initGame();
+    }
+});
+
+window.makeChoice = makeChoice;
+window.backToMenu = backToMenu;
+window.restartGame = restartGame;
+window.startGame = startGame;
+window.openSettings = openSettings;
+window.openCredits = openCredits;
+window.openJournal = openJournal;
+
+(function() {
+    const originalDisplayPage = GameState.prototype.displayPage;
+    GameState.prototype.displayPage = function(page) {
+        originalDisplayPage.call(this, page);
+        if (this.currentPage === 'final') {
+            setTimeout(() => {
+                console.log("Affichage bilan final !");
+                if (typeof Chart !== 'undefined') {
+                    const ctx = document.getElementById('errors-bar-chart');
+                    if (ctx) {
+                        const errorThemes = [
+                            { key: 'password_policy', label: 'Mots de passe' },
+                            { key: 'admin_rights', label: 'Privilèges admin' },
+                            { key: 'backup_policy', label: 'Sauvegardes' },
+                            { key: 'network_security', label: 'Réseau' },
+                            { key: 'training', label: 'Formation' }
+                        ];
+                        const data = errorThemes.map(theme => this.poorChoices.includes(theme.key) ? 1 : 0);
+                        new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: errorThemes.map(t => t.label),
+                                datasets: [{
+                                    label: 'Erreurs détectées',
+                                    data: data,
+                                    backgroundColor: [
+                                        'rgba(255,0,79,0.7)',
+                                        'rgba(0,207,255,0.7)',
+                                        'rgba(255,194,219,0.7)',
+                                        'rgba(0,11,73,0.7)',
+                                        'rgba(0,255,127,0.7)'
+                                    ],
+                                    borderRadius: 8
+                                }]
+                            },
+                            options: {
+                                plugins: {
+                                    legend: { display: false }
+                                },
+                                scales: {
+                                    y: { beginAtZero: true, max: 1, ticks: { stepSize: 1 } }
+                                }
+                            }
+                        });
+                    } else {
+                        console.warn('Canvas errors-bar-chart non trouvé');
+                    }
+                } else {
+                    console.warn('Chart.js non chargé');
+                }
+                // Générer les conseils personnalisés
+                const advices = this.generateANSSIRecommendations();
+                const advicesList = document.getElementById('advices-list');
+                if (advicesList) {
+                    advicesList.innerHTML = advices.map(rec => `<li style='margin-bottom:1.2rem;display:flex;align-items:flex-start;gap:1rem;'><i class="${rec.icon}" style="color:var(--accent-blue);font-size:1.3rem;margin-top:0.2rem;"></i><span style="color:var(--text-secondary);line-height:1.6;">${rec.text}</span></li>`).join('');
+                } else {
+                    console.warn('advices-list non trouvé');
+                }
+            }, 500); // délai augmenté pour laisser le DOM se mettre à jour
+        }
+    };
+})();
+    </script>
+</body></html>

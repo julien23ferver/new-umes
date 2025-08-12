@@ -174,3 +174,4 @@ Si vous rencontrez des problèmes :
 **🎯 Maintenant, modifiez vos questions en toute simplicité !** 
 
 Ouvrez `questions.js`, faites vos modifications, et regardez les changements apparaître automatiquement dans votre quiz ! 🚀
+
