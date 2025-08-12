@@ -1158,6 +1158,17 @@
 .role-card:not(.locked) {
   pointer-events: auto !important;
 }
+
+@keyframes shake {
+  10%, 90% { transform: translateX(-1px); }
+  20%, 80% { transform: translateX(2px); }
+  30%, 50%, 70% { transform: translateX(-4px); }
+  40%, 60% { transform: translateX(4px); }
+}
+
+.modal.shake .modal-content {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
 .role-card:not(.locked) * {
   pointer-events: auto !important;
 }
@@ -1509,6 +1520,18 @@ document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
         <button class="credits-close-btn" onclick="closeCreditsModal()">
             <i class="fas fa-times"></i> <span data-en="Close" data-fr="Fermer">Fermer</span>
         </button>
+    </div>
+</div>
+<div class="modal" id="pseudoModal" style="display: none;">
+    <div class="modal-content" style="max-width: 500px;">
+        <h2><i class="fas fa-user-edit"></i> <span data-en="Enter your name" data-fr="Entrez votre pseudo">Entrez votre pseudo</span></h2>
+        <p data-en="Your name will be displayed in the Hall of Fame." data-fr="Votre pseudo sera affiché dans le Hall of Fame.">Votre pseudo sera affiché dans le Hall of Fame.</p>
+        <div style="margin: 20px 0;">
+            <input type="text" id="pseudoInput" placeholder="Votre pseudo..." style="width: 100%; padding: 12px; font-size: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-medium); background: var(--bg-secondary); color: var(--text-primary);">
+        </div>
+        <div class="modal-buttons">
+            <button class="modal-btn" id="submitPseudoBtn"><span data-en="Save Score" data-fr="Enregistrer le score">Enregistrer le score</span> <i class="fas fa-save"></i></button>
+        </div>
     </div>
 </div>
 <script>
@@ -2783,11 +2806,52 @@ document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
                 }
             }
 
-            // Demander le pseudo à l'utilisateur
+            // Demander le pseudo à l'utilisateur via un modal personnalisé
             promptPlayerName() {
                 return new Promise((resolve) => {
-                    const pseudo = prompt('🏆 Entrez votre pseudo pour le Hall of Fame :\n\n(Le pseudo est obligatoire pour enregistrer votre score)');
-                    resolve(pseudo ? pseudo.trim() : null);
+                    const pseudoModal = document.getElementById('pseudoModal');
+                    const pseudoInput = document.getElementById('pseudoInput');
+                    const submitPseudoBtn = document.getElementById('submitPseudoBtn');
+
+                    if (!pseudoModal || !pseudoInput || !submitPseudoBtn) {
+                        // Fallback vers l'ancien prompt si le modal n'est pas trouvé
+                        console.warn("Modal de pseudo non trouvé, utilisation du prompt par défaut.");
+                        const pseudo = prompt('🏆 Entrez votre pseudo pour le Hall of Fame :\n\n(Le pseudo est obligatoire pour enregistrer votre score)');
+                        resolve(pseudo ? pseudo.trim() : null);
+                        return;
+                    }
+
+                    pseudoModal.style.display = 'flex';
+                    pseudoInput.focus();
+                    pseudoInput.style.border = '1px solid var(--border-medium)'; // Reset border
+
+                    // Fonction pour gérer la soumission
+                    const handleSubmit = () => {
+                        const pseudo = pseudoInput.value.trim();
+                        if (pseudo) {
+                            pseudoModal.style.display = 'none';
+                            // Nettoyer les listeners pour éviter les exécutions multiples
+                            submitPseudoBtn.removeEventListener('click', handleSubmit);
+                            pseudoInput.removeEventListener('keypress', handleEnter);
+                            resolve(pseudo);
+                        } else {
+                            // Optionnel: secouer le champ et mettre une bordure rouge si vide
+                            pseudoInput.style.border = '2px solid var(--error-red)';
+                            pseudoModal.classList.add('shake');
+                            setTimeout(() => pseudoModal.classList.remove('shake'), 500);
+                        }
+                    };
+
+                    // Gérer la touche Entrée
+                    const handleEnter = (event) => {
+                        if (event.key === 'Enter') {
+                            handleSubmit();
+                        }
+                    };
+
+                    // Attacher les listeners
+                    submitPseudoBtn.addEventListener('click', handleSubmit);
+                    pseudoInput.addEventListener('keypress', handleEnter);
                 });
             }
 
