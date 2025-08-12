@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Hall of Fame - Cyber Campus</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #000b49 0%, #001a5c 100%);
+            color: white;
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        h1 {
+            color: #00cfff;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 0 20px rgba(0, 207, 255, 0.5);
+        }
+        
+        .test-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 207, 255, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+        }
+        
+        .test-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .test-btn {
+            background: #00cfff;
+            color: #000b49;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .test-btn:hover {
+            background: #0099cc;
+            transform: translateY(-2px);
+        }
+        
+        .test-btn.danger {
+            background: #ff004f;
+            color: white;
+        }
+        
+        .test-btn.danger:hover {
+            background: #cc003f;
+        }
+        
+        .info {
+            background: rgba(0, 207, 255, 0.1);
+            border: 1px solid #00cfff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .score-display {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .score-value {
+            font-size: 3rem;
+            color: #00cfff;
+            font-weight: bold;
+        }
+        
+        .features {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features h3 {
+            color: #00cfff;
+            margin-bottom: 15px;
+        }
+        
+        .features ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .features li:before {
+            content: "🏆 ";
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 Test Hall of Fame</h1>
+        
+        <div class="info">
+            <h3>🎮 Système de Records Style Arcade</h3>
+            <p>Ce test démontre le système de Hall of Fame intégré au Cyber Campus.</p>
+            <p>Les scores sont sauvegardés localement et persistent entre les sessions.</p>
+        </div>
+        
+        <div class="test-section">
+            <h3>🧪 Tests de Scores</h3>
+            <p>Générez des scores de test pour voir le Hall of Fame en action :</p>
+            
+            <div class="test-buttons">
+                <button class="test-btn" onclick="generateTestScore('facile', 85)">Score Facile (85%)</button>
+                <button class="test-btn" onclick="generateTestScore('intermediaire', 72)">Score Intermédiaire (72%)</button>
+                <button class="test-btn" onclick="generateTestScore('difficile', 68)">Score Difficile (68%)</button>
+                <button class="test-btn" onclick="generateTestScore('nexus', 45)">Score Nexus (45%)</button>
+            </div>
+            
+            <div class="test-buttons">
+                <button class="test-btn" onclick="generateRandomScore()">🎲 Score Aléatoire</button>
+                <button class="test-btn" onclick="showHallOfFame()">🏆 Voir Hall of Fame</button>
+                <button class="test-btn danger" onclick="clearAllScores()">🗑️ Effacer Tous les Scores</button>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>📊 Statistiques Actuelles</h3>
+            <div id="statsDisplay">
+                <p>Chargement des statistiques...</p>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>✨ Fonctionnalités du Hall of Fame</h3>
+            <div class="features">
+                <ul>
+                    <li><strong>Sauvegarde locale :</strong> Les scores sont stockés dans le navigateur</li>
+                    <li><strong>Top 10 :</strong> Seuls les 10 meilleurs scores sont conservés</li>
+                    <li><strong>Noms aléatoires :</strong> Génération de noms style arcade (CYBERMASTER123)</li>
+                    <li><strong>Filtrage par jeu :</strong> Cyber Dico et Jeu du Héros séparés</li>
+                    <li><strong>Statistiques :</strong> Moyenne, meilleur score, nombre de joueurs</li>
+                    <li><strong>Export :</strong> Possibilité d'exporter les scores en JSON</li>
+                    <li><strong>Design rétro :</strong> Interface style arcade avec animations</li>
+                    <li><strong>Responsive :</strong> Fonctionne sur mobile et desktop</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="test-section">
+            <h3>🔗 Intégration</h3>
+            <p>Le Hall of Fame est automatiquement intégré dans :</p>
+            <ul style="text-align: left; max-width: 400px; margin: 0 auto;">
+                <li>✅ <strong>dico.html</strong> - Quiz Cyber Dico</li>
+                <li>✅ <strong>heros.html</strong> - Jeu du Héros (à implémenter)</li>
+                <li>✅ <strong>Bouton Hall of Fame</strong> dans l'interface</li>
+                <li>✅ <strong>Enregistrement automatique</strong> des scores</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Import du système Hall of Fame -->
+    <script src="hall_of_fame.js"></script>
+    
+    <script>
+        // Fonction pour générer un score de test
+        async function generateTestScore(difficulty, percentage) {
+            const score = Math.floor(percentage / 10); // Convertir % en score
+            const total = 10; // 10 questions
+            const correct = Math.floor((percentage / 100) * total);
+            const time = Math.floor(Math.random() * 300) + 60; // 1-6 minutes
+            
+            const scoreData = {
+                score: score,
+                percentage: percentage,
+                correct: correct,
+                total: total,
+                difficulty: difficulty,
+                time: time,
+                gameType: 'quiz'
+            };
+            
+            console.log('Génération d\'un score de test:', scoreData);
+            
+            const position = await saveScore(scoreData);
+            if (position) {
+                alert(`🏆 Nouveau record ! Position #${position} dans le Hall of Fame !`);
+            } else {
+                alert('Score enregistré mais pas assez élevé pour le Hall of Fame.');
+            }
+            
+            updateStats();
+        }
+        
+        // Fonction pour générer un score aléatoire
+        function generateRandomScore() {
+            const difficulties = ['facile', 'intermediaire', 'difficile', 'nexus'];
+            const difficulty = difficulties[Math.floor(Math.random() * difficulties.length)];
+            const percentage = Math.floor(Math.random() * 100) + 1;
+            
+            generateTestScore(difficulty, percentage);
+        }
+        
+        // Fonction pour effacer tous les scores
+        function clearAllScores() {
+            if (confirm('Êtes-vous sûr de vouloir effacer tous les scores du Hall of Fame ?')) {
+                hallOfFameUI.hof.clearScores();
+                updateStats();
+                alert('Tous les scores ont été effacés.');
+            }
+        }
+        
+        // Fonction pour mettre à jour les statistiques
+        function updateStats() {
+            const stats = hallOfFameUI.hof.getStats();
+            const statsDisplay = document.getElementById('statsDisplay');
+            
+            statsDisplay.innerHTML = `
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin: 20px 0;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; color: #00cfff; font-weight: bold;">${stats.totalGames}</div>
+                        <div style="color: #b0b0b0;">Parties</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; color: #00cfff; font-weight: bold;">${stats.bestScore}</div>
+                        <div style="color: #b0b0b0;">Meilleur Score</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; color: #00cfff; font-weight: bold;">${stats.averageScore}</div>
+                        <div style="color: #b0b0b0;">Moyenne</div>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2rem; color: #00cfff; font-weight: bold;">${stats.totalPlayers}</div>
+                        <div style="color: #b0b0b0;">Joueurs</div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Mettre à jour les statistiques au chargement
+        window.addEventListener('load', () => {
+            updateStats();
+        });
+    </script>
+</body>
+</html>

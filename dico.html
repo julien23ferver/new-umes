@@ -1,0 +1,3588 @@
+<!DOCTYPE html><html data-theme="dark" lang="fr"><head><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;"><meta content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;" http-equiv="Content-Security-Policy"><meta content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;" http-equiv="Content-Security-Policy"><meta content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;" http-equiv="Content-Security-Policy">
+
+
+    
+<meta content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com https://upload.wikimedia.org; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;" http-equiv="Content-Security-Policy">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Cyber Quizz - Formation Interactive Professionnelle</title>
+<meta content="Formation interactive et adaptative en cybersécurité basée sur le Cyberdico de l'ANSSI." name="description">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="questions.js"></script>
+<style>
+        :root {
+            --primary-blue: #00cfff;
+            --accent-purple: #ff004f;
+            --accent-green: #10b981;
+            --success-green: #22c55e;
+            --warning-orange: #f59e0b;
+            --error-red: #ef4444;
+            --nexus-theme-color: #00cfff; /* Remplacé l'or par le bleu */
+            --nexus-dark: #000b49;
+            --revision-cyan: #ffc2db;
+            --campus-pink: #ffc2db;
+            --glossary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --lock-gray: #6b7280;
+            
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-full: 9999px;
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-glow: 0 0 20px rgba(102, 126, 234, 0.6);
+            
+            --transition-fast: all 0.15s ease-in-out;
+            --transition-normal: all 0.2s ease-in-out;
+            --transition-slow: all 0.3s ease-in-out;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #000b49;
+            --bg-secondary: #001a5c;
+            --bg-tertiary: #002970;
+            --bg-elevated: #001454;
+            --bg-card: #001147;
+            --text-primary: #ffffff;
+            --text-secondary: #e5e5e5;
+            --text-muted: #a3a3a3;
+            --border-light: #002970;
+            --border-medium: #404040;
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f0f8ff;
+            --bg-secondary: #e6f3ff;
+            --bg-tertiary: #cce7ff;
+            --bg-elevated: #ffffff;
+            --bg-card: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-light: #e2e8f0;
+            --border-medium: #cbd5e1;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Poppins', 'Inter', sans-serif; background-color: var(--bg-primary); color: var(--text-primary); min-height: 100vh; overflow-x: hidden; line-height: 1.6; transition: background-color 0.3s, color 0.3s; }
+        
+
+        
+        .content-wrapper { position: relative; z-index: 10; }
+        .screen { display: none; min-height: 100vh; padding: 20px; }
+        .screen.active { display: block; }
+
+
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        @keyframes slideInRight { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+        @keyframes slideOutLeft { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(-50px); } }
+        @keyframes correctPulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 10px rgba(34, 197, 94, 0.3); } 50% { transform: scale(1.03); box-shadow: 0 0 25px rgba(34, 197, 94, 0.7); } }
+        @keyframes incorrectShake { 0%, 100% { transform: translateX(0); } 10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); } 20%, 40%, 60%, 80% { transform: translateX(8px); } }
+        @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+        @keyframes scorePop { 0% { transform: scale(1); } 50% { transform: scale(1.25); color: var(--accent-green); } 100% { transform: scale(1); } }
+        @keyframes bounceIn { 0% { opacity: 0; transform: scale(0.3) translateY(-50px); } 50% { opacity: 1; transform: scale(1.05) translateY(0); } 70% { transform: scale(0.9); } 100% { opacity: 1; transform: scale(1); } }
+        @keyframes rotate-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        @keyframes pulse-border { 0% { box-shadow: 0 0 0 0 rgba(255, 0, 79, 0.4); } 70% { box-shadow: 0 0 0 20px rgba(255, 0, 79, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 0, 79, 0); } }
+        @keyframes nexus-glow { 0% { box-shadow: 0 0 10px rgba(0, 207, 255, 0.5); } 50% { box-shadow: 0 0 30px rgba(0, 207, 255, 0.8), 0 0 50px rgba(0, 207, 255, 0.4); } 100% { box-shadow: 0 0 10px rgba(0, 207, 255, 0.5); } }
+        @keyframes revision-pulse { 0% { box-shadow: 0 0 10px rgba(255, 194, 219, 0.5); } 50% { box-shadow: 0 0 30px rgba(255, 194, 219, 0.8), 0 0 50px rgba(255, 194, 219, 0.4); } 100% { box-shadow: 0 0 10px rgba(255, 194, 219, 0.5); } }
+        @keyframes glossary-glow { 0% { box-shadow: var(--shadow-glow); } 50% { box-shadow: 0 0 30px rgba(102, 126, 234, 0.8), var(--shadow-glow); } 100% { box-shadow: var(--shadow-glow); } }
+        @keyframes lock-shake { 0%, 100% { transform: rotate(0deg); } 10%, 30%, 50%, 70%, 90% { transform: rotate(-3deg); } 20%, 40%, 60%, 80% { transform: rotate(3deg); } }
+        @keyframes celebration { 0% { transform: scale(1) rotate(0deg); } 25% { transform: scale(1.2) rotate(5deg); } 50% { transform: scale(1.1) rotate(-5deg); } 75% { transform: scale(1.15) rotate(3deg); } 100% { transform: scale(1) rotate(0deg); } }
+        @keyframes sparkle { 0%, 100% { opacity: 0; transform: scale(0); } 50% { opacity: 1; transform: scale(1); } }
+        @keyframes gentle-gradient-shift {
+            0%, 100% { 
+                background-position: 0% 50%; 
+            }
+            50% { 
+                background-position: 100% 50%; 
+            }
+        }
+        
+        @keyframes gentle-glow {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.02);
+            }
+        }
+        
+        @keyframes gentle-letter-appear {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            25% { background-position: 100% 0%; }
+            50% { background-position: 200% 50%; }
+            75% { background-position: 100% 100%; }
+        }
+        
+        .fade-in-up { animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .bounce-in { animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards; }
+        .score-pop { animation: scorePop 0.4s ease-in-out; }
+
+        .logo-container { margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 15px; flex-direction: column; }
+        .campus-logo {
+            width: 400px;
+            height: auto;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+        }
+        .logo-icon { font-size: 2.5rem; color: var(--primary-blue); display: none; }
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--text-primary);
+            margin: 0;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-purple) 50%, var(--primary-blue) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            letter-spacing: 4px;
+            animation: gentle-gradient-shift 8s infinite ease-in-out;
+            position: relative;
+            text-transform: uppercase;
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 0 0 20px rgba(0, 207, 255, 0.2);
+            transform-origin: center;
+        }
+        
+        .main-title::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(135deg, rgba(0, 207, 255, 0.05), rgba(147, 51, 234, 0.05));
+            border-radius: 15px;
+            z-index: -1;
+            opacity: 0.3;
+            animation: gentle-glow 6s infinite ease-in-out;
+        }
+        
+        /* Animation d'apparition lettre par lettre - plus douce */
+        .main-title span {
+            display: inline-block;
+            opacity: 0;
+            animation: gentle-letter-appear 0.8s ease-out forwards;
+        }
+        
+        .main-title span:nth-child(1) { animation-delay: 0.2s; }
+        .main-title span:nth-child(2) { animation-delay: 0.4s; }
+        .main-title span:nth-child(3) { animation-delay: 0.6s; }
+        .main-title span:nth-child(4) { animation-delay: 0.8s; }
+        .main-title span:nth-child(5) { animation-delay: 1.0s; }
+        .main-title span:nth-child(6) { animation-delay: 1.2s; }
+        .main-title span:nth-child(7) { animation-delay: 1.4s; }
+        .main-title span:nth-child(8) { animation-delay: 1.6s; }
+        .main-title span:nth-child(9) { animation-delay: 1.8s; }
+        .main-title span:nth-child(10) { animation-delay: 2.0s; }
+
+        .top-controls { position: fixed; top: 20px; right: 20px; z-index: 101; display: flex; gap: 12px; align-items: center; }
+        
+        .credits-btn {
+            background: #3b82f6;
+            border: 1px solid #2563eb;
+            border-radius: 12px;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+        }
+
+        .credits-btn:hover {
+            transform: translateY(-2px);
+            background: #2563eb;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+        .credits-btn i {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .theme-toggle { background: var(--bg-elevated); border: 1px solid var(--border-light); border-radius: var(--radius-full); width: 50px; height: 26px; cursor: pointer; display: flex; align-items: center; padding: 4px; transition: var(--transition-normal); position: relative; overflow: hidden; }
+        .theme-toggle:hover { transform: scale(1.1); border-color: var(--primary-blue); }
+        .theme-toggle::before { content: ''; position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg, var(--primary-blue), var(--accent-purple)); border-radius: var(--radius-full); z-index: -1; opacity: 0; transition: opacity 0.3s; }
+        .theme-toggle:hover::before { opacity: 1; }
+        .theme-toggle-indicator { background: var(--accent-purple); width: 18px; height: 18px; border-radius: 50%; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); position: relative; z-index: 1; }
+        [data-theme="light"] .theme-toggle-indicator { transform: translateX(24px); }
+        .theme-label { position: absolute; bottom: -25px; left: 50%; transform: translateX(-50%); font-size: 0.7rem; color: var(--text-muted); opacity: 0; transition: opacity 0.3s; white-space: nowrap; }
+        .theme-toggle:hover .theme-label { opacity: 1; }
+        .language-toggle { background: var(--bg-elevated); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 8px 12px; cursor: pointer; transition: var(--transition-normal); display: flex; align-items: center; gap: 6px; font-size: 0.9rem; color: var(--text-primary); position: relative; }
+        .language-toggle:hover { background: var(--bg-secondary); border-color: var(--primary-blue); transform: translateY(-2px); }
+        .flag-icon { width: 20px; height: 15px; border-radius: 2px; background-size: cover; background-position: center; }
+        .flag-fr { background-image: linear-gradient(to right, #002654 33%, #ffffff 33%, #ffffff 66%, #ce1126 66%); }
+        .flag-en { background-image: linear-gradient(45deg, #012169 25%, transparent 25%), linear-gradient(-45deg, #012169 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #012169 75%), linear-gradient(-45deg, transparent 75%, #012169 75%), linear-gradient(to right, #ce1126 33%, #ffffff 33%, #ffffff 66%, #ce1126 66%); background-size: 8px 8px, 8px 8px, 8px 8px, 8px 8px, 100% 100%; }
+
+        .modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); z-index: 100; display: none; align-items: center; justify-content: center; animation: fadeInUp 0.3s; }
+        .modal-content { background: var(--bg-card); padding: 32px; border-radius: var(--radius-xl); max-width: 500px; text-align: center; border: 1px solid var(--border-light); animation: bounceIn 0.5s; }
+        .modal-content h2 { margin-bottom: 16px; }
+        .modal-content p { color: var(--text-secondary); margin-bottom: 24px; }
+        .modal-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .modal-btn { background: var(--accent-purple); border: none; border-radius: var(--radius-lg); padding: 12px 24px; color: white; font-weight: 600; cursor: pointer; transition: var(--transition-normal); min-width: 120px; }
+        .modal-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+        .modal-btn.secondary { background: transparent; border: 2px solid var(--primary-blue); color: var(--primary-blue); }
+        .modal-btn.secondary:hover { background: rgba(0, 207, 255, 0.1); }
+
+        .credits-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(20px);
+            z-index: 200;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .credits-modal-content {
+            background: rgba(0, 11, 73, 0.95);
+            padding: 40px 50px;
+            border-radius: 25px;
+            max-width: 700px;
+            width: 90%;
+            max-height: 85vh;
+            overflow-y: auto;
+            text-align: left;
+            border: 2px solid var(--campus-pink);
+            animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+        .credits-modal-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 194, 219, 0.1) 0%, transparent 60%);
+            animation: rotate-slow 25s infinite linear;
+            z-index: 0;
+        }
+        .credits-modal-content > * {
+            position: relative;
+            z-index: 1;
+        }
+        .credits-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 194, 219, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 194, 219, 0.3);
+            position: relative;
+        }
+
+        .credits-header h2 {
+            background: linear-gradient(45deg, #ffffff, var(--campus-pink), var(--accent-purple), var(--primary-blue));
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+            animation: gradient-shift 4s ease-in-out infinite;
+        }
+        .credits-header h2 .fas {
+            font-size: 1.8rem;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        .credits-header p {
+            font-style: italic;
+            color: var(--text-muted);
+        }
+        .credits-section {
+            margin-bottom: 20px;
+            padding: 25px;
+            background: rgba(0, 25, 92, 0.8);
+            border-radius: 18px;
+            border: 1px solid rgba(255, 194, 219, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .credits-section:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 36, 130, 0.9);
+            border-color: var(--campus-pink);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+        .credits-section .fas {
+            font-size: 1.5rem;
+            color: var(--campus-pink);
+            flex-shrink: 0;
+            width: 30px;
+            text-align: center;
+        }
+        .credits-section-content {
+            flex-grow: 1;
+        }
+        .credits-section h4 {
+            color: var(--text-primary);
+            margin: 0 0 5px 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .credits-section p {
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.4;
+            font-size: 0.95rem;
+        }
+        .credits-close-btn {
+            background: linear-gradient(135deg, var(--campus-pink) 0%, var(--accent-purple) 50%, var(--primary-blue) 100%);
+            border: none;
+            border-radius: 20px;
+            padding: 18px 45px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            margin: 40px auto 0;
+            display: block;
+            box-shadow: 
+                0 8px 25px rgba(255, 194, 219, 0.3),
+                0 0 20px rgba(255, 0, 79, 0.2);
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 1px;
+        }
+
+        .credits-close-btn:hover {
+            transform: translateY(-5px) scale(1.08);
+            box-shadow: 
+                0 20px 40px rgba(255, 194, 219, 0.5),
+                0 0 30px rgba(255, 0, 79, 0.4);
+        }
+
+        .welcome-header { 
+            text-align: center; 
+            margin-bottom: 50px; 
+            padding: 80px 30px; 
+            background: rgba(0, 11, 73, 0.9); 
+            backdrop-filter: blur(10px); 
+            border-bottom: 2px solid var(--border-light); 
+            position: relative; 
+            border-radius: 0 0 30px 30px;
+        }
+        [data-theme="light"] .welcome-header { 
+            background: rgba(255, 255, 255, 0.95); 
+        }
+        @keyframes slide { 0% { transform: translateX(-50px) translateY(-50px); } 100% { transform: translateX(50px) translateY(50px); } }
+        .welcome-header h1 { position: relative; z-index: 2; }
+        .subtitle { color: var(--text-secondary); font-size: 1.1rem; margin-top: 16px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .tip-banner { background: rgba(255, 194, 219, 0.1); border: 1px solid var(--campus-pink); border-radius: var(--radius-md); padding: 12px 16px; margin-top: 20px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .tip-banner i { color: var(--campus-pink); margin-right: 8px; }
+        .tip-banner span { color: var(--text-secondary); font-size: 0.95rem; }
+        .role-selection { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+        .role-selection h2 { text-align: center; margin-bottom: 40px; font-size: 2rem; animation: fadeInUp 0.8s ease-out; }
+        .role-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; padding: 0 20px; max-width: 1600px; margin: 0 auto; justify-items: center; }
+        .role-card { 
+            background: var(--bg-card); 
+            border: 2px solid var(--border-light); 
+            border-radius: var(--radius-xl); 
+            padding: 32px; 
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+            box-shadow: var(--shadow-md); 
+            display: flex; 
+            flex-direction: column; 
+            opacity: 0; 
+            transform: translateY(50px); 
+            animation: fadeInUp 0.8s ease-out forwards; 
+            min-height: 400px; 
+            max-width: 350px; 
+            width: 100%; 
+            position: relative; 
+        }
+        .role-card:nth-child(1) { animation-delay: 0.1s; }
+        .role-card:nth-child(2) { animation-delay: 0.2s; }
+        .role-card:nth-child(3) { animation-delay: 0.3s; }
+        .role-card:nth-child(4) { animation-delay: 0.4s; }
+        .role-card:nth-child(5) { animation-delay: 0.5s; }
+        .role-card:nth-child(6) { animation-delay: 0.6s; }
+        .role-card:hover { 
+            transform: translateY(-8px) scale(1.02); 
+            box-shadow: var(--shadow-xl); 
+            border-color: var(--primary-blue); 
+        }
+        .role-card.nexus:hover { border-color: var(--nexus-theme-color); box-shadow: var(--shadow-xl); }
+        .role-card.revision:hover { border-color: var(--revision-cyan); box-shadow: var(--shadow-xl); }
+        .role-card.locked {
+          position: relative;
+          opacity: 0.6;
+          cursor: pointer; /* Changed to pointer to indicate it's clickable */
+          filter: grayscale(0.5);
+        }
+        .role-card.locked:hover { transform: none; box-shadow: var(--shadow-md); border-color: var(--border-light); }
+        .lock-overlay { 
+          position: absolute; 
+          top: 0; left: 0; right: 0; bottom: 0; 
+          background: rgba(10, 20, 30, 0.7); 
+          display: flex; 
+          align-items: center; 
+          justify-content: center; 
+          font-size: 3rem; 
+          color: #fff; 
+          z-index: 10;
+          border-radius: var(--radius-xl);
+          pointer-events: none; /* Let clicks pass through to the card */
+        }
+        .role-card.locked .lock-overlay { animation: lock-shake 0.5s ease-in-out; }
+        .card-icon { font-size: 2.5rem; margin-bottom: 16px; transition: var(--transition-normal); display: block; text-align: center; }
+        .role-card:hover .card-icon { animation: rotate-slow 1s ease-in-out; }
+        
+        /* Couleurs des icônes pour chaque type de carte */
+        .role-card .card-icon { color: #4f46e5; } /* Glossaire - Indigo */
+        .role-card.user .card-icon { color: #059669; } /* Mode Facile - Vert */
+        .role-card.intermediate .card-icon { color: #d97706; } /* Mode Intermédiaire - Orange */
+        .role-card.professional .card-icon { color: #dc2626; } /* Mode Expert - Rouge */
+        /* .role-card.hero styles supprimés sur Dico */
+        .role-card.nexus .card-icon { color: #0891b2; } /* Impossible Level - Bleu */
+        .role-card.revision .card-icon { color: #ec4899; } /* Mode Révision - Rose */
+.role-card.hall-of-fame .card-icon { color: #f59e0b; } /* Hall of Fame - Or */
+        .role-card h3 { font-size: 1.3rem; margin-bottom: 10px; text-align: center; }
+        .role-card.nexus h3 { color: var(--nexus-theme-color); text-shadow: 0 0 10px rgba(0, 207, 255, 0.3); }
+        .role-card.revision h3 { color: var(--revision-cyan); text-shadow: 0 0 10px rgba(255, 194, 219, 0.3); }
+.role-card.hall-of-fame h3 { color: #f59e0b; text-shadow: 0 0 10px rgba(245, 158, 11, 0.3); }
+        .role-card p { color: var(--text-secondary); margin-bottom: 16px; flex-grow: 1; text-align: center; font-size: 0.9rem; line-height: 1.5; }
+        .time-estimate { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px; text-align: center; font-style: italic; }
+        .time-estimate i { margin-right: 6px; color: var(--primary-blue); }
+        .features { list-style: none; text-align: left; margin-bottom: 20px; padding: 0 16px; }
+        .features li { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; opacity: 0; animation: slideInRight 0.6s ease-out forwards; font-size: 0.85rem; }
+        .features li:nth-child(1) { animation-delay: 0.5s; }
+        .features li:nth-child(2) { animation-delay: 0.6s; }
+        .features li:nth-child(3) { animation-delay: 0.7s; }
+        .features li i { color: var(--primary-blue); width: 16px; text-align: center; }
+        .nexus .features li i { color: var(--nexus-theme-color); }
+        .revision .features li i { color: var(--revision-cyan); }
+        .start-btn { 
+            width: 100%; 
+            background: #4f46e5; 
+            color: white; 
+            border: none; 
+            border-radius: 12px; 
+            padding: 14px; 
+            font-size: 1rem; 
+            font-weight: 600; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            margin-top: auto; 
+            position: relative; 
+            box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+        }
+        
+        /* Couleurs spécifiques pour chaque type de carte */
+        .role-card .start-btn { background: #4f46e5; } /* Glossaire - Indigo */
+        .role-card.user .start-btn { background: #059669; } /* Mode Facile - Vert */
+        .role-card.intermediate .start-btn { background: #d97706; } /* Mode Intermédiaire - Orange */
+        .role-card.professional .start-btn { background: #dc2626; } /* Mode Expert - Rouge */
+        /* .role-card.hero .start-btn supprimé sur Dico */
+        .role-card.nexus .start-btn { background: #0891b2; } /* Impossible Level - Bleu */
+        .role-card.revision .start-btn { background: #ec4899; } /* Mode Révision - Rose */
+.role-card.hall-of-fame .start-btn { background: #f59e0b; } /* Hall of Fame - Or */
+        .nexus .start-btn { background: #0891b2; }
+        .revision .start-btn { background: #ec4899; }
+        .role-card.locked .start-btn { background: var(--lock-gray); cursor: not-allowed; animation: none; }
+
+        .start-btn:hover:not(.locked .start-btn) { 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+        }
+        
+        /* Effets hover spécifiques pour chaque type */
+        .role-card .start-btn:hover { background: #3730a3; } /* Glossaire - Indigo foncé */
+        .role-card.user .start-btn:hover { background: #047857; } /* Mode Facile - Vert foncé */
+        .role-card.intermediate .start-btn:hover { background: #b45309; } /* Mode Intermédiaire - Orange foncé */
+        .role-card.professional .start-btn:hover { background: #b91c1c; } /* Mode Expert - Rouge foncé */
+        /* .role-card.hero .start-btn:hover supprimé sur Dico */
+        .role-card.nexus .start-btn:hover { background: #0e7490; } /* Impossible Level - Bleu foncé */
+        .role-card.revision .start-btn:hover { background: #be185d; } /* Mode Révision - Rose foncé */
+.role-card.hall-of-fame .start-btn:hover { background: #d97706; } /* Hall of Fame - Or foncé */
+        .nexus .start-btn:hover { box-shadow: 0 10px 25px rgba(0, 207, 255, 0.4); }
+        .revision .start-btn:hover { box-shadow: 0 10px 25px rgba(255, 194, 219, 0.4); }
+        .start-btn:active, .control-btn:active:not(:disabled), .action-btn:active { transform: scale(0.98); filter: brightness(0.9); }
+
+        .game-screen-logo { display: block; width: 200px; margin: 0 auto 25px; filter: drop-shadow(0 3px 6px rgba(0,0,0,0.3)); }
+        .game-container { max-width: 800px; margin: 20px auto; padding: 20px; background: var(--bg-card); border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); position: relative; }
+        .game-title { text-align: center; color: var(--accent-purple); font-weight: 600; margin-bottom: 16px; display: none; }
+        .game-title.nexus { color: var(--nexus-theme-color); text-shadow: 0 0 10px rgba(0, 207, 255, 0.3); }
+        .game-title.revision { color: var(--revision-cyan); text-shadow: 0 0 10px rgba(255, 194, 219, 0.3); }
+        .game-header-controls { position: absolute; top: 20px; left: 20px; z-index: 10; }
+        .home-btn { background: var(--bg-elevated); border: 1px solid var(--border-light); border-radius: var(--radius-lg); padding: 8px 12px; color: var(--text-primary); font-size: 0.9rem; cursor: pointer; transition: var(--transition-normal); display: flex; align-items: center; gap: 6px; }
+        .home-btn:hover { background: var(--bg-secondary); border-color: var(--border-medium); transform: translateY(-2px); }
+        .game-header { margin-top: 50px; }
+        .progress-container { display: flex; align-items: center; gap: 16px; margin-bottom: 16px; }
+        .progress-info { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 500; flex-wrap: wrap; gap: 10px; }
+        .progress-bar { flex-grow: 1; height: 8px; background: var(--bg-secondary); border-radius: var(--radius-full); overflow: hidden; }
+        .progress-fill { height: 100%; width: 0%; transition: width 0.5s ease-out, background-color 0.5s ease-out; position: relative; overflow: hidden; background-color: var(--primary-blue); }
+        .progress-fill.green { background-color: var(--success-green); }
+        .progress-fill.yellow { background-color: var(--warning-orange); }
+        .progress-fill.red { background-color: var(--error-red); }
+        .progress-fill.nexus { background: linear-gradient(90deg, var(--nexus-theme-color), var(--accent-purple)); }
+        .progress-fill.revision { background: linear-gradient(90deg, var(--revision-cyan), var(--accent-purple)); }
+        .progress-fill::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%); animation: shimmer 2s infinite linear; }
+        .progress-percentage { font-weight: bold; color: var(--text-secondary); min-width: 40px; }
+        .question-dots-container { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+        .question-dot { width: 12px; height: 12px; background-color: var(--bg-secondary); border-radius: 50%; transition: var(--transition-normal); }
+        .question-dot.current { background-color: var(--accent-purple); transform: scale(1.3); animation: pulse-border 1.5s infinite; }
+        .question-dot.current.nexus { background-color: var(--nexus-theme-color); box-shadow: 0 0 0 0 rgba(0, 207, 255, 0.4); }
+        .question-dot.current.revision { background-color: var(--revision-cyan); box-shadow: 0 0 0 0 rgba(255, 194, 219, 0.4); }
+        .question-dot.answered.correct { background-color: var(--success-green); }
+        .question-dot.answered.incorrect { background-color: var(--error-red); }
+        .theme-info { display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: var(--bg-elevated); border-radius: var(--radius-md); border-left: 4px solid var(--accent-purple); }
+        .theme-info.nexus { border-left-color: var(--nexus-theme-color); background: linear-gradient(135deg, rgba(0, 207, 255, 0.1), var(--bg-elevated)); }
+        .theme-info.revision { border-left-color: var(--revision-cyan); background: linear-gradient(135deg, rgba(255, 194, 219, 0.1), var(--bg-elevated)); }
+        .theme-icon { color: var(--accent-purple); font-size: 1.2rem; }
+        .theme-icon.nexus { color: var(--nexus-theme-color); }
+        .theme-icon.revision { color: var(--revision-cyan); }
+        #currentTheme { font-weight: 600; font-size: 1.1rem; }
+        .question-card-wrapper { min-height: 450px; position: relative; }
+        .question-card { animation: slideInRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .question-text { font-size: 1.1rem; margin-bottom: 24px; min-height: 50px; }
+        .scenario-section { background: rgba(255, 194, 219, 0.1); border: 1px solid var(--campus-pink); border-radius: var(--radius-md); padding: 12px 16px; margin-bottom: 20px; font-style: italic; }
+        .option { background: var(--bg-elevated); border: 2px solid var(--border-light); border-radius: var(--radius-lg); padding: 16px; cursor: pointer; transition: var(--transition-normal); display: flex; align-items: center; gap: 12px; opacity: 0; width: 100%; text-align: left; font-size: 1rem; color: var(--text-primary); font-family: 'Poppins', sans-serif; margin-bottom: 12px; }
+        .option.visible { opacity: 1; animation: fadeInUp 0.5s ease-out forwards; }
+        .option:hover { transform: translateY(-3px) scale(1.01); box-shadow: var(--shadow-md); border-color: var(--primary-blue); background: var(--bg-secondary); }
+        .option.correct { border-color: var(--success-green); background: rgba(34, 197, 94, 0.15); animation: correctPulse 0.8s ease-out; }
+        .option.incorrect { border-color: var(--error-red); background: rgba(239, 68, 68, 0.15); animation: incorrectShake 0.6s ease-out; }
+        .option-letter { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; font-weight: 600; border: 1px solid var(--border-medium); }
+        .option.correct .option-letter { background: var(--success-green); color: white; }
+        .option.incorrect .option-letter { background: var(--error-red); color: white; }
+        .feedback { margin-top: 24px; padding: 16px; border-radius: var(--radius-lg); display: none; }
+        .feedback.show { display: block; animation: fadeInUp 0.5s; }
+        .feedback.correct { border: 1px solid var(--success-green); background: rgba(34, 197, 94, 0.1); }
+        .feedback.incorrect { border: 1px solid var(--error-red); background: rgba(239, 68, 68, 0.1); }
+        .feedback-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-weight: 600; font-size: 1.1rem; }
+        .feedback.correct .feedback-header { color: var(--success-green); }
+        .feedback.incorrect .feedback-header { color: var(--error-red); }
+        .feedback-link { margin-top: 10px; font-size: 0.9rem; }
+        .feedback-link a { color: var(--primary-blue); text-decoration: none; }
+        .feedback-link a:hover { text-decoration: underline; }
+        .game-controls { display: flex; justify-content: space-between; margin-top: 24px; }
+        .control-btn { 
+            background: #6b7280; 
+            border: none; 
+            border-radius: 8px; 
+            padding: 10px 20px; 
+            color: white; 
+            font-weight: 500; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+        }
+        .control-btn:hover:not(:disabled) { 
+            background: #4b5563; 
+            transform: translateY(-1px); 
+        }
+        .control-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+        .next-btn { background: var(--accent-purple); border-color: var(--accent-purple); color: white; }
+
+        .results-container { max-width: 900px; margin: 20px auto; text-align: center; }
+        .results-header, .performance-stats, .themes-recap, .action-buttons { opacity: 0; }
+        .results-header.fade-in, .performance-stats.fade-in, .themes-recap.fade-in, .action-buttons.fade-in { animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+        .results-header { background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated)); padding: 40px; border-radius: var(--radius-xl); margin-bottom: 32px; position: relative; overflow: hidden; border: 1px solid var(--border-light); }
+        .results-header::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(0, 207, 255, 0.1) 0%, transparent 70%); animation: rotate-slow 20s infinite linear; }
+        .results-icon { font-size: 4rem; margin-bottom: 20px; animation: celebration 2s ease-in-out infinite; color: var(--accent-purple); }
+        .results-title { font-size: 2.5rem; margin-bottom: 16px; background: linear-gradient(45deg, var(--primary-blue), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .results-message { color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 24px; position: relative; z-index: 2; }
+        .results-score { font-size: 3.5rem; font-weight: 700; background: linear-gradient(45deg, var(--success-green), var(--accent-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; position: relative; z-index: 2; }
+        .sparkles { position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none; }
+        .sparkle { position: absolute; width: 4px; height: 4px; background: var(--primary-blue); border-radius: 50%; animation: sparkle 2s infinite; }
+        .performance-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-bottom: 32px; }
+        .stat-card { background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated)); padding: 24px; border-radius: var(--radius-xl); transition: var(--transition-normal); border: 1px solid var(--border-light); position: relative; overflow: hidden; }
+        .stat-card::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); transition: left 0.8s; }
+        .stat-card:hover::before { left: 100%; }
+        .stat-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: var(--shadow-xl); }
+        .stat-value { font-size: 2.5rem; font-weight: 700; margin-bottom: 8px; }
+        .stat-label { color: var(--text-secondary); font-size: 1.1rem; font-weight: 500; }
+        .correct-stat .stat-value { background: linear-gradient(45deg, var(--success-green), var(--accent-green)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .incorrect-stat .stat-value { background: linear-gradient(45deg, var(--error-red), #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .time-stat .stat-value { background: linear-gradient(45deg, var(--primary-blue), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .themes-recap { background: linear-gradient(135deg, var(--bg-card), var(--bg-elevated)); padding: 32px; border-radius: var(--radius-xl); margin-bottom: 32px; text-align: left; border: 1px solid var(--border-light); }
+        .themes-recap h3 { text-align: center; margin-bottom: 24px; font-size: 1.5rem; color: var(--text-primary); }
+        #themesChartContainer { max-height: 350px; overflow-y: auto; padding-right: 10px; }
+        #themesChart { width: 100%; height: auto; }
+        .action-buttons { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .action-btn { 
+            background: #4f46e5; 
+            border: none; 
+            border-radius: 12px; 
+            padding: 14px 28px; 
+            color: white; 
+            font-weight: 600; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+            position: relative; 
+            font-size: 1rem; 
+        }
+
+        .action-btn:hover { 
+            transform: translateY(-2px); 
+            background: #4338ca;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4); 
+        }
+        .action-btn.secondary { background: transparent; border: 2px solid var(--campus-pink); color: var(--campus-pink); }
+        .action-btn.secondary:hover { background: rgba(255, 194, 219, 0.1); box-shadow: 0 15px 35px rgba(255, 194, 219, 0.2); }
+        .export-btn { background: #0891b2; }
+        .export-btn:hover { 
+            background: #0e7490;
+            box-shadow: 0 4px 12px rgba(8, 145, 178, 0.4); 
+        }
+
+
+        .revision-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); z-index: 100; display: none; align-items: center; justify-content: center; animation: fadeInUp 0.3s; }
+        .revision-modal-content { background: var(--bg-card); padding: 40px; border-radius: var(--radius-xl); max-width: 600px; text-align: center; border: 2px solid var(--revision-cyan); animation: bounceIn 0.5s; box-shadow: 0 0 30px rgba(255, 194, 219, 0.3); }
+        .revision-stats { background: rgba(255, 194, 219, 0.1); border: 1px solid var(--revision-cyan); border-radius: var(--radius-md); padding: 20px; margin: 20px 0; }
+
+        .glossary-container { max-width: 900px; margin: 20px auto; padding: 20px; }
+        .glossary-header { text-align: center; margin-bottom: 30px; }
+        .glossary-search-container { margin-bottom: 30px; position: relative; }
+        #glossarySearch { width: 100%; padding: 12px 16px 12px 40px; background: var(--bg-elevated); border: 1px solid var(--border-light); border-radius: var(--radius-lg); color: var(--text-primary); font-size: 1rem; }
+        .search-icon { position: absolute; left: 16px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+        .glossary-list { list-style: none; }
+        .glossary-item { background: var(--bg-card); border: 1px solid var(--border-light); border-radius: var(--radius-md); margin-bottom: 12px; padding: 16px; transition: var(--transition-normal); }
+        .glossary-item:hover { transform: translateX(5px); border-color: var(--primary-blue); }
+        .glossary-item h3 { color: var(--primary-blue); margin-bottom: 8px; }
+        .glossary-item p { color: var(--text-secondary); }
+
+        @media (max-width: 768px) {
+            .role-cards { grid-template-columns: 1fr; gap: 20px; padding: 0 10px; }
+            .role-card { max-width: none; }
+            .performance-stats { grid-template-columns: 1fr; }
+            .main-title { font-size: 2.8rem; letter-spacing: 1px; }
+            .campus-logo { width: 200px; }
+            .game-header-controls { position: relative; top: 0; left: 0; margin-bottom: 20px; }
+            .game-header { margin-top: 0; }
+            .progress-info { font-size: 0.9rem; }
+            .action-buttons { flex-direction: column; align-items: center; }
+            .action-btn { width: 100%; max-width: 300px; }
+            .modal-buttons { flex-direction: column; }
+            .modal-btn { width: 100%; }
+            .top-controls { 
+                position: relative; 
+                top: 10px; 
+                right: 10px; 
+                justify-content: flex-end; 
+                margin-bottom: 10px; 
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            .credits-btn {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+            .credits-modal-content {
+                margin: 20px;
+                padding: 30px;
+                max-width: calc(100vw - 40px);
+                max-height: 85vh;
+                overflow-y: auto;
+            }
+            .results-title { font-size: 2rem; }
+            .results-score { font-size: 2.5rem; }
+        }
+
+        @media (min-width: 1200px) {
+            .role-cards { grid-template-columns: repeat(3, 1fr); gap: 30px; }
+            .role-card { max-width: 380px; }
+        }
+    
+.hero-banner-link {
+  grid-column: 1 / -1;
+  background-color: var(--accent-purple);
+  border-radius: 12px;
+  padding: 16px 30px;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 20px auto;
+  max-width: 100%;
+  width: 100%;
+  box-shadow: 0 0 10px rgba(255, 0, 79, 0.2);
+}
+.hero-banner-link:hover {
+  transform: scale(1.01);
+  box-shadow: 0 0 15px rgba(255, 0, 79, 0.3);
+}
+
+/* Styles pour le jeu du héros */
+.hero-banner-link {
+    grid-column: 1 / -1;
+    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--campus-pink) 100%);
+    border: 2px solid var(--campus-pink);
+    border-radius: var(--radius-xl);
+    padding: 20px;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(255, 194, 219, 0.3);
+}
+
+.hero-banner-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s;
+}
+
+.hero-banner-link:hover::before {
+    left: 100%;
+}
+
+.hero-banner-link:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(255, 194, 219, 0.5);
+    border-color: var(--accent-purple);
+}
+
+.hero-banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-banner-content i {
+    font-size: 1.5rem;
+}
+
+.hero-game-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: var(--bg-card);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+}
+
+.hero-game-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255, 0, 79, 0.1), rgba(0, 207, 255, 0.1));
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-primary);
+}
+
+.hero-game-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--accent-purple) 0%, var(--accent-blue) 50%, var(--campus-pink) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    animation: title-glow 4s infinite ease-in-out;
+}
+
+.hero-game-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.hero-game-content {
+    min-height: 500px;
+    position: relative;
+}
+
+/* Styles pour le menu principal du jeu du héros */
+.hero-menu {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-menu h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+.difficulty-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.difficulty-card {
+    background: var(--bg-elevated);
+    border: 2px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    text-align: center;
+}
+
+.difficulty-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 10px 25px rgba(255, 0, 79, 0.3);
+}
+
+.difficulty-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--accent-primary);
+}
+
+.difficulty-card p {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+}
+
+.difficulty-card .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.stat {
+    text-align: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent-blue);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Styles pour le dashboard du jeu */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.metric {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.metric::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-primary));
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.metric-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.metric.security .metric-value { color: var(--accent-blue); }
+.metric.productivity .metric-value { color: var(--accent-primary); }
+.metric.treasury .metric-value { color: var(--campus-pink); }
+
+/* Styles pour les choix du jeu */
+.choice-btn {
+    background: var(--bg-elevated);
+    border: 2px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    text-align: left;
+    width: 100%;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.choice-btn:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 8px 20px rgba(255, 0, 79, 0.2);
+}
+
+.choice-btn:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(0, 207, 255, 0.2);
+}
+
+/* Styles pour les modales du jeu */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    border: 2px solid var(--border-primary);
+    border-radius: var(--radius-xl);
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    animation: bounceIn 0.5s ease-out;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--accent-primary);
+}
+
+.modal-body {
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.modal-confirm {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-blue));
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 12px 25px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.modal-confirm:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 0, 79, 0.3);
+}
+
+/* Styles pour les écrans de fin */
+.victory, .game-over {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.victory h2, .game-over h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.victory h2 { color: var(--accent-green); }
+.game-over h2 { color: var(--accent-red); }
+
+.restart-btn {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-blue));
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: 15px 30px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition-normal);
+    margin: 10px;
+    font-size: 1rem;
+}
+
+.restart-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 0, 79, 0.3);
+}
+
+/* Responsive design pour le jeu du héros */
+@media (max-width: 768px) {
+    .hero-game-title {
+        font-size: 2rem;
+    }
+    
+    .dashboard {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .difficulty-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .choice-btn {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}
+
+.role-card.locked {
+  position: relative;
+  /* pointer-events: none; */
+  opacity: 0.6;
+  cursor: not-allowed;
+  filter: grayscale(0.5);
+}
+.role-card.locked .lock-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(10, 20, 30, 0.7);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  border-radius: 20px;
+  z-index: 2;
+  backdrop-filter: blur(2px);
+}
+.role-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px 0;
+}
+
+        .content-wrapper {
+          position: relative;
+          z-index: 10;
+        }
+
+/* Correction overlays: seuls les locked doivent bloquer */
+.role-card:not(.locked) .lock-overlay {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+/* Forcer les boutons à être interactifs et visibles comme cliquables */
+.role-card .start-btn {
+  pointer-events: auto !important;
+  z-index: 20;
+  position: relative;
+  cursor: pointer !important;
+}
+
+/* S'assurer que les overlays ne bloquent rien d'autre */
+.lock-overlay {
+  pointer-events: none;
+}
+.role-card.locked .lock-overlay {
+  pointer-events: auto;
+}
+
+
+
+/* Correction radicale pour rendre tous les boutons du menu cliquables */
+.role-card:not(.locked) {
+  pointer-events: auto !important;
+}
+.role-card:not(.locked) * {
+  pointer-events: auto !important;
+}
+.role-card.locked,
+.role-card.locked * {
+  pointer-events: none !important;
+}
+.role-card.locked .start-btn,
+.role-card.locked .lock-overlay {
+  pointer-events: auto !important;
+}
+
+
+
+</style>
+<script>
+document.querySelectorAll('.role-card:not(.locked) .start-btn').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (!btn.onclick) {
+      console.log('Bouton cliqué:', btn);
+    }
+  });
+});
+</script>
+</head>
+<body>
+
+<div class="content-wrapper"><div style="position: fixed; top: 10px; left: 10px; z-index: 1000; background: rgba(0,0,0,0.6); padding: 8px 16px; border-radius: 8px; font-size: 0.9rem; color: #ffffff; font-family: 'Poppins', sans-serif;">🔒 Développé par le Campus Cyber de Nouvelle-Aquitaine</div>
+<div class="top-controls">
+<div class="credits-btn" id="creditsBtn" onclick="showCreditsModal()">
+<i class="fas fa-info-circle"></i>
+<span data-en="Credits" data-fr="Crédits">Crédits</span>
+</div>
+<div class="language-toggle" id="languageToggle" onclick="toggleLanguage()">
+<div class="flag-icon flag-fr" id="flagIcon"></div>
+<span id="languageText">FR</span>
+</div>
+<div aria-label="Changer de thème" class="theme-toggle" id="themeToggle" role="button">
+<div class="theme-toggle-indicator"></div>
+<div class="theme-label" id="themeLabel">Mode Sombre</div>
+</div>
+</div>
+<div class="screen active" id="welcomeScreen">
+<div class="welcome-header fade-in-up">
+<div class="logo-container">
+<img alt="Logo Nouvelle-Aquitaine" class="campus-logo" src="logo_loc_lion-entier_fond-sombre (1).png" style="width: 450px; max-width: 100%; margin-bottom: 30px; display: block;">
+<h1 class="main-title" data-en="Cyber Quizz" data-fr="Cyber Quizz">
+    <span>C</span><span>Y</span><span>B</span><span>E</span><span>R</span> <span>Q</span><span>U</span><span>I</span><span>Z</span><span>Z</span>
+</h1>
+</div>
+<p class="subtitle" data-en="Improve your cybersecurity knowledge interactively. Choose your level and start the training." data-fr="Améliorez vos connaissances en cybersécurité de manière interactive. Choisissez votre niveau et commencez la formation.">Améliorez vos connaissances en cybersécurité de manière interactive. Choisissez votre niveau et commencez la formation.</p>
+<div class="tip-banner">
+<i class="fas fa-lightbulb"></i>
+<span data-en="Tip: Check the glossary first to familiarize yourself with cybersecurity terms!" data-fr="&lt;strong&gt;Conseil :&lt;/strong&gt; Consultez d'abord le glossaire pour vous familiariser avec les termes de cybersécurité !"><strong>Conseil :</strong> Consultez d'abord le glossaire pour vous familiariser avec les termes de cybersécurité !</span>
+</div>
+</div>
+<div class="role-selection">
+<h2 class="fade-in-up" data-en="Choose your game mode" data-fr="Choisissez votre mode de jeu" style="animation-delay: 0.2s;">Choisissez votre mode de jeu</h2>
+<div class="role-cards">
+<!-- 1. Glossaire -->
+<div class="role-card">
+<div class="card-icon" style="color: var(--accent-purple);"><i class="fas fa-book"></i></div>
+<h3 data-en="Glossary" data-fr="Glossaire">Glossaire</h3>
+<p data-en="Explore the complete dictionary of cybersecurity terms with their detailed definitions based on ANSSI's Cyberdico." data-fr="Explorez le dictionnaire complet des termes de cybersécurité avec leurs définitions détaillées basées sur le Cyberdico de l'ANSSI.">Explorez le dictionnaire complet des termes de cybersécurité avec leurs définitions détaillées basées sur le Cyberdico de l'ANSSI.</p>
+<ul class="features">
+<li><i class="fas fa-check-circle"></i> <span data-en="Official definitions" data-fr="Définitions officielles">Définitions officielles</span></li>
+<li><i class="fas fa-search"></i> <span data-en="Instant search" data-fr="Recherche instantanée">Recherche instantanée</span></li>
+<li><i class="fas fa-graduation-cap"></i> <span data-en="ANSSI reference" data-fr="Référence ANSSI">Référence ANSSI</span></li>
+</ul>
+<button aria-label="Consulter le glossaire" class="start-btn" onclick="showGlossary()"><i class="fas fa-book-open"></i> <span data-en="Browse" data-fr="Consulter">Consulter</span></button>
+</div>
+<!-- 2. Hall of Fame -->
+<div class="role-card hall-of-fame">
+<div class="card-icon" style="color: #f59e0b;"><i class="fas fa-trophy"></i></div>
+<h3 data-en="Hall of Fame" data-fr="Hall of Fame">🏆 Hall of Fame</h3>
+<p data-en="Discover the best scores and compete with other players in our arcade-style leaderboard. Challenge yourself to reach the top!" data-fr="Découvrez les meilleurs scores et rivalisez avec d'autres joueurs dans notre classement style arcade. Défiez-vous pour atteindre le sommet !">Découvrez les meilleurs scores et rivalisez avec d'autres joueurs dans notre classement style arcade. Défiez-vous pour atteindre le sommet !</p>
+<ul class="features">
+<li><i class="fas fa-trophy"></i> <span data-en="Top 10 scores" data-fr="Top 10 des scores">Top 10 des scores</span></li>
+<li><i class="fas fa-chart-line"></i> <span data-en="Statistics" data-fr="Statistiques">Statistiques</span></li>
+<li><i class="fas fa-gamepad"></i> <span data-en="Arcade style" data-fr="Style arcade">Style arcade</span></li>
+</ul>
+<button aria-label="Voir le Hall of Fame" class="start-btn" onclick="showHallOfFame()"><i class="fas fa-trophy"></i> <span data-en="View" data-fr="Voir">Voir</span></button>
+</div>
+<!-- 2. Mode Facile -->
+<div class="role-card user">
+<div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+<h3 data-en="Easy Mode" data-fr="Mode Facile">Mode Facile</h3>
+<p data-en="Discover basic concepts with 25 fundamental questions to master essential cybersecurity vocabulary." data-fr="Découvrez les concepts de base avec 25 questions fondamentales pour maîtriser le vocabulaire essentiel de la cybersécurité.">Découvrez les concepts de base avec 25 questions fondamentales pour maîtriser le vocabulaire essentiel de la cybersécurité.</p>
+<div class="time-estimate">
+<i class="fas fa-clock"></i><span data-en="Estimated time: 5-7 min" data-fr="Temps estimé : 5-7 min">Temps estimé : 5-7 min</span>
+</div>
+<ul class="features">
+<li><i class="fas fa-check-circle"></i> <span data-en="25 fundamental questions" data-fr="25 questions fondamentales">25 questions fondamentales</span></li>
+<li><i class="fas fa-star"></i> <span data-en="Perfect for beginners" data-fr="Parfait pour débuter">Parfait pour débuter</span></li>
+</ul>
+<button aria-label="Commencer le mode facile" class="start-btn" data-difficulty="facile"><i class="fas fa-play"></i> <span data-en="Start" data-fr="Commencer">Commencer</span></button>
+</div>
+<!-- 3. Mode Intermédiaire -->
+<div class="role-card intermediate">
+<div class="card-icon"><i class="fas fa-user-graduate"></i></div>
+<h3 data-en="Intermediate Mode" data-fr="Mode Intermédiaire">Mode Intermédiaire</h3>
+<p data-en="Deepen your knowledge with 20 targeted questions on technical concepts and advanced security procedures." data-fr="Approfondissez vos connaissances avec 20 questions ciblées sur les concepts techniques et les procédures de sécurité avancées.">Approfondissez vos connaissances avec 20 questions ciblées sur les concepts techniques et les procédures de sécurité avancées.</p>
+<div class="time-estimate">
+<i class="fas fa-clock"></i><span data-en="Estimated time: 6-8 min" data-fr="Temps estimé : 6-8 min">Temps estimé : 6-8 min</span>
+</div>
+<ul class="features">
+<li><i class="fas fa-check-circle"></i> <span data-en="20 technical questions" data-fr="20 questions techniques">20 questions techniques</span></li>
+<li><i class="fas fa-level-up-alt"></i> <span data-en="Ideal for progress" data-fr="Idéal pour progresser">Idéal pour progresser</span></li>
+</ul>
+<button aria-label="Commencer le mode intermédiaire" class="start-btn" data-difficulty="intermediaire"><i class="fas fa-play"></i> <span data-en="Continue" data-fr="Continuer">Continuer</span></button>
+</div>
+<!-- 4. Mode Expert -->
+<div class="role-card professional">
+<div class="card-icon"><i class="fas fa-user-secret"></i></div>
+<h3 data-en="Expert Mode" data-fr="Mode Expert">Mode Expert</h3>
+<p data-en="Challenge yourself with 15 expert questions on advanced technologies and complex professional cybersecurity scenarios." data-fr="Défiez-vous avec 15 questions expertes sur les technologies avancées et les scénarios complexes de cybersécurité professionnelle.">Défiez-vous avec 15 questions expertes sur les technologies avancées et les scénarios complexes de cybersécurité professionnelle.</p>
+<div class="time-estimate">
+<i class="fas fa-clock"></i><span data-en="Estimated time: 7-10 min" data-fr="Temps estimé : 7-10 min">Temps estimé : 7-10 min</span>
+</div>
+<ul class="features">
+<li><i class="fas fa-check-circle"></i> <span data-en="15 expert questions" data-fr="15 questions expertes">15 questions expertes</span></li>
+<li><i class="fas fa-medal"></i> <span data-en="For professionals" data-fr="Pour les professionnels">Pour les professionnels</span></li>
+</ul>
+<button aria-label="Commencer le mode expert" class="start-btn" data-difficulty="difficile"><i class="fas fa-rocket"></i> <span data-en="Take the challenge" data-fr="Relever le défi">Relever le défi</span></button>
+</div>
+            <!-- 5. Jeu du Héros - retiré sur la page Dico pour séparation stricte -->
+<!-- 6. Impossible Level -->
+<div class="role-card nexus">
+<div class="card-icon"><i class="fas fa-skull-crossbones"></i></div>
+<h3 data-en="Impossible Level" data-fr="Impossible Level">Impossible Level</h3>
+<p data-en="Legendary mode with 10 impossible questions on emerging technologies and cutting-edge threats. Only true experts will survive." data-fr="Mode légendaire avec 10 questions impossibles sur les technologies émergentes et les menaces de pointe. Seuls les vrais experts survivront.">Mode légendaire avec 10 questions impossibles sur les technologies émergentes et les menaces de pointe. Seuls les vrais experts survivront.</p>
+<div class="time-estimate">
+<i class="fas fa-clock"></i><span data-en="Estimated time: 8-12 min" data-fr="Temps estimé : 8-12 min">Temps estimé : 8-12 min</span>
+</div>
+<ul class="features">
+<li><i class="fas fa-check-circle"></i> <span data-en="10 impossible questions" data-fr="10 questions impossibles">10 questions impossibles</span></li>
+<li><i class="fas fa-brain"></i> <span data-en="Legendary level" data-fr="Niveau légendaire">Niveau légendaire</span></li>
+</ul>
+<button aria-label="Commencer le mode Impossible Level" class="start-btn" data-difficulty="nexus"><i class="fas fa-fire"></i> <span data-en="Defy the impossible" data-fr="Défier l'impossible">Défier l'impossible</span></button>
+</div>
+<!-- 7. Mode Révision (Corrected) -->
+<div class="role-card revision locked" id="revisionCard" onclick="handleRevisionClick()">
+<div class="lock-overlay"><i class="fas fa-lock"></i></div>
+<div class="card-icon"><i class="fas fa-brain"></i></div>
+<h3 data-en="Revision Mode" data-fr="Mode Révision">Mode Révision</h3>
+<p data-en="Smartly review your past mistakes with personalized options to optimize your learning." data-fr="Révisez intelligemment vos erreurs passées avec des options personnalisées pour optimiser votre apprentissage.">Révisez intelligemment vos erreurs passées avec des options personnalisées pour optimiser votre apprentissage.</p>
+<ul class="features">
+<li><i class="fas fa-lock"></i> <span data-en="Targeted revision" data-fr="Révision ciblée">Révision ciblée</span></li>
+<li><i class="fas fa-lock"></i> <span data-en="Adaptive learning" data-fr="Apprentissage adaptatif">Apprentissage adaptatif</span></li>
+<li><i class="fas fa-lock"></i> <span data-en="Optimized progression" data-fr="Progression optimisée">Progression optimisée</span></li>
+</ul>
+<button aria-label="Mode révision verrouillé" class="start-btn"><i class="fas fa-lock"></i> <span data-en="Locked" data-fr="Verrouillé">Verrouillé</span></button>
+</div>
+<!-- 8. Quiz personnalisé (customQuizCard) -->
+<div class="role-card custom" id="customQuizCard" style="display:none;">
+  <div class="card-icon"><i class="fas fa-user-cog"></i></div>
+  <h3 data-en="Custom Quiz" data-fr="Quiz personnalisé">Quiz personnalisé</h3>
+  <p data-en="Review your error questions to improve your skills." data-fr="Révisez vos questions d'erreur pour améliorer vos compétences.">Révisez vos questions d'erreur pour améliorer vos compétences.</p>
+  <button aria-label="Commencer le quiz personnalisé" class="start-btn" onclick="startGame('custom')"><i class="fas fa-play"></i> <span data-en="Start" data-fr="Commencer">Commencer</span></button>
+</div>
+</div>
+</div>
+</div>
+<div class="screen" id="gameScreen">
+<div class="game-container">
+<img alt="Logo Nouvelle-Aquitaine" class="game-screen-logo" src="logo_loc_lion-entier_fond-sombre (1).png" style="width: 150px; margin: 0 auto 20px; display: block;">
+<div class="game-header-controls">
+<button aria-label="Retour à l'accueil" class="home-btn" onclick="goHome()">
+<i class="fas fa-home"></i> <span data-en="Home" data-fr="Accueil">Accueil</span>
+</button>
+</div>
+<div class="game-header">
+<h2 class="game-title" id="gameTitle"></h2>
+<div class="progress-info">
+<span class="question-counter"><span data-en="Question" data-fr="Question">Question</span> <span id="currentQuestion">1</span> / <span id="totalQuestions"></span></span>
+<span class="timer-display" id="timer">00:00</span>
+<span class="score-display"><span data-en="Score" data-fr="Score">Score</span>: <span id="currentScore">0</span></span>
+</div>
+<div class="progress-container">
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+<span class="progress-percentage" id="progressPercentage"></span>
+</div>
+<div class="question-dots-container" id="question-dots"></div>
+<div class="theme-info" id="themeInfoContainer">
+<div class="theme-icon" id="themeIcon"><i class="fas fa-shield-alt"></i></div>
+<div id="currentTheme"></div>
+</div>
+</div>
+<div class="question-card-wrapper" id="questionCardWrapper"></div>
+<div class="game-controls">
+<button class="control-btn" disabled="" id="prevBtn" onclick="previousQuestion()"><i class="fas fa-chevron-left"></i> <span data-en="Previous" data-fr="Précédent">Précédent</span></button>
+<button class="control-btn next-btn" disabled="" id="nextBtn" onclick="nextQuestion()"><span data-en="Next" data-fr="Suivant">Suivant</span> <i class="fas fa-chevron-right"></i></button>
+</div>
+</div>
+</div>
+<div class="screen" id="resultsScreen">
+<div class="results-container">
+<div class="results-header">
+<div class="sparkles" id="sparkles"></div>
+<div class="results-icon"><i class="fas fa-trophy"></i></div>
+<h2 class="results-title" data-en="Training Completed!" data-fr="Formation Terminée !">Formation Terminée !</h2>
+<p class="results-message" id="resultsMessage"></p>
+<div class="results-score" id="finalScore"></div>
+</div>
+<div class="performance-stats">
+<div class="stat-card correct-stat">
+<div class="stat-value" id="correctAnswers"></div>
+<div class="stat-label" data-en="Correct" data-fr="Correctes">Correctes</div>
+</div>
+<div class="stat-card incorrect-stat">
+<div class="stat-value" id="incorrectAnswers"></div>
+<div class="stat-label" data-en="Incorrect" data-fr="Incorrectes">Incorrectes</div>
+</div>
+<div class="stat-card time-stat">
+<div class="stat-value" id="totalTime"></div>
+<div class="stat-label" data-en="Total time" data-fr="Temps total">Temps total</div>
+</div>
+</div>
+<div class="themes-recap">
+<h3 data-en="Summary by themes" data-fr="Récapitulatif par thèmes">Récapitulatif par thèmes</h3>
+<div id="themesChartContainer">
+<svg height="300" id="themesChart" width="600"></svg>
+</div>
+</div>
+<div class="action-buttons">
+<button class="action-btn secondary" onclick="goHome()"><i class="fas fa-home"></i> <span data-en="Home" data-fr="Accueil">Accueil</span></button>
+<button class="action-btn export-btn" onclick="exportToPDF()"><i class="fas fa-file-pdf"></i> <span data-en="Export PDF" data-fr="Exporter PDF">Exporter PDF</span></button>
+<button class="action-btn" onclick="replayGame()"><i class="fas fa-redo"></i> <span data-en="Replay" data-fr="Rejouer">Rejouer</span></button>
+<button class="action-btn" id="reviewErrorsBtn" onclick="reviewErrors()" style="display: none;"><i class="fas fa-diagnoses"></i> <span data-en="Review my errors" data-fr="Réviser mes erreurs">Réviser mes erreurs</span></button>
+</div>
+</div>
+</div>
+<div class="screen" id="glossaryScreen">
+<div class="glossary-container">
+<div class="game-header-controls" style="position: relative; margin-bottom: 20px; justify-content: flex-start;">
+<button aria-label="Retour à l'accueil" class="home-btn" onclick="goHome()">
+<i class="fas fa-home"></i> <span data-en="Home" data-fr="Accueil">Accueil</span>
+</button>
+</div>
+<img alt="Logo Nouvelle-Aquitaine" src="logo_loc_lion-entier_fond-sombre (1).png" style="width: 250px; margin-bottom: 25px; display: block; margin-left: auto; margin-right: auto;">
+<div class="glossary-header">
+<h2 data-en="Cybersecurity Glossary" data-fr="Glossaire de la Cybersécurité">Glossaire de la Cybersécurité</h2>
+<p data-en="Search for a term to find its definition." data-fr="Recherchez un terme pour trouver sa définition.">Recherchez un terme pour trouver sa définition.</p>
+</div>
+<div class="glossary-search-container">
+<i class="fas fa-search search-icon"></i>
+<input data-en="Search for a term (e.g: Phishing)..." data-fr="Rechercher un terme (ex: Phishing)..." id="glossarySearch" placeholder="Rechercher un terme (ex: Phishing)..." type="text">
+</div>
+<ul class="glossary-list" id="glossaryList"></ul>
+</div>
+</div>
+
+
+<div class="modal" id="tutorialModal">
+<div class="modal-content">
+<h2><i class="fas fa-info-circle"></i> <span data-en="How to play" data-fr="Comment jouer">Comment jouer</span></h2>
+<p data-en="Read each question carefully and select the answer that seems most correct to you. Your progress and score will be updated in real time. Good luck!" data-fr="Lisez attentivement chaque question et sélectionnez la réponse qui vous semble la plus juste. Votre progression et votre score seront mis à jour en temps réel. Bonne chance !">Lisez attentivement chaque question et sélectionnez la réponse qui vous semble la plus juste. Votre progression et votre score seront mis à jour en temps réel. Bonne chance !</p>
+<button class="modal-btn" data-en="Got it, start!" data-fr="Compris, commencer !" id="startFromTutorialBtn">Compris, commencer !</button>
+</div>
+</div>
+<div class="modal" id="resumeModal">
+<div class="modal-content">
+<h2><i class="fas fa-history"></i> <span data-en="Resume the game?" data-fr="Reprendre la partie ?">Reprendre la partie ?</span></h2>
+<p data-en="We found a game in progress. Do you want to resume it?" data-fr="Nous avons trouvé une partie en cours. Voulez-vous la reprendre ?">Nous avons trouvé une partie en cours. Voulez-vous la reprendre ?</p>
+<div class="modal-buttons">
+<button class="modal-btn secondary" data-en="No, new game" data-fr="Non, nouvelle partie" id="resumeNoBtn">Non, nouvelle partie</button>
+<button class="modal-btn" data-en="Yes, resume" data-fr="Oui, reprendre" id="resumeYesBtn">Oui, reprendre</button>
+</div>
+</div>
+</div>
+<div class="revision-modal" id="revisionModal">
+    <div class="revision-modal-content">
+        <h2><i class="fas fa-brain" style="color: var(--revision-cyan);"></i> <span data-en="Revision Mode" data-fr="Mode Révision">Mode Révision</span></h2>
+        <p data-en="Review your past mistakes to optimize your learning." data-fr="Révisez vos erreurs passées pour optimiser votre apprentissage.">Révisez vos erreurs passées pour optimiser votre apprentissage.</p>
+        <div class="revision-stats">
+            <h3 data-en="Errors to review" data-fr="Erreurs à réviser">Erreurs à réviser</h3>
+            <p data-en="Loading..." data-fr="Chargement..." id="revisionStatsText">Chargement...</p>
+        </div>
+        <div class="modal-buttons" style="margin-top: 30px;">
+            <button class="modal-btn secondary" data-en="Close" data-fr="Fermer" onclick="closeRevisionModal()">Fermer</button>
+            <button class="modal-btn" data-en="Start revision" data-fr="Commencer la révision" disabled="" id="startRevisionBtn" onclick="startRevisionMode()">Commencer la révision</button>
+        </div>
+    </div>
+</div>
+<div class="credits-modal" id="creditsModal">
+    <div class="credits-modal-content">
+        <div class="credits-header">
+            <h2><i class="fas fa-heart"></i> <span data-en="Credits &amp; Acknowledgments" data-fr="Crédits &amp; Remerciements">Crédits &amp; Remerciements</span></h2>
+            <p><em data-en="Non-profit educational project" data-fr="Projet associatif, à but non lucratif et pédagogique">Projet associatif, à but non lucratif et pédagogique</em></p>
+        </div>
+
+        <div class="credits-section">
+            <i class="fas fa-code"></i>
+            <div class="credits-section-content">
+                <h4 data-en="Lead Developer" data-fr="Développeur principal">Développeur principal</h4>
+                <p data-en="Julien Poitou" data-fr="Julien Poitou">Julien Poitou</p>
+            </div>
+        </div>
+
+        <div class="credits-section">
+            <i class="fas fa-shield-alt"></i>
+            <div class="credits-section-content">
+                <h4 data-en="Support" data-fr="Soutien">Soutien</h4>
+                <p data-en="Campus Cyber de Nouvelle-Aquitaine" data-fr="Campus Cyber de Nouvelle-Aquitaine">Campus Cyber de Nouvelle-Aquitaine</p>
+            </div>
+        </div>
+
+        <div class="credits-section">
+            <i class="fas fa-users"></i>
+            <div class="credits-section-content">
+                <h4 data-en="Contributors" data-fr="Contributeurs">Contributeurs</h4>
+                <p data-en="Campus team, Claude AI, VS Code" data-fr="Équipe du campus, Claude AI, VS Code">Équipe du campus, Claude AI, VS Code</p>
+            </div>
+        </div>
+
+        <div class="credits-section">
+            <i class="fas fa-heart"></i>
+            <div class="credits-section-content">
+                <h4 data-en="Special Thanks" data-fr="Remerciements">Remerciements</h4>
+                <p data-en="Guy Flament + entire campus team" data-fr="Guy Flament + toute l'équipe du campus">Guy Flament + toute l'équipe du campus</p>
+            </div>
+        </div>
+
+        <div class="credits-section">
+            <i class="fas fa-tools"></i>
+            <div class="credits-section-content">
+                <h4 data-en="Technologies Used" data-fr="Technologies utilisées">Technologies utilisées</h4>
+                <p data-en="HTML, CSS, JavaScript, FontAwesome" data-fr="HTML, CSS, JavaScript, FontAwesome">HTML, CSS, JavaScript, FontAwesome</p>
+            </div>
+        </div>
+
+        <div class="credits-section">
+            <i class="fas fa-book"></i>
+            <div class="credits-section-content">
+                <h4 data-en="Sources" data-fr="Sources">Sources</h4>
+                <p data-en="ANSSI Cyberdico" data-fr="Cyberdico ANSSI">Cyberdico ANSSI</p>
+            </div>
+        </div>
+
+        <div class="credits-section">
+            <i class="fas fa-lock"></i>
+            <div class="credits-section-content">
+                <h4 data-en="Licenses" data-fr="Licences">Licences</h4>
+                <p data-en="Protected content, no reproduction" data-fr="Contenu protégé, pas de reproduction">Contenu protégé, pas de reproduction</p>
+            </div>
+        </div>
+
+        <button class="credits-close-btn" onclick="closeCreditsModal()">
+            <i class="fas fa-times"></i> <span data-en="Close" data-fr="Fermer">Fermer</span>
+        </button>
+    </div>
+</div>
+<script>
+        // --- TRANSLATIONS ---
+        const translations = {
+            fr: {
+                // Déjà défini dans le HTML via data-fr
+            },
+            en: {
+                // Définies dans le HTML via data-en
+                messages: {
+                    revisionLocked: "🔒 Complete at least one quiz to unlock revision mode!",
+                    nexusLegend: "🏆 LEGEND! You are officially a cybersecurity genius!",
+                    nexusImpressive: "🔥 Impressive! Few people reach this level on Impossible Level!",
+                    nexusNotBad: "⚡ Not bad! Nexus mode is not for the weak!",
+                    nexusDefeated: "💀 Nexus defeated you... but honor is safe for trying!",
+                    revisionExcellent: "🎯 Excellent! Your revisions are paying off!",
+                    revisionWellDone: "📈 Well done! You're progressing thanks to your revisions!",
+                    revisionContinue: "🔄 Continue your revisions, persistence pays off!",
+                    customCompleted: "Custom quiz completed! You worked on your weak points.",
+                    reviewCompleted: "Review session completed!",
+                    excellentPerformance: "Excellent performance! You are an expert.",
+                    veryGoodScore: "Very good score! Your knowledge is solid.",
+                    correctScore: "Correct score. Keep going to improve!",
+                    dontGiveUp: "Don't give up, training is the key!",
+                    statsText: "📈 Total recorded errors: <strong>{total}</strong><br>📅 Recent errors (7 days): <strong>{recent}</strong><br>🎯 Distribution: Easy ({easy}), Intermediate ({intermediate}), Hard ({hard})",
+                    correctAnswer: "Correct answer!",
+                    incorrectAnswer: "Incorrect answer",
+                    learnMoreANSSI: "Learn more on the ANSSI website"
+                }
+            }
+        };
+
+        let currentLanguage = 'fr';
+
+        // --- QUESTIONS CHARGÉES DEPUIS questions.js ---
+        // Les questions sont maintenant synchronisées automatiquement avec le fichier questions.js
+        // Modifiez questions.js pour mettre à jour le contenu du quiz !
+        
+        // La variable 'questions' est maintenant importée depuis questions.js
+        // Pas besoin de la redéfinir ici !
+
+        // --- NOUVELLE FONCTION POUR MÉLANGER LES RÉPONSES ---
+        /**
+         * Prend un tableau de questions et mélange les options pour chaque question.
+         * Met à jour l'index de la bonne réponse en conséquence.
+         * @param {Array} questionArray Le tableau de questions à traiter.
+         * @returns {Array} Le tableau de questions avec les options mélangées.
+         */
+        function randomizeQuestions(questionArray) {
+            // Itère sur chaque question du tableau fourni
+            return questionArray.map(question => {
+                // Stocke l'index original de la bonne réponse
+                const originalCorrectIndex = question.correct;
+                
+                // Crée un tableau d'objets combinant les options FR et EN avec leur index original
+                const combinedOptions = question.options.map((optFr, index) => ({
+                    fr: optFr,
+                    en: question.optionsEn[index],
+                    originalIndex: index,
+                    isCorrect: index === originalCorrectIndex
+                }));
+
+                // Algorithme de mélange de Fisher-Yates pour une randomisation robuste
+                for (let i = combinedOptions.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [combinedOptions[i], combinedOptions[j]] = [combinedOptions[j], combinedOptions[i]];
+                }
+
+                // Sépare à nouveau les options mélangées en tableaux FR et EN
+                const shuffledOptionsFr = combinedOptions.map(opt => opt.fr);
+                const shuffledOptionsEn = combinedOptions.map(opt => opt.en);
+
+                // Trouve le nouvel index de la bonne réponse en cherchant l'option marquée comme correcte
+                const newCorrectIndex = combinedOptions.findIndex(opt => opt.isCorrect);
+
+                // Retourne un nouvel objet question avec les options mélangées et le bon index mis à jour
+                return {
+                    ...question, // Copie toutes les propriétés originales de la question
+                    options: shuffledOptionsFr,
+                    optionsEn: shuffledOptionsEn,
+                    correct: newCorrectIndex // Met à jour avec le nouvel index de la bonne réponse
+                };
+            });
+        }
+
+        // --- APPLICATION DU MÉLANGE À TOUTES LES QUESTIONS AU CHARGEMENT ---
+        // On parcourt chaque niveau de difficulté (facile, intermediaire, etc.)
+        // et on applique la fonction de randomisation des réponses.
+        Object.keys(questions).forEach(difficulty => {
+            questions[difficulty] = randomizeQuestions(questions[difficulty]);
+        });
+
+
+        // --- GLOBAL STATE ---
+        let currentDifficulty = 'facile';
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let userAnswers = [];
+        let startTime = null;
+        let gameQuestions = [];
+        let incorrectlyAnsweredQuestions = [];
+        let persistentIncorrectQuestions = [];
+        let revisionHistory = [];
+        let timerInterval = null;
+        let audioCtx;
+        let isReviewSession = false;
+        let lastResults = null;
+
+        // --- DOM ELEMENTS ---
+        const themeToggle = document.getElementById('themeToggle');
+        const tutorialModal = document.getElementById('tutorialModal');
+        const resumeModal = document.getElementById('resumeModal');
+        const revisionModal = document.getElementById('revisionModal');
+        const creditsModal = document.getElementById('creditsModal');
+        const startFromTutorialBtn = document.getElementById('startFromTutorialBtn');
+        const questionDotsContainer = document.getElementById('question-dots');
+        const gameTitle = document.getElementById('gameTitle');
+        const customQuizCard = document.getElementById('customQuizCard');
+        const revisionCard = document.getElementById('revisionCard');
+
+        // --- CREDITS MODAL FUNCTIONS ---
+        function showCreditsModal() {
+            creditsModal.style.display = 'flex';
+        }
+
+        function closeCreditsModal() {
+            creditsModal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        creditsModal.addEventListener('click', function(e) {
+            if (e.target === creditsModal) {
+                closeCreditsModal();
+            }
+        });
+
+        // --- LANGUAGE FUNCTIONS ---
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'fr' ? 'en' : 'fr';
+            updateLanguageDisplay();
+            saveLanguagePreference();
+        }
+
+        function updateLanguageDisplay() {
+            const flagIcon = document.getElementById('flagIcon');
+            const languageText = document.getElementById('languageText');
+            const themeLabel = document.getElementById('themeLabel');
+            
+            if (currentLanguage === 'en') {
+                flagIcon.className = 'flag-icon flag-en';
+                languageText.textContent = 'EN';
+                themeLabel.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? 'Dark Mode' : 'Light Mode';
+            } else {
+                flagIcon.className = 'flag-icon flag-fr';
+                languageText.textContent = 'FR';
+                themeLabel.textContent = document.documentElement.getAttribute('data-theme') === 'dark' ? 'Mode Sombre' : 'Mode Clair';
+            }
+
+            // Update all elements with data-fr and data-en attributes
+            document.querySelectorAll('[data-fr][data-en]').forEach(element => {
+                const text = currentLanguage === 'fr' ? element.getAttribute('data-fr') : element.getAttribute('data-en');
+                if (element.tagName === 'INPUT') {
+                    element.placeholder = text;
+                } else {
+                    element.innerHTML = text;
+                }
+            });
+        }
+
+        function saveLanguagePreference() {
+            try {
+                localStorage.setItem('cyberdico-language', currentLanguage);
+            } catch (e) {
+                console.warn("Could not save language preference.");
+            }
+        }
+
+        function loadLanguagePreference() {
+            try {
+                const saved = localStorage.getItem('cyberdico-language');
+                if (saved && (saved === 'fr' || saved === 'en')) {
+                    currentLanguage = saved;
+                }
+            } catch (e) {
+                currentLanguage = 'fr';
+            }
+            updateLanguageDisplay();
+        }
+
+        // --- REVISION LOCK HANDLING (Corrected) ---
+        function handleRevisionClick() {
+            if (revisionCard.classList.contains('locked')) {
+                const lockOverlay = revisionCard.querySelector('.lock-overlay');
+                if (lockOverlay) {
+                    lockOverlay.style.animation = 'lock-shake 0.5s ease-in-out';
+                    setTimeout(() => { lockOverlay.style.animation = ''; }, 500);
+                }
+                
+                const message = currentLanguage === 'fr' ? 
+                    "🔒 Terminez au moins un quiz pour débloquer le mode révision !" :
+                    translations.en.messages.revisionLocked;
+                
+                const tempMessage = document.createElement('div');
+                tempMessage.style.cssText = `
+                    position: fixed;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background: var(--bg-card);
+                    border: 2px solid var(--warning-orange);
+                    border-radius: var(--radius-lg);
+                    padding: 20px;
+                    z-index: 1000;
+                    text-align: center;
+                    box-shadow: var(--shadow-xl);
+                    animation: bounceIn 0.5s ease-out;
+                `;
+                tempMessage.innerHTML = `<i class="fas fa-lock" style="color: var(--warning-orange); font-size: 2rem; margin-bottom: 10px;"></i><br>${message}`;
+                document.body.appendChild(tempMessage);
+                
+                setTimeout(() => {
+                    tempMessage.remove();
+                }, 3000);
+            } else {
+                showRevisionModal();
+            }
+        }
+
+        // --- EXPORT PDF FUNCTION ---
+        function exportToPDF() {
+            if (!lastResults || !window.jsPDF) {
+                alert("Impossible d'exporter en PDF pour le moment.");
+                return;
+            }
+
+            const { jsPDF } = window.jsPDF;
+            const doc = new jsPDF();
+            
+            // Header
+            doc.setFontSize(20);
+            doc.setTextColor(0, 207, 255);
+            doc.text('Cyber Quizz - Rapport de Formation', 20, 30);
+            
+            // Date
+            doc.setFontSize(12);
+            doc.setTextColor(100, 100, 100);
+            doc.text(`Date: ${new Date().toLocaleDateString('fr-FR')}`, 20, 40);
+            
+            // Results
+            doc.setFontSize(16);
+            doc.setTextColor(0, 0, 0);
+            doc.text('Résultats:', 20, 60);
+            
+            doc.setFontSize(12);
+            doc.text(`Score: ${lastResults.percentage}%`, 30, 75);
+            doc.text(`Questions correctes: ${lastResults.correct}`, 30, 85);
+            doc.text(`Questions incorrectes: ${lastResults.incorrect}`, 30, 95);
+            doc.text(`Temps total: ${lastResults.time}`, 30, 105);
+            doc.text(`Difficulté: ${lastResults.difficulty}`, 30, 115);
+            
+            // Themes
+            if (lastResults.themes && lastResults.themes.length > 0) {
+                doc.text('Thèmes abordés:', 20, 135);
+                let y = 150;
+                lastResults.themes.forEach((theme, index) => {
+                    if (y > 270) {
+                        doc.addPage();
+                        y = 20;
+                    }
+                    doc.text(`• ${theme}`, 30, y);
+                    y += 10;
+                });
+            }
+            
+            // Footer
+            doc.setFontSize(10);
+            doc.setTextColor(150, 150, 150);
+            doc.text('Généré par Cyber Quizz - Formation Interactive en Cybersécurité', 20, 280);
+            
+            // Save
+            doc.save(`cyber-quizz-rapport-${new Date().toISOString().split('T')[0]}.pdf`);
+        }
+
+        // --- SPARKLES EFFECT ---
+        function createSparkles() {
+            const sparklesContainer = document.getElementById('sparkles');
+            if (!sparklesContainer) return;
+            
+            for (let i = 0; i < 15; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 2 + 's';
+                sparkle.style.animationDuration = (Math.random() * 1 + 1) + 's';
+                sparklesContainer.appendChild(sparkle);
+            }
+        }
+
+        // --- CORE GAME FUNCTIONS ---
+        function loadPersistentIncorrectQuestions() {
+            try {
+                const stored = localStorage.getItem('cyberdico-incorrect-questions');
+                persistentIncorrectQuestions = stored ? JSON.parse(stored) : [];
+            } catch (e) {
+                persistentIncorrectQuestions = [];
+            }
+        }
+
+        function savePersistentIncorrectQuestions() {
+            try {
+                localStorage.setItem('cyberdico-incorrect-questions', JSON.stringify(persistentIncorrectQuestions));
+            } catch (e) {
+                console.warn("Could not save incorrect questions to localStorage.");
+            }
+        }
+
+        function loadRevisionHistory() {
+            try {
+                const stored = localStorage.getItem('cyberdico-revision-history');
+                revisionHistory = stored ? JSON.parse(stored) : [];
+            } catch (e) {
+                revisionHistory = [];
+            }
+        }
+
+        function saveRevisionHistory() {
+            try {
+                localStorage.setItem('cyberdico-revision-history', JSON.stringify(revisionHistory));
+            } catch (e) {
+                console.warn("Could not save revision history to localStorage.");
+            }
+        }
+
+        function clearGameState() {
+            try {
+                localStorage.removeItem('cyberdico-game-state');
+            } catch (e) {
+                console.warn("Could not clear game state.");
+            }
+        }
+
+        function updateRevisionVisibility() {
+            if (hasCompletedAtLeastOneQuiz()) {
+                customQuizCard.style.display = 'block';
+                updateCustomQuizCount();
+            }
+        }
+
+        function updateCustomQuizCount() {
+            if (persistentIncorrectQuestions.length > 0) {
+                const countSpan = customQuizCard.querySelector('p');
+                const newText = currentLanguage === 'fr' ? 
+                    `Révisez vos ${persistentIncorrectQuestions.length} questions d'erreur pour améliorer vos compétences.` :
+                    `Review your ${persistentIncorrectQuestions.length} error questions to improve your skills.`;
+                countSpan.innerHTML = newText;
+            }
+        }
+
+        function hasCompletedAtLeastOneQuiz() {
+            try {
+                return localStorage.getItem('cyberdico-has-completed-quiz') === 'true';
+            } catch (e) {
+                return false;
+            }
+        }
+
+        function markQuizAsCompleted() {
+            try {
+                localStorage.setItem('cyberdico-has-completed-quiz', 'true');
+            } catch (e) {
+                console.warn("Could not save quiz completion status to localStorage.");
+            }
+        }
+
+        function startGame(difficulty) {
+            currentDifficulty = difficulty;
+            isReviewSession = false;
+            
+            if (!questions[difficulty] || questions[difficulty].length === 0) {
+                alert("Questions non disponibles pour cette difficulté.");
+                return;
+            }
+            
+            gameQuestions = [...questions[difficulty]];
+            currentQuestionIndex = 0;
+            score = 0;
+            userAnswers = [];
+            incorrectlyAnsweredQuestions = [];
+            startTime = Date.now();
+            
+            initGame();
+            showScreen('gameScreen');
+        }
+
+        function initGame() {
+            clearInterval(timerInterval);
+            
+            const titleElement = document.getElementById('gameTitle');
+            const themeContainer = document.getElementById('themeInfoContainer');
+            const progressFill = document.getElementById('progressFill');
+            const themeIcon = document.getElementById('themeIcon');
+            
+            // Set title and theme based on difficulty
+            const titles = {
+                facile: currentLanguage === 'fr' ? "Mode Facile" : "Easy Mode",
+                intermediaire: currentLanguage === 'fr' ? "Mode Intermédiaire" : "Intermediate Mode", 
+                difficile: currentLanguage === 'fr' ? "Mode Expert" : "Expert Mode",
+                nexus: "Impossible Level",
+                revision: currentLanguage === 'fr' ? "Mode Révision" : "Revision Mode",
+                custom: currentLanguage === 'fr' ? "Quiz Personnalisé" : "Custom Quiz"
+            };
+            
+            titleElement.textContent = titles[currentDifficulty] || titles.facile;
+            titleElement.style.display = 'block';
+            
+            // Apply theme styling
+            if (currentDifficulty === 'nexus') {
+                titleElement.className = 'game-title nexus';
+                themeContainer.className = 'theme-info nexus';
+                progressFill.className = 'progress-fill nexus';
+                themeIcon.className = 'theme-icon nexus';
+            } else if (currentDifficulty === 'revision') {
+                titleElement.className = 'game-title revision';
+                themeContainer.className = 'theme-info revision';
+                progressFill.className = 'progress-fill revision';
+                themeIcon.className = 'theme-icon revision';
+            } else {
+                titleElement.className = 'game-title';
+                themeContainer.className = 'theme-info';
+                progressFill.className = 'progress-fill';
+                themeIcon.className = 'theme-icon';
+            }
+            
+            document.getElementById('totalQuestions').textContent = gameQuestions.length;
+            document.getElementById('currentScore').textContent = '0';
+            
+            createQuestionDots();
+            displayCurrentQuestion();
+            startTimer();
+            updateProgress();
+        }
+
+        function createQuestionDots() {
+            questionDotsContainer.innerHTML = '';
+            gameQuestions.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'question-dot';
+                if (index === currentQuestionIndex) {
+                    dot.classList.add('current');
+                    if (currentDifficulty === 'nexus') dot.classList.add('nexus');
+                    if (currentDifficulty === 'revision') dot.classList.add('revision');
+                }
+                questionDotsContainer.appendChild(dot);
+            });
+        }
+
+        function displayCurrentQuestion() {
+            const question = gameQuestions[currentQuestionIndex];
+            if (!question) {
+                endGame();
+                return;
+            }
+            
+            const questionText = currentLanguage === 'fr' ? question.question : (question.questionEn || question.question);
+            const options = currentLanguage === 'fr' ? question.options : (question.optionsEn || question.options);
+            
+            let scenarioHtml = '';
+            if (question.scenario) {
+                const scenarioText = currentLanguage === 'fr' ? question.scenario : (question.scenarioEn || question.scenario);
+                scenarioHtml = `<div class="scenario-section">${scenarioText}</div>`;
+            }
+            
+            let optionsHtml = '';
+            options.forEach((option, index) => {
+                optionsHtml += `
+                    <button class="option" onclick="selectOption(this, ${index})" aria-label="Option ${String.fromCharCode(65 + index)}">
+                        <div class="option-letter">${String.fromCharCode(65 + index)}</div>
+                        <div>${option}</div>
+                    </button>
+                `;
+            });
+            
+            const themeText = currentLanguage === 'fr' ? question.term : (question.termEn || question.term);
+            document.getElementById('currentTheme').textContent = themeText;
+            
+            document.getElementById('questionCardWrapper').innerHTML = `
+                <div class="question-card">
+                    ${scenarioHtml}
+                    <div class="question-text">${questionText}</div>
+                    <div class="options-container">
+                        ${optionsHtml}
+                    </div>
+                    <div class="feedback" id="feedback"></div>
+                </div>
+            `;
+            
+            document.getElementById('currentQuestion').textContent = currentQuestionIndex + 1;
+            updateNavigationButtons();
+            updateProgress();
+            updateQuestionDots();
+            
+            setTimeout(() => {
+                document.querySelectorAll('.option').forEach((option, index) => {
+                    setTimeout(() => {
+                        option.classList.add('visible');
+                    }, index * 100);
+                });
+            }, 200);
+        }
+
+        function selectOption(element, selectedIndex) {
+            if (userAnswers[currentQuestionIndex] !== undefined) return;
+            
+            initAudio();
+            
+            const question = gameQuestions[currentQuestionIndex];
+            const isCorrect = selectedIndex === question.correct;
+            const allOptions = document.querySelectorAll('.option');
+            
+            allOptions.forEach(option => option.style.pointerEvents = 'none');
+            
+            if (isCorrect) {
+                element.classList.add('correct');
+                playSound('correct');
+                score++;
+                document.getElementById('currentScore').textContent = score;
+                document.getElementById('currentScore').classList.add('score-pop');
+                setTimeout(() => document.getElementById('currentScore').classList.remove('score-pop'), 400);
+            } else {
+                element.classList.add('incorrect');
+                allOptions[question.correct].classList.add('correct');
+                playSound('incorrect');
+                
+                const questionWithAnswer = {
+                    ...question,
+                    userAnswer: selectedIndex,
+                    timestamp: Date.now()
+                };
+                incorrectlyAnsweredQuestions.push(questionWithAnswer);
+                
+                if (!persistentIncorrectQuestions.find(q => q.id === question.id)) {
+                    persistentIncorrectQuestions.push(questionWithAnswer);
+                    savePersistentIncorrectQuestions();
+                }
+            }
+            
+            userAnswers[currentQuestionIndex] = selectedIndex;
+            
+            const feedback = document.getElementById('feedback');
+            const explanation = currentLanguage === 'fr' ? question.explanation : (question.explanationEn || question.explanation);
+            
+            feedback.className = `feedback ${isCorrect ? 'correct' : 'incorrect'} show`;
+            feedback.innerHTML = `
+                <div class="feedback-header">
+                    <i class="fas ${isCorrect ? 'fa-check-circle' : 'fa-times-circle'}"></i>
+                    ${currentLanguage === 'fr' ? 
+                        (isCorrect ? 'Bonne réponse !' : 'Mauvaise réponse') :
+                        (isCorrect ? translations.en.messages.correctAnswer : translations.en.messages.incorrectAnswer)
+                    }
+                </div>
+                <div>${explanation}</div>
+                <div class="feedback-link">
+                    <a href="https://www.ssi.gouv.fr/" target="_blank" rel="noopener">
+                        ${currentLanguage === 'fr' ? 'En savoir plus sur le site de l\'ANSSI' : translations.en.messages.learnMoreANSSI}
+                    </a>
+                </div>
+            `;
+            
+            updateQuestionDots();
+            document.getElementById('nextBtn').disabled = false;
+
+            // Smoothly scroll to the feedback/controls area
+            setTimeout(() => {
+                document.getElementById('nextBtn').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }, 300);
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < gameQuestions.length - 1) {
+                currentQuestionIndex++;
+                displayCurrentQuestion();
+            } else {
+                endGame();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayCurrentQuestion();
+            }
+        }
+
+        function updateNavigationButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            prevBtn.disabled = currentQuestionIndex === 0;
+            nextBtn.disabled = userAnswers[currentQuestionIndex] === undefined;
+        }
+
+        function updateProgress() {
+            const progressFill = document.getElementById('progressFill');
+            const progressPercentage = document.getElementById('progressPercentage');
+            
+            const answeredQuestions = userAnswers.filter(answer => answer !== undefined).length;
+            const percentage = gameQuestions.length > 0 ? Math.round((answeredQuestions / gameQuestions.length) * 100) : 0;
+            
+            progressFill.style.width = `${percentage}%`;
+            progressPercentage.textContent = `${percentage}%`;
+            
+            progressFill.classList.remove('green', 'yellow', 'red');
+            if (percentage >= 80) progressFill.classList.add('green');
+            else if (percentage >= 40) progressFill.classList.add('yellow');
+            else if (percentage > 0) progressFill.classList.add('red');
+        }
+
+        function updateQuestionDots() {
+            const dots = document.querySelectorAll('.question-dot');
+            dots.forEach((dot, index) => {
+                dot.className = 'question-dot';
+                
+                if (index === currentQuestionIndex) {
+                    dot.classList.add('current');
+                    if (currentDifficulty === 'nexus') dot.classList.add('nexus');
+                    if (currentDifficulty === 'revision') dot.classList.add('revision');
+                }
+                
+                if (userAnswers[index] !== undefined) {
+                    const question = gameQuestions[index];
+                    const isCorrect = userAnswers[index] === question.correct;
+                    dot.classList.add('answered', isCorrect ? 'correct' : 'incorrect');
+                }
+            });
+        }
+
+        function startTimer() {
+            const timerElement = document.getElementById('timer');
+            timerInterval = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - startTime) / 1000);
+                timerElement.textContent = formatTime(elapsed);
+            }, 1000);
+        }
+
+        // --- ENHANCED END GAME ---
+        function endGame() {
+            clearInterval(timerInterval);
+            clearGameState();
+            
+            if (!isReviewSession && currentDifficulty !== 'nexus' && currentDifficulty !== 'revision') {
+                markQuizAsCompleted();
+                unlockRevisionMode();
+            }
+            
+            updateRevisionVisibility();
+            
+            const totalTime = Math.floor((Date.now() - startTime) / 1000);
+            const percentage = gameQuestions.length > 0 ? Math.round((score / gameQuestions.length) * 100) : 0;
+
+            // Store results for PDF export
+            lastResults = {
+                percentage,
+                correct: score,
+                incorrect: gameQuestions.length - score,
+                time: formatTime(totalTime),
+                difficulty: currentDifficulty,
+                themes: [...new Set(gameQuestions.map(q => q.term))]
+            };
+
+            let message;
+            if (currentDifficulty === 'nexus') {
+                const messages = currentLanguage === 'fr' ? {
+                    80: "🏆 LÉGENDE ! Vous êtes officiellement un génie de la cybersécurité !",
+                    60: "🔥 Impressionnant ! Peu de gens arrivent à ce niveau sur Impossible Level !",
+                    40: "⚡ Pas mal ! Le mode Nexus n'est pas pour les faibles !",
+                    0: "💀 Le Nexus vous a vaincu... mais l'honneur est sauf d'avoir essayé !"
+                } : {
+                    80: translations.en.messages.nexusLegend,
+                    60: translations.en.messages.nexusImpressive,
+                    40: translations.en.messages.nexusNotBad,
+                    0: translations.en.messages.nexusDefeated
+                };
+                
+                if (percentage >= 80) message = messages[80];
+                else if (percentage >= 60) message = messages[60];
+                else if (percentage >= 40) message = messages[40];
+                else message = messages[0];
+            } else if (currentDifficulty === 'revision') {
+                const messages = currentLanguage === 'fr' ? {
+                    80: "🎯 Excellent ! Vos révisions portent leurs fruits !",
+                    60: "📈 Bien joué ! Vous progressez grâce à vos révisions !",
+                    0: "🔄 Continuez vos révisions, la persévérance paie !"
+                } : {
+                    80: translations.en.messages.revisionExcellent,
+                    60: translations.en.messages.revisionWellDone,
+                    0: translations.en.messages.revisionContinue
+                };
+                
+                if (percentage >= 80) message = messages[80];
+                else if (percentage >= 60) message = messages[60];
+                else message = messages[0];
+            } else {
+                // Standard messages
+                const messages = currentLanguage === 'fr' ? {
+                    custom: "Quiz personnalisé terminé ! Vous avez travaillé sur vos points faibles.",
+                    review: "Session de révision terminée !",
+                    80: "Excellente performance ! Vous êtes un expert.",
+                    60: "Très bon score ! Vos connaissances sont solides.",
+                    40: "Score correct. Continuez pour vous améliorer !",
+                    0: "Ne baissez pas les bras, la formation est la clé !"
+                } : {
+                    custom: translations.en.messages.customCompleted,
+                    review: translations.en.messages.reviewCompleted,
+                    80: translations.en.messages.excellentPerformance,
+                    60: translations.en.messages.veryGoodScore,
+                    40: translations.en.messages.correctScore,
+                    0: translations.en.messages.dontGiveUp
+                };
+
+                if (currentDifficulty === 'custom') message = messages.custom;
+                else if (isReviewSession) message = messages.review;
+                else if (percentage >= 80) message = messages[80];
+                else if (percentage >= 60) message = messages[60];
+                else if (percentage >= 40) message = messages[40];
+                else message = messages[0];
+            }
+            
+            document.getElementById('resultsMessage').textContent = message;
+            document.getElementById('totalTime').textContent = formatTime(totalTime);
+            
+            const reviewBtn = document.getElementById('reviewErrorsBtn');
+            if (incorrectlyAnsweredQuestions.length > 0 && currentDifficulty !== 'nexus' && currentDifficulty !== 'revision') {
+                reviewBtn.style.display = 'inline-flex';
+                const buttonText = currentLanguage === 'fr' ? 
+                    `Réviser mes ${incorrectlyAnsweredQuestions.length} erreurs` : 
+                    `Review my ${incorrectlyAnsweredQuestions.length} errors`;
+                reviewBtn.querySelector('span').textContent = buttonText;
+            } else {
+                reviewBtn.style.display = 'none';
+            }
+
+            generateThemesChart();
+            createSparkles();
+            showScreen('resultsScreen');
+
+            animateValue(document.getElementById('finalScore'), 0, percentage, 1500, true);
+            animateValue(document.getElementById('correctAnswers'), 0, score, 1500);
+            animateValue(document.getElementById('incorrectAnswers'), 0, gameQuestions.length - score, 1500);
+            
+            document.querySelectorAll('.results-container > div').forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.15}s`;
+                el.classList.add('fade-in');
+            });
+
+            // 🏆 Enregistrer le score dans le Hall of Fame
+            if (typeof saveScore === 'function' && !isReviewSession) {
+                const scoreData = {
+                    score: score,
+                    percentage: percentage,
+                    correct: score,
+                    total: gameQuestions.length,
+                    difficulty: currentDifficulty,
+                    time: totalTime,
+                    gameType: 'quiz'
+                };
+                
+                // Enregistrer le score de manière asynchrone
+                setTimeout(() => {
+                    saveScore(scoreData);
+                }, 2000); // Délai pour laisser l'animation se terminer
+            }
+        }
+
+        function unlockRevisionMode() {
+            revisionCard.classList.remove('locked');
+            const lockOverlay = revisionCard.querySelector('.lock-overlay');
+            if (lockOverlay) lockOverlay.remove();
+            
+            const button = revisionCard.querySelector('.start-btn');
+            // The onclick handler is now on the parent card, so no need to change it here.
+            button.innerHTML = `<i class="fas fa-redo-alt"></i> <span data-fr="Réviser mes erreurs" data-en="Review my errors">Réviser mes erreurs</span>`;
+            
+            // Update features list
+            const features = revisionCard.querySelectorAll('.features li i');
+            features.forEach(icon => {
+                icon.className = 'fas fa-check-circle';
+            });
+            
+            updateLanguageDisplay();
+        }
+
+        // --- OTHER FUNCTIONS ---
+        function goHome() {
+            clearInterval(timerInterval);
+            showScreen('welcomeScreen');
+            updateRevisionVisibility();
+        }
+
+        function showGlossary() {
+            populateGlossary();
+            showScreen('glossaryScreen');
+            window.scrollTo(0, 0);
+        }
+
+        const glossaryAdditions = [
+            {id:"g_1", term:"Botnet", termEn:"Botnet", explanation:"Un réseau de machines compromises (zombies) contrôlées à distance par un attaquant pour mener des actions malveillantes, comme des attaques DDoS.", explanationEn:"A network of compromised machines (zombies) remotely controlled by an attacker to conduct malicious activities, such as DDoS attacks."},
+            {id:"g_2", term:"Spear Phishing", termEn:"Spear Phishing", explanation:"Une attaque d'hameçonnage ciblée qui vise une personne ou une organisation spécifique, en utilisant des informations personnelles pour paraître plus crédible.", explanationEn:"A targeted phishing attack that aims at a specific individual or organization, using personal information to appear more credible."},
+            {id:"g_3", term:"Exploit", termEn:"Exploit", explanation:"Un morceau de code ou une technique qui tire parti d'une vulnérabilité dans un système informatique pour provoquer un comportement imprévu, souvent pour obtenir un accès non autorisé.", explanationEn:"A piece of code or a technique that takes advantage of a vulnerability in a computer system to cause unintended behavior, often to gain unauthorized access."},
+            {id:"g_4", term:"EDR (Endpoint Detection and Response)", termEn:"EDR (Endpoint Detection and Response)", explanation:"Une solution de sécurité qui surveille en continu les terminaux (ordinateurs, serveurs) pour détecter et répondre aux cybermenaces avancées.", explanationEn:"A security solution that continuously monitors endpoints (computers, servers) to detect and respond to advanced cyber threats."},
+            {id:"g_5", term:"Threat Intelligence", termEn:"Threat Intelligence", explanation:"Des informations sur les menaces et les acteurs malveillants, collectées et analysées pour aider les organisations à se protéger contre les cyberattaques.", explanationEn:"Information about threats and malicious actors that is collected and analyzed to help organizations protect themselves against cyberattacks."},
+            {id:"g_6", term:"Cryptojacking", termEn:"Cryptojacking", explanation:"L'utilisation non autorisée de l'ordinateur d'une autre personne pour miner de la cryptomonnaie. L'attaquant installe un logiciel malveillant qui s'exécute en arrière-plan.", explanationEn:"The unauthorized use of someone else's computer to mine cryptocurrency. The attacker installs malicious software that runs in the background."},
+            {id:"g_7", term:"Whaling", termEn:"Whaling", explanation:"Une forme de spear phishing spécifiquement dirigée contre des cadres supérieurs ou d'autres cibles de grande valeur au sein d'une organisation.", explanationEn:"A form of spear phishing specifically directed at senior executives or other high-profile targets within an organization."},
+            {id:"g_8", term:"IDS/IPS", termEn:"IDS/IPS", explanation:"Système de Détection/Prévention d'Intrusion. L'IDS surveille le trafic réseau pour détecter les activités suspectes et émet des alertes, tandis que l'IPS peut également bloquer activement ces menaces.", explanationEn:"Intrusion Detection/Prevention System. IDS monitors network traffic for suspicious activity and issues alerts, while IPS can also actively block these threats."}
+        ];
+
+        function populateGlossary() {
+            const glossaryList = document.getElementById('glossaryList');
+            const allTerms = [];
+            
+            Object.values(questions).forEach(difficultyQuestions => {
+                difficultyQuestions.forEach(q => {
+                    if (!allTerms.find(term => term.id === q.id)) {
+                        allTerms.push({
+                            id: q.id,
+                            term: q.term,
+                            termEn: q.termEn || q.term,
+                            explanation: q.explanation,
+                            explanationEn: q.explanationEn || q.explanation
+                        });
+                    }
+                });
+            });
+
+            glossaryAdditions.forEach(item => {
+                if (!allTerms.find(term => term.term === item.term)) {
+                    allTerms.push(item);
+                }
+            });
+            
+            allTerms.sort((a, b) => (currentLanguage === 'fr' ? a.term : a.termEn).localeCompare(currentLanguage === 'fr' ? b.term : b.termEn));
+            
+            function renderGlossary(terms) {
+                glossaryList.innerHTML = '';
+                terms.forEach(item => {
+                    const li = document.createElement('li');
+                    li.className = 'glossary-item';
+                    li.innerHTML = `
+                        <h3>${currentLanguage === 'fr' ? item.term : item.termEn}</h3>
+                        <p>${currentLanguage === 'fr' ? item.explanation : item.explanationEn}</p>
+                    `;
+                    glossaryList.appendChild(li);
+                });
+            }
+            
+            renderGlossary(allTerms);
+            
+            document.getElementById('glossarySearch').oninput = (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+                const filtered = allTerms.filter(item => {
+                    const term = (currentLanguage === 'fr' ? item.term : item.termEn).toLowerCase();
+                    const explanation = (currentLanguage === 'fr' ? item.explanation : item.explanationEn).toLowerCase();
+                    return term.includes(searchTerm) || explanation.includes(searchTerm);
+                });
+                renderGlossary(filtered);
+            };
+        }
+
+        function startCustomQuiz() {
+            if (persistentIncorrectQuestions.length === 0) {
+                alert(currentLanguage === 'fr' ? 
+                    "Aucune question d'erreur disponible." : 
+                    "No error questions available.");
+                return;
+            }
+            
+            currentDifficulty = 'custom';
+            isReviewSession = true;
+            gameQuestions = shuffleArray([...persistentIncorrectQuestions]);
+            currentQuestionIndex = 0;
+            score = 0;
+            userAnswers = [];
+            startTime = Date.now();
+            
+            initGame();
+            showScreen('gameScreen');
+        }
+
+        function showRevisionModal() {
+            loadRevisionStats();
+            revisionModal.style.display = 'flex';
+        }
+
+        function closeRevisionModal() {
+            revisionModal.style.display = 'none';
+        }
+
+        function loadRevisionStats() {
+            const totalErrors = persistentIncorrectQuestions.length;
+            const statsTextElement = document.getElementById('revisionStatsText');
+            const startBtn = document.getElementById('startRevisionBtn');
+
+            if (totalErrors > 0) {
+                const message = currentLanguage === 'fr' ?
+                    `Vous avez <strong>${totalErrors}</strong> erreur${totalErrors > 1 ? 's' : ''} à réviser.` :
+                    `You have <strong>${totalErrors}</strong> error${totalErrors > 1 ? 's' : ''} to review.`;
+                statsTextElement.innerHTML = message;
+                startBtn.disabled = false;
+            } else {
+                const message = currentLanguage === 'fr' ?
+                    "Félicitations, vous n'avez aucune erreur à réviser pour le moment !" :
+                    "Congratulations, you have no errors to review at the moment!";
+                statsTextElement.innerHTML = message;
+                startBtn.disabled = true;
+            }
+        }
+
+        function startRevisionMode() {
+            if (persistentIncorrectQuestions.length === 0) {
+                 alert(currentLanguage === 'fr' ? 
+                    "Aucune question disponible pour ce mode de révision." :
+                    "No questions available for this revision mode.");
+                return;
+            }
+            
+            let revisionQuestions = [...persistentIncorrectQuestions];
+            
+            currentDifficulty = 'revision';
+            isReviewSession = true;
+            gameQuestions = shuffleArray(revisionQuestions);
+            currentQuestionIndex = 0;
+            score = 0;
+            userAnswers = [];
+            startTime = Date.now();
+            
+            closeRevisionModal();
+            initGame();
+            showScreen('gameScreen');
+        }
+
+        function generateThemesChart() {
+            const themesData = {};
+            gameQuestions.forEach((question, index) => {
+                const theme = question.term;
+                if (!themesData[theme]) {
+                    themesData[theme] = { correct: 0, total: 0 };
+                }
+                themesData[theme].total++;
+                if (userAnswers[index] === question.correct) {
+                    themesData[theme].correct++;
+                }
+            });
+            
+            const container = document.getElementById('themesChartContainer');
+            container.innerHTML = '';
+            
+            Object.entries(themesData).forEach(([theme, data]) => {
+                const percentage = Math.round((data.correct / data.total) * 100);
+                const div = document.createElement('div');
+                div.style.cssText = `
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 12px;
+                    padding: 8px;
+                    background: var(--bg-elevated);
+                    border-radius: var(--radius-md);
+                `;
+                
+                div.innerHTML = `
+                    <div style="flex: 1; font-weight: 500;">${theme}</div>
+                    <div style="width: 200px; height: 8px; background: var(--bg-secondary); border-radius: 4px; margin: 0 16px; overflow: hidden;">
+                        <div style="width: ${percentage}%; height: 100%; background: linear-gradient(90deg, ${percentage < 50 ? 'var(--error-red)' : 'var(--warning-orange)'}, var(--success-green)); transition: width 0.5s;"></div>
+                    </div>
+                    <div style="min-width: 80px; text-align: right; font-weight: 600; color: ${percentage >= 70 ? 'var(--success-green)' : percentage >= 50 ? 'var(--warning-orange)' : 'var(--error-red)'};">
+                        ${percentage}% (${data.correct}/${data.total})
+                    </div>
+                `;
+                
+                container.appendChild(div);
+            });
+        }
+
+        function replayGame() {
+            startGame(currentDifficulty);
+        }
+
+        function reviewErrors() {
+            if (incorrectlyAnsweredQuestions.length === 0) return;
+            
+            currentDifficulty = 'custom';
+            isReviewSession = true;
+            gameQuestions = shuffleArray([...incorrectlyAnsweredQuestions]);
+            currentQuestionIndex = 0;
+            score = 0;
+            userAnswers = [];
+            startTime = Date.now();
+            
+            initGame();
+            showScreen('gameScreen');
+        }
+
+        // --- UTILITY & CORE FUNCTIONS ---
+        const shuffleArray = (array) => { 
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) { 
+                const j = Math.floor(Math.random() * (i + 1)); 
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]; 
+            } 
+            return shuffled; 
+        };
+        
+        const formatTime = (totalSeconds) => { 
+            const minutes = Math.floor(totalSeconds / 60); 
+            const seconds = totalSeconds % 60; 
+            return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`; 
+        };
+        
+        const showScreen = (screenId) => { 
+            document.querySelectorAll('.screen').forEach(screen => screen.classList.remove('active')); 
+            document.getElementById(screenId).classList.add('active'); 
+        };
+        
+        const animateValue = (element, start, end, duration, isPercentage = false) => { 
+            let startTimestamp = null; 
+            const step = (timestamp) => { 
+                if (!startTimestamp) startTimestamp = timestamp; 
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1); 
+                const value = Math.floor(progress * (end - start) + start); 
+                element.textContent = isPercentage ? `${value}%` : value; 
+                if (progress < 1) { 
+                    window.requestAnimationFrame(step); 
+                } 
+            }; 
+            window.requestAnimationFrame(step); 
+        };
+
+        // --- AUDIO ---
+        function initAudio() { 
+            if (!audioCtx) { 
+                try { 
+                    audioCtx = new (window.AudioContext || window.webkitAudioContext)(); 
+                } catch(e) { 
+                    console.error("AudioContext not supported."); 
+                } 
+            } 
+        }
+        
+        function playSound(type) {
+            try {
+                if (!audioCtx) return;
+                if (audioCtx.state === 'suspended') { 
+                    audioCtx.resume(); 
+                }
+                
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                gain.gain.setValueAtTime(0, audioCtx.currentTime);
+                gain.gain.linearRampToValueAtTime(0.2, audioCtx.currentTime + 0.01);
+                
+                if (type === 'correct') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(600, audioCtx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(800, audioCtx.currentTime + 0.1);
+                } else {
+                    osc.type = 'square';
+                    osc.frequency.setValueAtTime(400, audioCtx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(200, audioCtx.currentTime + 0.1);
+                }
+                
+                gain.gain.exponentialRampToValueAtTime(0.00001, audioCtx.currentTime + 0.2);
+                osc.start(audioCtx.currentTime);
+                osc.stop(audioCtx.currentTime + 0.2);
+            } catch(e) {
+                console.warn("Could not play sound:", e);
+            }
+        }
+
+        // --- THEME MANAGEMENT ---
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            const themeLabel = document.getElementById('themeLabel');
+            if (themeLabel) {
+                themeLabel.textContent = currentLanguage === 'fr' ? 
+                    (theme === 'dark' ? 'Mode Sombre' : 'Mode Clair') :
+                    (theme === 'dark' ? 'Dark Mode' : 'Light Mode');
+            }
+            try { 
+                localStorage.setItem('cyberdico-theme', theme); 
+            } catch (e) { 
+                console.warn("Could not save theme to localStorage."); 
+            }
+        }
+
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            loadLanguagePreference();
+            loadPersistentIncorrectQuestions();
+            loadRevisionHistory();
+            
+            // Check if revision should be unlocked
+            if (hasCompletedAtLeastOneQuiz()) {
+                unlockRevisionMode();
+                updateRevisionVisibility();
+            }
+            
+
+            
+
+
+            // Theme
+            try {
+                const savedTheme = localStorage.getItem('cyberdico-theme') || 'dark';
+                applyTheme(savedTheme);
+            } catch (e) {
+                applyTheme('dark');
+            }
+            
+            themeToggle.addEventListener('click', () => {
+                const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                applyTheme(newTheme);
+            });
+
+            // Start game buttons
+            document.querySelectorAll('.start-btn[data-difficulty]').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const difficulty = e.currentTarget.dataset.difficulty;
+                    startGame(difficulty);
+                });
+            });
+
+            // Gestion des erreurs globales
+            window.addEventListener('error', function(e) {
+                console.error('Erreur JavaScript:', e.error);
+            });
+
+            // Éviter les erreurs de fermeture de modal
+            document.addEventListener('click', function(e) {
+                if (e.target === revisionModal) {
+                    closeRevisionModal();
+                }
+            });
+        });
+
+        // 🏆 HALL OF FAME - Système de Records en Ligne
+        // Utilise l'API REST pour sauvegarder/récupérer les scores
+
+        class HallOfFame {
+            constructor() {
+                this.apiBaseUrl = 'http://localhost:3000/api';
+                this.scores = [];
+                this.stats = null;
+                this.loading = false;
+            }
+
+            // Charger les scores depuis l'API
+            async loadScores() {
+                try {
+                    this.loading = true;
+                    const response = await fetch(`${this.apiBaseUrl}/scores`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    this.scores = data.scores || [];
+                    return this.scores;
+                } catch (error) {
+                    console.warn('Erreur lors du chargement du hall of fame:', error);
+                    // Fallback vers localStorage si l'API n'est pas disponible
+                    return this.loadScoresFromLocalStorage();
+                } finally {
+                    this.loading = false;
+                }
+            }
+
+            // Fallback vers localStorage
+            loadScoresFromLocalStorage() {
+                try {
+                    const stored = localStorage.getItem('cyber-hall-of-fame-fallback');
+                    this.scores = stored ? JSON.parse(stored) : [];
+                    return this.scores;
+                } catch (error) {
+                    console.warn('Erreur lors du chargement du fallback:', error);
+                    this.scores = [];
+                    return [];
+                }
+            }
+
+            // Ajouter un nouveau score via l'API
+            async addScore(scoreData) {
+                try {
+                    // Demander le pseudo à l'utilisateur
+                    const pseudo = await this.promptPlayerName();
+                    if (!pseudo) {
+                        console.log('Pseudo annulé, score non enregistré');
+                        return null;
+                    }
+
+                    const scorePayload = {
+                        pseudo: pseudo,
+                        score: scoreData.score,
+                        percentage: scoreData.percentage,
+                        correct: scoreData.correct,
+                        total: scoreData.total,
+                        difficulty: scoreData.difficulty || 'facile',
+                        time: scoreData.time || 0,
+                        gameType: scoreData.gameType || 'quiz'
+                    };
+
+                    const response = await fetch(`${this.apiBaseUrl}/scores`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(scorePayload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    console.log('Score enregistré avec succès:', result);
+                    
+                    // Recharger les scores pour avoir les données à jour
+                    await this.loadScores();
+                    
+                    return result.rank || 1;
+                } catch (error) {
+                    console.warn('Erreur lors de l\'enregistrement du score:', error);
+                    // Fallback vers localStorage
+                    return this.addScoreToLocalStorage(scoreData);
+                }
+            }
+
+            // Fallback vers localStorage
+            addScoreToLocalStorage(scoreData) {
+                try {
+                    const newEntry = {
+                        id: Date.now(),
+                        pseudo: scoreData.pseudo || 'ANONYME',
+                        score: scoreData.score,
+                        percentage: scoreData.percentage,
+                        correct: scoreData.correct,
+                        total: scoreData.total,
+                        difficulty: scoreData.difficulty || 'facile',
+                        date: new Date().toISOString(),
+                        time: scoreData.time || 0,
+                        gameType: scoreData.gameType || 'quiz'
+                    };
+
+                    this.scores.push(newEntry);
+                    this.scores.sort((a, b) => b.score - a.score);
+                    
+                    // Garder seulement les 100 meilleurs scores
+                    if (this.scores.length > 100) {
+                        this.scores = this.scores.slice(0, 100);
+                    }
+
+                    // Sauvegarder dans localStorage
+                    localStorage.setItem('cyber-hall-of-fame-fallback', JSON.stringify(this.scores));
+                    
+                    return this.scores.findIndex(entry => entry.id === newEntry.id) + 1;
+                } catch (error) {
+                    console.warn('Erreur lors de la sauvegarde fallback:', error);
+                    return null;
+                }
+            }
+
+            // Demander le pseudo à l'utilisateur
+            promptPlayerName() {
+                return new Promise((resolve) => {
+                    const pseudo = prompt('🏆 Entrez votre pseudo pour le Hall of Fame :\n\n(Le pseudo est obligatoire pour enregistrer votre score)');
+                    resolve(pseudo ? pseudo.trim() : null);
+                });
+            }
+
+            // Obtenir les statistiques depuis l'API
+            async getStats() {
+                try {
+                    const response = await fetch(`${this.apiBaseUrl}/stats`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    this.stats = data;
+                    return data;
+                } catch (error) {
+                    console.warn('Erreur lors du chargement des statistiques:', error);
+                    // Calculer les stats localement
+                    return this.calculateLocalStats();
+                }
+            }
+
+            // Calculer les statistiques localement
+            calculateLocalStats() {
+                if (this.scores.length === 0) {
+                    return {
+                        totalScores: 0,
+                        averageScore: 0,
+                        topScore: 0,
+                        totalPlayers: 0,
+                        difficulties: {}
+                    };
+                }
+
+                const totalScores = this.scores.length;
+                const averageScore = Math.round(this.scores.reduce((sum, s) => sum + s.score, 0) / totalScores);
+                const topScore = Math.max(...this.scores.map(s => s.score));
+                const uniquePlayers = new Set(this.scores.map(s => s.pseudo)).size;
+
+                // Statistiques par difficulté
+                const difficulties = {};
+                this.scores.forEach(score => {
+                    if (!difficulties[score.difficulty]) {
+                        difficulties[score.difficulty] = { count: 0, average: 0, total: 0 };
+                    }
+                    difficulties[score.difficulty].count++;
+                    difficulties[score.difficulty].total += score.score;
+                });
+
+                Object.keys(difficulties).forEach(diff => {
+                    difficulties[diff].average = Math.round(difficulties[diff].total / difficulties[diff].count);
+                });
+
+                return {
+                    totalScores,
+                    averageScore,
+                    topScore,
+                    totalPlayers: uniquePlayers,
+                    difficulties
+                };
+            }
+
+            // Obtenir les meilleurs scores
+            getTopScores(limit = 10) {
+                return this.scores.slice(0, limit);
+            }
+
+            // Obtenir les scores par difficulté
+            getScoresByDifficulty(difficulty) {
+                return this.scores.filter(entry => entry.difficulty === difficulty);
+            }
+
+            // Obtenir les scores par type de jeu
+            getScoresByGameType(gameType) {
+                return this.scores.filter(entry => entry.gameType === gameType);
+            }
+
+            // Formater la date pour l'affichage
+            formatDate(dateString) {
+                const date = new Date(dateString);
+                return date.toLocaleDateString('fr-FR', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: '2-digit',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+            }
+
+            // Formater le temps de jeu
+            formatTime(seconds) {
+                const minutes = Math.floor(seconds / 60);
+                const remainingSeconds = seconds % 60;
+                return `${minutes}:${remainingSeconds.toString().padStart(2, '0')}`;
+            }
+
+            // Vérifier si l'API est disponible
+            async checkApiStatus() {
+                try {
+                    const response = await fetch(`${this.apiBaseUrl}/scores`);
+                    return response.ok;
+                } catch (error) {
+                    return false;
+                }
+            }
+        }
+
+        // 🎮 Interface du Hall of Fame
+        class HallOfFameUI {
+            constructor() {
+                this.hof = new HallOfFame();
+                this.currentView = 'all'; // 'all', 'quiz', 'heros'
+            }
+
+            // Afficher le modal du Hall of Fame
+            async showHallOfFame() {
+                const modal = this.createModal();
+                document.body.appendChild(modal);
+                
+                // Animation d'entrée
+                setTimeout(() => {
+                    modal.classList.add('active');
+                }, 10);
+
+                // Charger les données depuis l'API
+                await this.loadData();
+                this.updateDisplay();
+            }
+
+            // Charger les données depuis l'API
+            async loadData() {
+                try {
+                    // Afficher un indicateur de chargement
+                    this.showLoading();
+                    
+                    // Charger les scores et les statistiques
+                    await Promise.all([
+                        this.hof.loadScores(),
+                        this.hof.getStats()
+                    ]);
+                    
+                    // Masquer l'indicateur de chargement
+                    this.hideLoading();
+                } catch (error) {
+                    console.warn('Erreur lors du chargement des données:', error);
+                    this.hideLoading();
+                    this.showError('Erreur de connexion au serveur. Mode hors ligne activé.');
+                }
+            }
+
+            // Afficher l'indicateur de chargement
+            showLoading() {
+                const loadingEl = document.getElementById('hofLoading');
+                if (loadingEl) {
+                    loadingEl.style.display = 'flex';
+                }
+            }
+
+            // Masquer l'indicateur de chargement
+            hideLoading() {
+                const loadingEl = document.getElementById('hofLoading');
+                if (loadingEl) {
+                    loadingEl.style.display = 'none';
+                }
+            }
+
+            // Afficher une erreur
+            showError(message) {
+                const errorEl = document.getElementById('hofError');
+                if (errorEl) {
+                    errorEl.textContent = message;
+                    errorEl.style.display = 'block';
+                    setTimeout(() => {
+                        errorEl.style.display = 'none';
+                    }, 5000);
+                }
+            }
+
+            // Créer le modal du Hall of Fame
+            createModal() {
+                const modal = document.createElement('div');
+                modal.className = 'hall-of-fame-modal';
+                modal.innerHTML = `
+                    <div class="hof-backdrop"></div>
+                    <div class="hof-container">
+                        <div class="hof-header">
+                            <h1 class="hof-title">🏆 HALL OF FAME 🏆</h1>
+                            <button class="hof-close" onclick="this.closest('.hall-of-fame-modal').remove()">×</button>
+                        </div>
+                        
+                        <!-- Indicateur de chargement -->
+                        <div id="hofLoading" class="hof-loading" style="display: none;">
+                            <div class="loading-spinner"></div>
+                            <p>Chargement des scores...</p>
+                        </div>
+
+                        <!-- Message d'erreur -->
+                        <div id="hofError" class="hof-error" style="display: none;"></div>
+                        
+                        <div class="hof-tabs">
+                            <button class="hof-tab active" data-view="all">Tous les Scores</button>
+                            <button class="hof-tab" data-view="quiz">Cyber Dico</button>
+                            <button class="hof-tab" data-view="heros">Jeu du Héros</button>
+                        </div>
+
+                        <div class="hof-stats">
+                            <div class="hof-stat">
+                                <span class="stat-label">Parties</span>
+                                <span class="stat-value" id="totalScores">0</span>
+                            </div>
+                            <div class="hof-stat">
+                                <span class="stat-label">Meilleur Score</span>
+                                <span class="stat-value" id="topScore">0</span>
+                            </div>
+                            <div class="hof-stat">
+                                <span class="stat-label">Moyenne</span>
+                                <span class="stat-value" id="averageScore">0</span>
+                            </div>
+                            <div class="hof-stat">
+                                <span class="stat-label">Joueurs</span>
+                                <span class="stat-value" id="totalPlayers">0</span>
+                            </div>
+                        </div>
+
+                        <div class="hof-scores" id="hofScores">
+                            <!-- Les scores seront affichés ici -->
+                        </div>
+
+                        <div class="hof-actions">
+                            <button class="hof-btn hof-btn-clear" onclick="hallOfFameUI.clearAllScores()">
+                                🗑️ Effacer Tout
+                            </button>
+                            <button class="hof-btn hof-btn-export" onclick="hallOfFameUI.exportScores()">
+                                📊 Exporter
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+                // Ajouter les styles
+                this.addStyles();
+
+                // Gérer les onglets
+                modal.querySelectorAll('.hof-tab').forEach(tab => {
+                    tab.addEventListener('click', (e) => {
+                        modal.querySelectorAll('.hof-tab').forEach(t => t.classList.remove('active'));
+                        e.target.classList.add('active');
+                        this.currentView = e.target.dataset.view;
+                        this.updateDisplay();
+                    });
+                });
+
+                return modal;
+            }
+
+            // Mettre à jour l'affichage
+            updateDisplay() {
+                const scoresContainer = document.getElementById('hofScores');
+                const stats = this.hof.stats || this.hof.calculateLocalStats();
+
+                // Mettre à jour les statistiques
+                document.getElementById('totalScores').textContent = stats.totalScores || 0;
+                document.getElementById('topScore').textContent = stats.topScore || 0;
+                document.getElementById('averageScore').textContent = stats.averageScore || 0;
+                document.getElementById('totalPlayers').textContent = stats.totalPlayers || 0;
+
+                // Filtrer les scores selon la vue
+                let scores = [];
+                switch (this.currentView) {
+                    case 'quiz':
+                        scores = this.hof.getScoresByGameType('quiz');
+                        break;
+                    case 'heros':
+                        scores = this.hof.getScoresByGameType('heros');
+                        break;
+                    default:
+                        scores = this.hof.getTopScores();
+                }
+
+                // Afficher les scores
+                if (scores.length === 0) {
+                    scoresContainer.innerHTML = `
+                        <div class="hof-empty">
+                            <div class="empty-icon">🎮</div>
+                            <h3>Aucun score enregistré</h3>
+                            <p>Jouez pour apparaître dans le Hall of Fame !</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                scoresContainer.innerHTML = scores.map((score, index) => `
+                    <div class="hof-entry ${index < 3 ? 'top-' + (index + 1) : ''}">
+                        <div class="entry-rank">
+                            ${index < 3 ? ['🥇', '🥈', '🥉'][index] : (index + 1)}
+                        </div>
+                        <div class="entry-info">
+                            <div class="entry-name">${score.name}</div>
+                            <div class="entry-details">
+                                ${score.gameType === 'quiz' ? 'Cyber Dico' : 'Jeu du Héros'} • 
+                                ${score.difficulty.toUpperCase()} • 
+                                ${score.percentage}%
+                            </div>
+                        </div>
+                        <div class="entry-score">
+                            <div class="score-value">${score.score}</div>
+                            <div class="score-details">
+                                ${score.correct}/${score.total} • 
+                                ${this.hof.formatTime(score.time)}
+                            </div>
+                        </div>
+                        <div class="entry-date">
+                            ${this.hof.formatDate(score.date)}
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // Effacer tous les scores
+            clearAllScores() {
+                if (confirm('Êtes-vous sûr de vouloir effacer tous les scores du Hall of Fame ?')) {
+                    this.hof.clearScores();
+                    this.updateDisplay();
+                }
+            }
+
+            // Exporter les scores
+            exportScores() {
+                const scores = this.hof.getTopScores();
+                const dataStr = JSON.stringify(scores, null, 2);
+                const dataBlob = new Blob([dataStr], {type: 'application/json'});
+                
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(dataBlob);
+                link.download = `cyber-hall-of-fame-${new Date().toISOString().split('T')[0]}.json`;
+                link.click();
+            }
+
+            // Ajouter les styles CSS
+            addStyles() {
+                if (document.getElementById('hof-styles')) return;
+
+                const style = document.createElement('style');
+                style.id = 'hof-styles';
+                style.textContent = `
+                    .hall-of-fame-modal {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 10000;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
+                    }
+
+                    .hall-of-fame-modal.active {
+                        opacity: 1;
+                    }
+
+                    .hof-backdrop {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.8);
+                        backdrop-filter: blur(5px);
+                    }
+
+                    .hof-container {
+                        position: relative;
+                        background: linear-gradient(135deg, #000b49 0%, #001a5c 100%);
+                        border: 2px solid #00cfff;
+                        border-radius: 20px;
+                        padding: 30px;
+                        max-width: 800px;
+                        width: 90%;
+                        max-height: 80vh;
+                        overflow-y: auto;
+                        box-shadow: 0 0 50px rgba(0, 207, 255, 0.3);
+                        animation: hofSlideIn 0.5s ease-out;
+                    }
+
+                    @keyframes hofSlideIn {
+                        from {
+                            transform: translateY(-50px) scale(0.9);
+                            opacity: 0;
+                        }
+                        to {
+                            transform: translateY(0) scale(1);
+                            opacity: 1;
+                        }
+                    }
+
+                    .hof-header {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 20px;
+                        border-bottom: 2px solid #00cfff;
+                        padding-bottom: 15px;
+                    }
+
+                    .hof-title {
+                        color: #00cfff;
+                        font-size: 2.5rem;
+                        font-weight: bold;
+                        text-shadow: 0 0 20px rgba(0, 207, 255, 0.5);
+                        margin: 0;
+                    }
+
+                    .hof-close {
+                        background: none;
+                        border: 2px solid #ff004f;
+                        color: #ff004f;
+                        font-size: 2rem;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                    }
+
+                    .hof-close:hover {
+                        background: #ff004f;
+                        color: white;
+                        transform: scale(1.1);
+                    }
+
+                    .hof-tabs {
+                        display: flex;
+                        gap: 10px;
+                        margin-bottom: 20px;
+                    }
+
+                    .hof-tab {
+                        background: rgba(0, 207, 255, 0.1);
+                        border: 1px solid #00cfff;
+                        color: #00cfff;
+                        padding: 10px 20px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        flex: 1;
+                    }
+
+                    .hof-tab.active,
+                    .hof-tab:hover {
+                        background: #00cfff;
+                        color: #000b49;
+                    }
+
+                    .hof-stats {
+                        display: grid;
+                        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                        gap: 15px;
+                        margin-bottom: 25px;
+                        padding: 20px;
+                        background: rgba(255, 255, 255, 0.05);
+                        border-radius: 15px;
+                        border: 1px solid rgba(0, 207, 255, 0.3);
+                    }
+
+                    .hof-stat {
+                        text-align: center;
+                    }
+
+                    .stat-label {
+                        display: block;
+                        color: #b0b0b0;
+                        font-size: 0.9rem;
+                        margin-bottom: 5px;
+                    }
+
+                    .stat-value {
+                        display: block;
+                        color: #00cfff;
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                    }
+
+                    .hof-scores {
+                        margin-bottom: 20px;
+                    }
+
+                    .hof-loading {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 40px;
+                        color: #00cfff;
+                    }
+
+                    .loading-spinner {
+                        width: 40px;
+                        height: 40px;
+                        border: 4px solid rgba(0, 207, 255, 0.3);
+                        border-top: 4px solid #00cfff;
+                        border-radius: 50%;
+                        animation: spin 1s linear infinite;
+                        margin-bottom: 15px;
+                    }
+
+                    @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+
+                    .hof-error {
+                        background: rgba(239, 68, 68, 0.1);
+                        border: 1px solid #ef4444;
+                        color: #ef4444;
+                        padding: 15px;
+                        border-radius: 10px;
+                        margin-bottom: 20px;
+                        text-align: center;
+                    }
+
+                    .hof-entry {
+                        display: grid;
+                        grid-template-columns: 60px 1fr 120px 100px;
+                        gap: 15px;
+                        align-items: center;
+                        padding: 15px;
+                        margin-bottom: 10px;
+                        background: rgba(255, 255, 255, 0.05);
+                        border-radius: 10px;
+                        border: 1px solid rgba(0, 207, 255, 0.2);
+                        transition: all 0.3s ease;
+                    }
+
+                    .hof-entry:hover {
+                        background: rgba(0, 207, 255, 0.1);
+                        border-color: #00cfff;
+                        transform: translateX(5px);
+                    }
+
+                    .hof-entry.top-1 {
+                        background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+                        border-color: #ffd700;
+                    }
+
+                    .hof-entry.top-2 {
+                        background: linear-gradient(135deg, rgba(192, 192, 192, 0.2), rgba(192, 192, 192, 0.1));
+                        border-color: #c0c0c0;
+                    }
+
+                    .hof-entry.top-3 {
+                        background: linear-gradient(135deg, rgba(205, 127, 50, 0.2), rgba(205, 127, 50, 0.1));
+                        border-color: #cd7f32;
+                    }
+
+                    .entry-rank {
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        text-align: center;
+                        color: #00cfff;
+                    }
+
+                    .entry-name {
+                        font-weight: bold;
+                        color: white;
+                        font-size: 1.1rem;
+                    }
+
+                    .entry-details {
+                        color: #b0b0b0;
+                        font-size: 0.9rem;
+                        margin-top: 5px;
+                    }
+
+                    .entry-score {
+                        text-align: center;
+                    }
+
+                    .score-value {
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        color: #00cfff;
+                    }
+
+                    .score-details {
+                        color: #b0b0b0;
+                        font-size: 0.8rem;
+                        margin-top: 5px;
+                    }
+
+                    .entry-date {
+                        color: #b0b0b0;
+                        font-size: 0.8rem;
+                        text-align: right;
+                    }
+
+                    .hof-empty {
+                        text-align: center;
+                        padding: 50px 20px;
+                        color: #b0b0b0;
+                    }
+
+                    .empty-icon {
+                        font-size: 4rem;
+                        margin-bottom: 20px;
+                    }
+
+                    .hof-actions {
+                        display: flex;
+                        gap: 15px;
+                        justify-content: center;
+                    }
+
+                    .hof-btn {
+                        background: rgba(255, 0, 79, 0.1);
+                        border: 1px solid #ff004f;
+                        color: #ff004f;
+                        padding: 12px 24px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        font-weight: bold;
+                    }
+
+                    .hof-btn:hover {
+                        background: #ff004f;
+                        color: white;
+                        transform: translateY(-2px);
+                    }
+
+                    .hof-btn-clear {
+                        background: rgba(255, 0, 79, 0.1);
+                        border-color: #ff004f;
+                        color: #ff004f;
+                    }
+
+                    .hof-btn-export {
+                        background: rgba(0, 207, 255, 0.1);
+                        border-color: #00cfff;
+                        color: #00cfff;
+                    }
+
+                    @media (max-width: 768px) {
+                        .hof-container {
+                            padding: 20px;
+                            width: 95%;
+                        }
+
+                        .hof-title {
+                            font-size: 2rem;
+                        }
+
+                        .hof-entry {
+                            grid-template-columns: 50px 1fr 80px;
+                            gap: 10px;
+                        }
+
+                        .entry-date {
+                            display: none;
+                        }
+
+                        .hof-stats {
+                            grid-template-columns: repeat(2, 1fr);
+                        }
+                    }
+                `;
+
+                document.head.appendChild(style);
+            }
+
+            // Demander le nom du joueur
+            promptPlayerName(scoreData) {
+                return new Promise((resolve) => {
+                    const modal = document.createElement('div');
+                    modal.className = 'hall-of-fame-modal';
+                    modal.innerHTML = `
+                        <div class="hof-backdrop"></div>
+                        <div class="hof-container" style="max-width: 500px;">
+                            <div class="hof-header">
+                                <h2 style="color: #00cfff; margin: 0;">🏆 NOUVEAU RECORD ! 🏆</h2>
+                            </div>
+                            
+                            <div style="text-align: center; margin: 20px 0;">
+                                <div style="font-size: 3rem; color: #00cfff; margin-bottom: 10px;">
+                                    Score: ${scoreData.score} (${scoreData.percentage}%)
+                                </div>
+                                <p style="color: #b0b0b0; margin-bottom: 20px;">
+                                    Félicitations ! Vous êtes dans le Hall of Fame !
+                                </p>
+                            </div>
+
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: block; color: #00cfff; margin-bottom: 10px;">
+                                    Entrez votre nom (ou utilisez un nom aléatoire) :
+                                </label>
+                                <input type="text" id="playerName" 
+                                       style="width: 100%; padding: 12px; border: 2px solid #00cfff; 
+                                              background: rgba(0, 207, 255, 0.1); color: white; 
+                                              border-radius: 10px; font-size: 1.1rem;"
+                                       placeholder="Votre nom ou laissez vide pour un nom aléatoire"
+                                       maxlength="15">
+                            </div>
+
+                            <div class="hof-actions">
+                                <button class="hof-btn" onclick="this.closest('.hall-of-fame-modal').remove(); resolve(null);">
+                                    Annuler
+                                </button>
+                                <button class="hof-btn" style="background: #00cfff; color: #000b49; border-color: #00cfff;"
+                                        onclick="
+                                            const name = document.getElementById('playerName').value.trim();
+                                            this.closest('.hall-of-fame-modal').remove();
+                                            resolve(name || '${this.hof.generateArcadeName()}');
+                                        ">
+                                    Enregistrer
+                                </button>
+                            </div>
+                        </div>
+                    `;
+
+                    document.body.appendChild(modal);
+                    setTimeout(() => modal.classList.add('active'), 10);
+                    
+                    // Focus sur l'input
+                    setTimeout(() => {
+                        const input = modal.querySelector('#playerName');
+                        input.focus();
+                        input.addEventListener('keypress', (e) => {
+                            if (e.key === 'Enter') {
+                                const name = input.value.trim();
+                                modal.remove();
+                                resolve(name || this.hof.generateArcadeName());
+                            }
+                        });
+                    }, 100);
+                });
+            }
+        }
+
+        // Instance globale
+        const hallOfFameUI = new HallOfFameUI();
+
+        // Fonction pour afficher le Hall of Fame
+        function showHallOfFame() {
+            hallOfFameUI.showHallOfFame();
+        }
+
+        // Fonction pour enregistrer un score
+        async function saveScore(scoreData) {
+            try {
+                // Vérifier si l'API est disponible
+                const apiAvailable = await hallOfFameUI.hof.checkApiStatus();
+                
+                if (apiAvailable) {
+                    // Utiliser l'API en ligne
+                    const position = await hallOfFameUI.hof.addScore(scoreData);
+                    
+                    if (position) {
+                        // Afficher le Hall of Fame après un délai
+                        setTimeout(() => {
+                            hallOfFameUI.showHallOfFame();
+                        }, 1000);
+                        
+                        return position;
+                    }
+                } else {
+                    // Mode hors ligne - utiliser localStorage
+                    console.log('API non disponible, mode hors ligne activé');
+                    const position = hallOfFameUI.hof.addScoreToLocalStorage(scoreData);
+                    
+                    if (position) {
+                        // Afficher le Hall of Fame après un délai
+                        setTimeout(() => {
+                            hallOfFameUI.showHallOfFame();
+                        }, 1000);
+                        
+                        return position;
+                    }
+                }
+            } catch (error) {
+                console.warn('Erreur lors de l\'enregistrement du score:', error);
+                // Fallback vers localStorage
+                const position = hallOfFameUI.hof.addScoreToLocalStorage(scoreData);
+                
+                if (position) {
+                    setTimeout(() => {
+                        hallOfFameUI.showHallOfFame();
+                    }, 1000);
+                    
+                    return position;
+                }
+            }
+            return null;
+        }
+    </script>
+
+</div>
+
+</body></html>

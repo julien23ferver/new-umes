@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test de Synchronisation - Questions.js</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .question {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #007bff;
+        }
+        .options {
+            margin: 10px 0;
+        }
+        .option {
+            padding: 5px 10px;
+            margin: 2px 0;
+            background: #e9ecef;
+            border-radius: 3px;
+        }
+        .correct {
+            background: #d4edda;
+            border-left: 3px solid #28a745;
+        }
+        .explanation {
+            background: #fff3cd;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 3px;
+            border-left: 3px solid #ffc107;
+        }
+        .stats {
+            background: #e2e3e5;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .difficulty {
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        .difficulty h3 {
+            color: #495057;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        .info {
+            background: #d1ecf1;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #17a2b8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Test de Synchronisation - Questions.js</h1>
+        
+        <div class="info">
+            <h3>ℹ️ Comment ça marche ?</h3>
+            <p>Ce fichier de test démontre que les questions sont maintenant chargées automatiquement depuis <code>questions.js</code>.</p>
+            <p><strong>Avantage :</strong> Modifiez <code>questions.js</code> et les changements apparaissent automatiquement ici !</p>
+        </div>
+
+        <div class="stats">
+            <h3>📊 Statistiques des Questions</h3>
+            <div id="stats"></div>
+        </div>
+
+        <div id="questions-container">
+            <!-- Les questions seront chargées ici dynamiquement -->
+        </div>
+
+        <div class="info">
+            <h3>🔧 Comment modifier les questions ?</h3>
+            <ol>
+                <li>Ouvrez <code>questions.js</code> dans votre éditeur</li>
+                <li>Modifiez une question (texte, options, explication...)</li>
+                <li>Sauvegardez le fichier</li>
+                <li>Rechargez cette page - les changements apparaissent !</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Import du fichier questions.js -->
+    <script src="questions.js"></script>
+    
+    <script>
+        // Fonction pour afficher les statistiques
+        function displayStats() {
+            const statsDiv = document.getElementById('stats');
+            let totalQuestions = 0;
+            let statsHTML = '';
+            
+            Object.keys(questions).forEach(difficulty => {
+                const count = questions[difficulty].length;
+                totalQuestions += count;
+                statsHTML += `<p><strong>${difficulty}:</strong> ${count} questions</p>`;
+            });
+            
+            statsHTML += `<p><strong>Total:</strong> ${totalQuestions} questions</p>`;
+            statsDiv.innerHTML = statsHTML;
+        }
+
+        // Fonction pour afficher toutes les questions
+        function displayQuestions() {
+            const container = document.getElementById('questions-container');
+            let html = '';
+            
+            Object.keys(questions).forEach(difficulty => {
+                html += `<div class="difficulty">
+                    <h3>🎯 Niveau ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}</h3>`;
+                
+                questions[difficulty].forEach(question => {
+                    html += `<div class="question">
+                        <h4>${question.term}</h4>
+                        <p><strong>Question:</strong> ${question.question}</p>
+                        <div class="options">
+                            <strong>Options:</strong>
+                            ${question.options.map((option, index) => 
+                                `<div class="option ${index === question.correct ? 'correct' : ''}">
+                                    ${index + 1}. ${option} ${index === question.correct ? '✅' : ''}
+                                </div>`
+                            ).join('')}
+                        </div>
+                        <div class="explanation">
+                            <strong>Explication:</strong> ${question.explanation}
+                        </div>
+                    </div>`;
+                });
+                
+                html += '</div>';
+            });
+            
+            container.innerHTML = html;
+        }
+
+        // Affichage au chargement de la page
+        window.addEventListener('load', () => {
+            displayStats();
+            displayQuestions();
+        });
+    </script>
+</body>
+</html>

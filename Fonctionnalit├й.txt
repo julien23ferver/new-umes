@@ -1,0 +1,64 @@
+Cyber Quizz/Jeu du Héros 
+
+Plateforme & Modules
+Suite de Formation Unifiée : Quizz interactif + Simulation stratégique.
+
+Architecture Web Autonome : Rapide, portable et sans dépendance serveur.
+
+Conception Évolutive : Prête pour l'intégration de futurs contenus.
+
+Simulation "Serious Game" : Scénario de prise de décision et gestion de ressources.
+
+Quizz Technique Adaptatif : Test des connaissances en cybersécurité.
+
+
+Gameplay & Engagement
+Difficulté Multi-Niveaux : Modes Facile, Intermédiaire, Expert et Impossible.
+
+Mode Révision Intelligent : Apprentissage ciblé sur les erreurs passées.
+
+Randomisation des Questions : Expérience de jeu unique à chaque partie.
+
+Scénario à Conséquences : Des choix qui impactent directement la fin du jeu.
+
+Gestion de Métriques en Direct : Suivi de la Sécurité, Productivité, et Trésorerie.
+
+Journal de Bord : Historique consultable de toutes les décisions prises.
+
+
+Interface & Expérience Utilisateur (UI/UX)
+Design Immersif "Cyberpunk" : Interface moderne et visuellement engageante.
+
+Animations d'Interface Fluides : Transitions et effets dynamiques avancés.
+
+Immersion Audio : Musique d'ambiance et effets sonores pour le feedback.
+
+Navigation Intuitive par Modales : Pop-ups pour tutoriels, crédits et messages.
+
+Feedback Utilisateur Instantané : Validation visuelle et sonore de chaque action.
+
+
+Personnalisation & Accessibilité
+Support Bilingue (FR/EN) : Contenu entièrement traduit et commutable.
+
+Thèmes Visuels (Clair/Sombre) : Choix de l'apparence de l'interface.
+
+Panneau de Contrôle Avancé : Réglage de la vitesse du texte et des animations.
+
+Haute Accessibilité : Modes contraste élevé et réduction des mouvements.
+
+Navigation 100% au Clavier : Contrôle total de l'application sans souris.
+
+Sauvegarde des Préférences : Mémorisation des choix de l'utilisateur.
+
+
+Analyse & Reporting
+Tableau de Bord Post-Partie : Score, temps, et statistiques détaillées.
+
+Export des Rapports en PDF : Génération de documents professionnels en un clic.
+
+Visualisation des Données : Graphiques de performance par catégorie.
+
+Conseils ANSSI Personnalisés : Recommandations basées sur les faiblesses détectées.
+
+Glossaire ANSSI Intégré : Accès rapide à la base de termes officielle.

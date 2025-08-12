@@ -1,0 +1,40 @@
+{
+  "scores": [
+    {
+      "id": "1",
+      "pseudo": "CYBER_MASTER",
+      "score": 95,
+      "percentage": 95,
+      "correct": 19,
+      "total": 20,
+      "difficulty": "facile",
+      "time": 180,
+      "gameType": "quiz",
+      "date": "2024-01-15T10:30:00.000Z"
+    },
+    {
+      "id": "2", 
+      "pseudo": "HACKER_42",
+      "score": 88,
+      "percentage": 88,
+      "correct": 17,
+      "total": 20,
+      "difficulty": "moyen",
+      "time": 240,
+      "gameType": "quiz",
+      "date": "2024-01-15T11:15:00.000Z"
+    },
+    {
+      "id": "3",
+      "pseudo": "NEXUS_WARRIOR",
+      "score": 100,
+      "percentage": 100,
+      "correct": 20,
+      "total": 20,
+      "difficulty": "difficile",
+      "time": 300,
+      "gameType": "quiz",
+      "date": "2024-01-15T12:00:00.000Z"
+    }
+  ]
+}
